@@ -13,7 +13,7 @@
 
     <meta charset="utf-8">
     <title>Туристическое агенство Pro-tour.by | продажа туров</title>
-    <meta name="keywords" content="новогодние каникулы, отдых, Египет, Новогодние каникулы, экскурсии, по Беларуси, Новогодний тур, купить тур, Закопане, Гарни, Дендрологический парк">
+    <meta name="keywords" content="новогодние каникулы, отдых, Египет, Новогодние каникулы, экскурсии, по Беларуси, Новогодний тур, купить тур, Закопане, Гарни, Дендрологический парк, pro-tour, про тур">
     <meta name="description" content="Туристическое агенство Pro-tour.by - продажа туров, организация экскурсий по Беларуси, въездной туризм - профессиональный подход в организации вашего отдыха">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <link href="img/logo.ico" rel="shortcut icon" type="image/x-icon" />
@@ -57,13 +57,15 @@
       <div class="container">
         <figure class="logo-box">
           <img src="img/logo.png" alt="Туристическое агенство Pro-tour.by">
-          <h1>Туристическое агенство Pro-tour.by</h1>
+          <h1>Туристическое агенство <span class="hide-text">Pro-tour.by</span></h1>
         </figure>
         <div class="content-box">
           <p>
             Ещё чуть-чуть и здесь появится наш новый сайт
           </p>
-          <p>...А пока заполните форму ниже, и мы с удовольствием расскажем Вам о самых заманчивых предложениях от туристического агенства Pro-tour.by</p>
+          <p>...А пока заполните форму ниже или позвоните по номеру <a class="link-phone" href="tel+375291321800">+375 29 132-18-00.</a><br>
+          Мы с удовольствием расскажем Вам о самых заманчивых предложениях<br>
+          от туристического агенства Pro-tour.by</p>
           <p>P.S. Не забудьте посетить нашу <a href="https://vk.com/protourby" target="_blank">страничку VK</a> </p>
         </div>
       </div>
@@ -77,8 +79,7 @@
         <!-- END Hidden Required Fields -->
         <label class="cloud-form__phone" for="phone">Телефон</label>
         <input id="phone" class="cloud-form__phone" type="text" name="phone"
-        value="" placeholder="+375(29) 132-18-00" required
-        pattern="^((8|\+375)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+        value="" placeholder="+375(29) 132-18-00" required>
         <label class="cloud-form__mail" for="mail">e-mail</label>
         <input id="mail"  class="cloud-form__mail" type="text" name="mail"
         value="" placeholder="info@PRO-tour.by" required
@@ -90,19 +91,19 @@
         <button id="submit" class="cloud-form__submit" type="submit" name="submit" onclick="yaCounter46482651.reachGoal('ORDER1'); return true;">
           Отправить заявку
         </button>
-        <div class="box-label">
+        <!--<div class="box-label">
           <input id="сonsent" class="cloud-form__сonsent" type="checkbox" name="сonsent" value="" required>
           <label class="cloud-form__сonsent" for="сonsent">
             Согласие на обработку персональных данных
           </label>
-        </div>
+        </div>-->
       </form>
 
     </main>
     <footer>
       <div class="copy">
         <p>
-          &copy; 2017 Pro-tour.by Все права защищены.
+          &copy; 2017 PRO-tour.by Все права защищены.
         </p>
       </div>
 
@@ -114,14 +115,20 @@
       </div>
       <div class="box-content">
         <p class="thanks">
-          УРА! Спасибо!<span class="smile"></span>
+          УРА! Спасибо!
         </p>
-        <p>Сейчас наши специалисты закончат танцевать от счастья<br> и мы сразу же вам перезвоним!</p>
+        <p>Сейчас наши специалисты закончат танцевать от счастья<span class="smile"></span><br> и мы сразу же вам перезвоним!</p>
       </div>
     </div>
 
     <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="js/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="js/maskedinput.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+     jQuery(function($){
+     $("#phone").mask("+375(99) 999-99-99");
+     });
+  	 </script>
   </body>
 </html>

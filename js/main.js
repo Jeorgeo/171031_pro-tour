@@ -48,10 +48,6 @@ function showThank() {
 };
 
 function removePopup() {
-  var videoScreen = popup.querySelector("video");
-  var removeScreen = videoScreen.querySelector("source");
-  removeScreen.src = "#";
-  popup.removeChild(videoScreen);
   popup.classList.add("modal-content-hide");
   winPopup.classList.add("modal-content-hide");
   setTimeout(function() {
@@ -102,13 +98,17 @@ $(document).ready(function() {
 
 	//E-mail Ajax Send
 	$(".order-form").submit(function() { //Change
-		var th = $(this).serialize();
+		var th = $(this);
 		$.ajax({
 			type: "POST",
 			url: "mail.php", //Change
-			data: th,
+			data: th.serialize()
 		}).done(function() {
 			showThank();
+      setTimeout(function() {
+				// Done Functions
+				th.trigger("reset");
+			}, 1000);
 		});
 		return false;
 	});

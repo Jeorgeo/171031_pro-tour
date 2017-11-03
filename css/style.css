@@ -78,7 +78,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-size: 0;
+	font-size: 1em;
   font-family: 'OpenSansSemibold', serif;
 }
 
@@ -97,6 +97,10 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+span.hide-text {
+  font-size: 0;
 }
 
 .container {
@@ -134,6 +138,11 @@ img {
 .color-text {
   color: #e93a1d;
 }
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 600px;
+  }
 
 @media (min-width: 768px) {
   .container {
@@ -176,6 +185,36 @@ header .content-box {
   color: #354b4d;
 }
 
+header .content-box {
+  font-size: 1.2em;
+}
+
+a.link-phone {
+  display: block;
+  margin: 0.5em;
+  text-align: center;
+}
+
+header .logo-box {
+  text-align: center;
+  max-width: 285px;
+}
+
+header .logo-box h1 {
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+header .logo-box a {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+header .logo-box a:hover {
+  color: blue;
+  border-bottom: 1px dotted blue;
+}
+
 header .content-box p {
   font-family: 'Pattaya', 'Arial', sans-serif;
 }
@@ -187,8 +226,7 @@ header .content-box a {
 header .content-box a:hover {
   outline: none;
   border: none;
-  border: 1px dotted blue;
-
+  border-bottom: 1px dotted blue;
 }
 
 /*--------------------------------------------------------------
@@ -209,6 +247,8 @@ main {
   width: 95%;
   max-width: 450px;
   margin: auto;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
   padding: 1em;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.3);
@@ -483,6 +523,11 @@ footer .copy {
 
   header .content-box {
     width: 70%;
+    margin: 0;
+  }
+
+  a.link-phone {
+    display: inline;
     margin: 0;
   }
 
