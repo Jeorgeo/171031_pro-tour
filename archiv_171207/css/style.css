@@ -26,29 +26,6 @@
 # Animation
 --------------------------------------------------------------*/
 
-/*--------------------------------------------------------------
-# Fonts
---------------------------------------------------------------*/
-
-@font-face {
-   font-family: 'Open Sans'; /* Гарнитура шрифта */
-   src: url(fonts/OpenSans-Regular.ttf); /* Путь к файлу со шрифтом */
-  }
-
-@font-face {
-   font-family: 'Open Sans Light'; /* Гарнитура шрифта */
-   src: url(fonts/OpenSans-Light.ttf); /* Путь к файлу со шрифтом */
-  }
-
-@font-face {
-   font-family: 'Roboto Slab'; /* Гарнитура шрифта */
-   src: url(fonts/RobotoSlab-Thin.ttf); /* Путь к файлу со шрифтом */
-  }
-
-/*--------------------------------------------------------------
-# Animation
---------------------------------------------------------------*/
-
 @keyframes show-panel {
   from { left: -235px; }
   to   { left: 0; }
@@ -77,50 +54,6 @@
 @keyframes prerotate-bottom {
   from { transform: rotate(45deg); }
   to   { transform: rotate(0deg); }
-}
-
-@keyframes swell {
-  from { width: 98%;
-  box-shadow: 0 0 0 0 #404040; }
-  to   { width: 100%;
-  box-shadow: 0 0 3px 1px #404040; }
-}
-
-@keyframes deflate {
-  from { width: 100%;
-  box-shadow: 0 0 3px 1px #404040; }
-  to   { width: 98%;
-  box-shadow: 0 0 0 0 #404040; }
-}
-
-@keyframes swell-r {
-  from { width: 85%; }
-  to   { width: 100%; }
-}
-
-@keyframes deflate-r {
-  from { width: 100%; }
-  to   { width: 85%; }
-}
-
-@keyframes rotate-up1 {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(-180deg); }
-}
-
-@keyframes prerotate-up1 {
-  from { transform: rotate(-180deg); }
-  to   { transform: rotate(0deg); }
-}
-
-@keyframes show-popup {
-  from { opacity: 0;}
-  to   { opacity: 1; }
-}
-
-@keyframes hide-popup {
-  from { opacity: 1;}
-  to   { opacity: 0; }
 }
 
 
