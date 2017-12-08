@@ -17,32 +17,35 @@
 --------------------------------------------------------------*/
 
 @font-face {
-  font-family: 'Pattaya'; /* Гарнитура шрифта */
-  src: url( "../fonts/Pattaya-Regular.ttf" ); /* Путь к файлу со шрифтом */
-}
-
-
-/*--------------------------------------------------------------
-# Animation
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Fonts
---------------------------------------------------------------*/
-
-@font-face {
-   font-family: 'Open Sans'; /* Гарнитура шрифта */
-   src: url(fonts/OpenSans-Regular.ttf); /* Путь к файлу со шрифтом */
+   font-family: 'Pattaya-Regular'; /* Гарнитура шрифта */
+   src: url('../fonts/Pattaya-Regular.ttf'); /* Путь к файлу со шрифтом */
   }
 
 @font-face {
-   font-family: 'Open Sans Light'; /* Гарнитура шрифта */
-   src: url(fonts/OpenSans-Light.ttf); /* Путь к файлу со шрифтом */
+   font-family: 'MontserratAlternates-Regular'; /* Гарнитура шрифта */
+   src: url('../fonts/MontserratAlternates-Regular.ttf'); /* Путь к файлу со шрифтом */
   }
 
 @font-face {
-   font-family: 'Roboto Slab'; /* Гарнитура шрифта */
-   src: url(fonts/RobotoSlab-Thin.ttf); /* Путь к файлу со шрифтом */
+   font-family: 'MontserratAlternates-Bold'; /* Гарнитура шрифта */
+   src: url('../fonts/MontserratAlternates-Bold.ttf'); /* Путь к файлу со шрифтом */
+  }
+
+@font-face {
+   font-family: 'Neucha'; /* Гарнитура шрифта */
+   src: url('../fonts/Neucha.ttf'); /* Путь к файлу со шрифтом */
+  }
+@font-face {
+   font-family: 'RobotoRegular'; /* Гарнитура шрифта */
+   src: url('../fonts/RobotoRegular.ttf'); /* Путь к файлу со шрифтом */
+  }
+@font-face {
+   font-family: 'RobotoLight'; /* Гарнитура шрифта */
+   src: url('../fonts/RobotoLight.ttf'); /* Путь к файлу со шрифтом */
+  }
+@font-face {
+   font-family: 'RobotoBold'; /* Гарнитура шрифта */
+   src: url('../fonts/RobotoBold.ttf'); /* Путь к файлу со шрифтом */
   }
 
 /*--------------------------------------------------------------
@@ -206,10 +209,15 @@ span.hide-text {
   color: #e93a1d;
 }
 
+.text_pro {
+  color: #d37225;
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 600px;
   }
+}
 
 @media (min-width: 768px) {
   .container {
@@ -224,7 +232,6 @@ span.hide-text {
   .cols.col-6-md {
     width: 50%;
   }
-
 }
 
 
@@ -232,162 +239,182 @@ span.hide-text {
 # Header
 --------------------------------------------------------------*/
 
-header {
-  position: relative;
-  z-index: 99;
+.left-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: block;
-  width: 100%;
-  padding: 1em 0;
-  background-color: #fcf6d0;
-  box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.5);
+  width: 235px;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  color: #354b4d;
+  background-color: #fbf5cf;
+  box-shadow: 2px 0 5px 3px rgba(0, 0, 0, 0.5);
 }
 
-header .logo-box,
-header .content-box {
+.logo-box {
+  margin: 1em;
+  margin-top: 0;
+}
+
+.logo-box h1 {
+  margin-top: 0;
+  text-align: center;
+  font-family: 'MontserratAlternates-Bold', 'Arial', sans-serif;
+}
+
+.social {
+  margin: 0 1em;
+  text-align: center;
+}
+
+header .social-icons {
   display: inline-block;
   vertical-align: top;
-  width: 100%;
-  margin: 0;
-  font-size: 1em;
-  color: #354b4d;
+  width: 32px;
+  height: 32px;
+  margin: 0 2px;
+  border: 1px solid rgba(211, 114, 37, 0.5);
+  border-radius: 50%;
 }
 
-header .content-box {
-  font-size: 1.2em;
+header .social-icons:hover {
+  cursor: pointer;
+  background-color: rgba(211, 114, 37, 0.2);
+  border: 1px solid rgba(211, 114, 37, 0.9);
 }
 
-a.link-phone {
+.social-icons.social_vk {
+  background: url('../img/vk_icon.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+.social-icons.social_ok {
+  background: url('../img/vk_icon.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+.social-icons.social_f {
+  background: url('../img/fb_icon.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+.social-icons.social_inst {
+  background: url('../img/in_icon.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+.main-menu {
+  margin: 1em 0;
+}
+
+.main-menu li {
+  padding: 0.5em 1em;
+}
+
+.main-menu li:hover  {
+  background-color: rgba(211, 114, 37, 0.2);
+}
+
+.main-menu li > a {
   display: block;
-  margin: 0.5em;
-  text-align: center;
+  font-size: 0.9em;
+  font-family: 'MontserratAlternates-Regular', 'Arial', sans-serif;
 }
 
-header .logo-box {
-  text-align: center;
-  max-width: 285px;
-}
-
-header .logo-box h1 {
-  margin-top: 0;
+.main-menu li .text_pro {
+  letter-spacing: -1px;
   text-transform: uppercase;
+  font-size: 1em;
+  font-family: 'MontserratAlternates-Bold';
+  margin-right: 2px;
 }
 
-header .logo-box a {
-  font-size: 1.2em;
+header .contacts {
+  margin: 1em;
+}
+
+.contats_title span,
+.wiget-phone,
+.wiget-mail {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  padding-left: 40px;
+}
+
+.contats_title span::before {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  content: '';
+  filter: grayscale(1);
+}
+
+.contats_title:hover span::before {
+  cursor: pointer;
+  filter: grayscale(0);
+}
+
+.contats_title.velcom span::before {
+  background: url('../img/icon_velcom.png') no-repeat 50% 50%;
+  background-size: contain;
+}
+
+.contats_title.mts span::before {
+  background: url('../img/icon_mts.png') no-repeat 50% 50%;
+  background-size: contain;
+}
+
+.wiget-phone,
+.wiget-mail {
+  padding: 5px;
+  padding-left: 30px;
+}
+
+.wiget-mail {
+  padding-left: 40px;
+  font-size: 1.1em;
+  font-family: 'Neucha';
+}
+
+.wiget-phone::before,
+.wiget-mail::before {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  content: '';
+
+}
+
+.wiget-phone::before {
+  background: url('../img/icon_phone.png') no-repeat 50% 50%;
+  background-size: contain;
+}
+
+.wiget-mail::before {
+  background: url('../img/icon_mail.png') no-repeat 50% 50%;
+  background-size: contain;
+}
+
+.contacts a:hover {
+  color: #d37225;
   font-weight: bold;
 }
 
-header .logo-box a:hover {
-  color: blue;
-  border-bottom: 1px dotted blue;
-}
 
-header .content-box p {
-  font-family: 'Pattaya', 'Arial', sans-serif;
-}
-
-header .content-box a {
-  color: blue;
-}
-
-header .content-box a:hover {
-  outline: none;
-  border: none;
-  border-bottom: 1px dotted blue;
-}
 
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-
-main {
-  position: relative;
-  z-index: 98;
-  min-height: 600px;
-  padding: 1em 0;
-  background: url('../img/bg_main.jpg') no-repeat 50% 50%;
-  background-size: cover;
-}
-
-.order-form {
-  display: block;
-  width: 95%;
-  max-width: 450px;
-  margin: auto;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  padding: 1em;
-  box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-}
-
-.order-form input,
-.order-form textarea,
-.order-form button {
-  display: block;
-  width: 90%;
-  margin: 1.5em auto;
-  padding: 1.5em;
-  color: #354b4d;
-  background-color: transparent;
-  border: 1px solid #354b4d;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-.order-form input:hover,
-.order-form textarea:hover,
-.order-form input:focus,
-.order-form textarea:focus {
-  background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 5px 2px #354b4d;
-}
-
-.order-form button:hover {
-  box-shadow: 0 0 5px 2px #354b4d;
-}
-
-.order-form label,
-.box-label {
-  display: block;
-  width: 90%;
-  margin: 0.5em auto;
-}
-
-.order-form button:hover {
-  cursor: pointer;
-  color: #ffffff;
-  background-color: #354b4d;
-}
-
-.order-form input.cloud-form__сonsent {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 2em;
-  width: 18px;
-  height: 18px;
-}
-
-.order-form label.cloud-form__сonsent {
-  display: inline-block;
-  vertical-align: top;
-  width: 75%;
-}
-
-.smile {
-  display: inline-block;
-  vertical-align: top;
-  width: 30px;
-  height: 30px;
-  margin-left: 1.5em;
-  background: url('../img/smile.png') no-repeat 50% 50%;
-  background-size: cover;
-}
-
-p.thanks {
-  line-height: 1.8em;
-}
 
 
 /*--------------------------------------------------------------
@@ -583,20 +610,7 @@ footer .copy {
   # Header
   --------------------------------------------------------------*/
 
-  header .logo-box {
-    width: 25%;
-    margin-right: 4%;
-  }
 
-  header .content-box {
-    width: 70%;
-    margin: 0;
-  }
-
-  a.link-phone {
-    display: inline;
-    margin: 0;
-  }
 
   /*--------------------------------------------------------------
   # Content
