@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0">
     <link href="img/logo.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+  	<link rel="stylesheet" type="text/css" href="engine1/style.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
 
@@ -54,23 +56,24 @@
     </header>
     <main>
       <section class="main-slider">
-        <div class="m-sl-box">
-          <div class="m-sl__slide slide1">
-            <a href="#">
-              <img src="img/bg_main.jpg" alt="">
-              <div class="m-sl__slide-content">
-                <p>
-                  <span big-text>it's time<br>
-                  to travel</span>
-                </p>
-                <p>
-                  время
-                  <button class="btn-popup" type="button" name="button">путешествовать!</button>
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
+        <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+        <div id="wowslider-container1">
+      	<div class="ws_images"><ul>
+      		<li><img src="data1/images/16860.jpg" alt="16860" title="16860" id="wows1_0"/></li>
+      		<li><img src="data1/images/13840478023135767nevseoboi.com.ua.jpg" alt="1384047802-3135767-nevseoboi.com.ua" title="1384047802-3135767-nevseoboi.com.ua" id="wows1_1"/></li>
+      		<li><img src="data1/images/img_lastminute_268195.jpg" alt="img_lastminute_268195" title="img_lastminute_268195" id="wows1_2"/></li>
+      		<li><a href="http://wowslider.net"><img src="data1/images/turupobelarusi.jpg" alt="bootstrap slider" title="Turu-po-Belarusi" id="wows1_3"/></a></li>
+      		<li><img src="data1/images/fin.jpg" alt="fin" title="fin" id="wows1_4"/></li>
+      	</ul></div>
+      	<div class="ws_bullets"><div>
+      		<a href="#" title="16860"><span><img src="data1/tooltips/16860.jpg" alt="16860"/>1</span></a>
+      		<a href="#" title="1384047802-3135767-nevseoboi.com.ua"><span><img src="data1/tooltips/13840478023135767nevseoboi.com.ua.jpg" alt="1384047802-3135767-nevseoboi.com.ua"/>2</span></a>
+      		<a href="#" title="img_lastminute_268195"><span><img src="data1/tooltips/img_lastminute_268195.jpg" alt="img_lastminute_268195"/>3</span></a>
+      		<a href="#" title="Turu-po-Belarusi"><span><img src="data1/tooltips/turupobelarusi.jpg" alt="Turu-po-Belarusi"/>4</span></a>
+      		<a href="#" title="fin"><span><img src="data1/tooltips/fin.jpg" alt="fin"/>5</span></a>
+      	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">bootstrap carousel example</a> by WOWSlider.com v8.8</div>
+      	<div class="ws_shadow"></div>
+      	</div>	
       </section>
       <section class="auto">
         <div class="container">
@@ -264,6 +267,8 @@
     <script type="text/javascript" src="js/jquery-migrate-1.4.1.min.js"></script>
     <script type="text/javascript" src="js/maskedinput.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="engine1/wowslider.js"></script>
+  	<script type="text/javascript" src="engine1/script.js"></script>
     <script type="text/javascript">
      jQuery(function($){
      $("#phone").mask("+375(99) 999-99-99");

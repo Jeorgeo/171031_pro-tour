@@ -242,7 +242,7 @@ span.hide-text {
 .left-panel {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -240px;
   display: block;
   width: 235px;
   height: 100%;
@@ -416,6 +416,15 @@ header .contacts {
 # Content
 --------------------------------------------------------------*/
 
+main {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 
 /*--------------------------------------------------------------
 # Popup form
@@ -558,63 +567,25 @@ footer .copy {
     max-width: 960px;
   }
 
-  .cols.col-1 {
-    width: 8.3333%;
-  }
-
-  .cols.col-2 {
-    width: 16.6666%;
-  }
-
-  .cols.col-3 {
-    width: 24.9999%;
-  }
-
-  .cols.col-4 {
-    width: 33.3332%;
-  }
-
-  .cols.col-5 {
-    width: 41.6665%;
-  }
-
-  .cols.col-6 {
-    width: 49.9998%;
-  }
-
-  .cols.col-7 {
-    width: 58.3331%;
-  }
-
-  .cols.col-8 {
-    width: 66.6664%;
-  }
-
-  .cols.col-9 {
-    width: 74.9997%;
-  }
-
-  .cols.col-10 {
-    width: 83.333%;
-  }
-
-  .cols.col-11 {
-    width: 91.663%;
-  }
-
-  .cols.col-12 {
-    width: 100%;
-  }
 
   /*--------------------------------------------------------------
   # Header
   --------------------------------------------------------------*/
-
+  .left-panel {
+    position: fixed;
+    left: 0;
+  }
 
 
   /*--------------------------------------------------------------
   # Content
   --------------------------------------------------------------*/
+
+  main {
+    width: calc(100% - 235px);
+    margin-left: 235px;
+    padding: 0;
+  }
 
   /*--------------------------------------------------------------
   # Footer
