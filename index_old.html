@@ -12,7 +12,6 @@
   	<link rel="stylesheet" type="text/css" href="engine1/style.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/diamonds.css">
-    <link rel="stylesheet" type="text/css" href="css/gallery.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
 
   </head>
@@ -151,20 +150,10 @@
                 <img src="img/gallery.jpg" alt="">
               </a>
             </div>
-            <div class="m-gal__slide item">
-              <a href="">
-                <img src="img/gallery.jpg" alt="">
-              </a>
-            </div>
-            <div class="m-gal__slide item">
-              <a href="">
-                <img src="img/gallery.jpg" alt="">
-              </a>
-            </div>
           </div>
         </div>
       </section>
-      <div class="auto">
+      <section class="auto">
         <div class="container">
           <article>
             <span class="section-title">
@@ -180,26 +169,55 @@
               Новые открытия, впечатления, может быть знакомства, селфи...
             </p>
           </article>
-          <section id="dg-container" class="dg-container">
-	           <div class="dg-wrapper">
-	           	<a href="#">
-	           		<img src="images/1.jpg" alt="image1">
-	           		<div>test</div>
-	           	</a>
-              <a href="#">
-	           		<img src="images/2.jpg" alt="image1">
-	           		<div>test</div>
-	           	</a>
-              <a href="#">
-	           		<img src="images/3.jpg" alt="image1">
-	           		<div>test</div>
-	           	</a>
-	           </div>
-	            <nav>
-	            	<span class="dg-prev"><</span>
-	            	<span class="dg-next">></span>
+          <div class="auto-slider dg-container" id="dg-container" >
+            <div class="a-sl-box">
+              <div class="a-sl__slide dg-wrapper">
+                <a href="#">
+                  <img src="img/bg_main.jpg" alt="">
+                  <div class="a-sl__slide-content">
+                    <p>
+                      <span title-slide >Еврошпагат</span>
+                    </p>
+                    <p>
+                      <span price-slide >от 350 р.</span>
+                    </p>
+                  </div>
+                  <span class="slide-shadow">Подробнее</span>
+                </a>
+              </div>
+              <div class="a-sl__slide dg-wrapper">
+                <a href="#">
+                  <img src="img/bg_main.jpg" alt="">
+                  <div class="a-sl__slide-content">
+                    <p>
+                      <span title-slide >Еврошпагат</span>
+                    </p>
+                    <p>
+                      <span price-slide >от 350 р.</span>
+                    </p>
+                  </div>
+                  <span class="slide-shadow">Подробнее</span>
+                </a>
+              </div>
+              <div class="a-sl__slide dg-wrapper">
+                <a href="#">
+                  <img src="img/bg_main.jpg" alt="">
+                  <div class="a-sl__slide-content">
+                    <p>
+                      <span title-slide >Еврошпагат</span>
+                    </p>
+                    <p>
+                      <span price-slide >от 350 р.</span>
+                    </p>
+                  </div>
+                  <span class="slide-shadow">Подробнее</span>
+                </a>
+              </div>
+              <nav>
+		            <span class="dg-prev"><</span>
+		            <span class="dg-next">></span>
 	            </nav>
-          </section>
+            </div>
           </div>
           <div class="btn-box">
             <span class="hover-text">
@@ -208,7 +226,7 @@
             <a href="">Поехали</a>
           </div>
         </div>
-      </div>
+      </section>
       <section class="insurance">
         <div class="container">
           <article>
@@ -303,7 +321,7 @@
      jQuery(function($){
      $("#phone").mask("+375(99) 999-99-99");
      $(".diamondswrap").diamonds({
-      size: 350, // Size of the squares
+      size: 300, // Size of the squares
       gap: 5 // Pixels between squares
       });
      $('#dg-container').gallery();

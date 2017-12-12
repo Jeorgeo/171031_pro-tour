@@ -364,13 +364,13 @@ _:-ms-input-placeholder, :root #wowslider-container1 .ws_playpause:after {line-h
 	font-size: 1.8em;
 	border: 2px solid #ffffff;
 }#wowslider-container1 .ws_images > ul{
-	animation: wsBasic 20s infinite;
-	-moz-animation: wsBasic 20s infinite;
-	-webkit-animation: wsBasic 20s infinite;
+	animation: wsBasic 52s infinite;
+	-moz-animation: wsBasic 52s infinite;
+	-webkit-animation: wsBasic 52s infinite;
 }
-@keyframes wsBasic{0%{left:-0%} 10%{left:-0%} 20%{left:-100%} 30%{left:-100%} 40%{left:-200%} 50%{left:-200%} 60%{left:-300%} 70%{left:-300%} 80%{left:-400%} 90%{left:-400%} }
-@-moz-keyframes wsBasic{0%{left:-0%} 10%{left:-0%} 20%{left:-100%} 30%{left:-100%} 40%{left:-200%} 50%{left:-200%} 60%{left:-300%} 70%{left:-300%} 80%{left:-400%} 90%{left:-400%} }
-@-webkit-keyframes wsBasic{0%{left:-0%} 10%{left:-0%} 20%{left:-100%} 30%{left:-100%} 40%{left:-200%} 50%{left:-200%} 60%{left:-300%} 70%{left:-300%} 80%{left:-400%} 90%{left:-400%} }
+@keyframes wsBasic{0%{left:-0%} 14.62%{left:-0%} 25%{left:-100%} 39.62%{left:-100%} 50%{left:-200%} 64.62%{left:-200%} 75%{left:-300%} 89.62%{left:-300%} }
+@-moz-keyframes wsBasic{0%{left:-0%} 14.62%{left:-0%} 25%{left:-100%} 39.62%{left:-100%} 50%{left:-200%} 64.62%{left:-200%} 75%{left:-300%} 89.62%{left:-300%} }
+@-webkit-keyframes wsBasic{0%{left:-0%} 14.62%{left:-0%} 25%{left:-100%} 39.62%{left:-100%} 50%{left:-200%} 64.62%{left:-200%} 75%{left:-300%} 89.62%{left:-300%} }
 
 #wowslider-container1 .ws_bullets  a img{
 	text-indent:0;
