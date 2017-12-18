@@ -14,11 +14,30 @@
     <link rel="stylesheet" type="text/css" href="css/diamonds.css">
     <link rel="stylesheet" type="text/css" href="css/gallery.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
-
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?151"></script>
   </head>
   <body>
-    <header class="main-header left-panel">
+    <header>
+      <div class="flout-header">
+        <div class="contacts">
+          <div class="contats_title velcom">
+            <div class="wiget-phone"><a href="tel:+375291321800">+375 29 132-18-00</a></div>
+            <div class="wiget-phone"><a href="tel:+375444770448">+375 44 477-04-48</a></div>
+          </div>
+          <div class="contats_title mts">
+            <div class="wiget-phone"><a href="tel:+375298991800">+375 29 899-18-00</a></div>
+            <div class="wiget-phone"><a href="tel:+375295804594">+375 29 580-45-94</a></div>
+          </div>
+          <div class="wiget-mail"><a href="mailto:info@pro-tour.by">info@pro-tour.by</a></div>
+          <div class="wiget-skype"><a href="#">protour</a></div>
+        </div>
+      </div>
+    </header>
+    <aside class="main-header left-panel">
       <div class="left-panel__box">
+        <div id="js-toggle" class="left-panel__menu-toggle">
+  				<button class="header-menu-toggle"><span>menu</span></button>
+  			</div>
         <figure class="logo-box">
           <img src="img/logo.png" alt="Туристическое агенство Pro-tour.by">
           <h1>Туристическое агенство <span class="hide-text">Pro-tour.by</span></h1>
@@ -40,22 +59,10 @@
           </ul>
         </nav>
         <span class="line"></span>
-        <div class="contacts">
-          <div class="contats_title velcom">
-            <span>Velcom</span>
-            <div class="wiget-phone"><a href="tel:+375291321800">+375 29 132-18-00</a></div>
-            <div class="wiget-phone"><a href="tel:+375444770448">+375 44 477-04-48</a></div>
-          </div>
-          <div class="contats_title mts">
-            <span>МТС</span>
-            <div class="wiget-phone"><a href="tel:+375298991800">+375 29 899-18-00</a></div>
-            <div class="wiget-phone"><a href="tel:+375295804594">+375 29 580-45-94</a></div>
-          </div>
-          <div class="wiget-mail"><a href="mailto:info@pro-tour.by">info@pro-tour.by</a></div>
-        </div>
+
         <span class="line"></span>
       </div>
-    </header>
+    </aside>
     <main>
       <section class="main-slider">
         <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
@@ -97,7 +104,7 @@
               </span>
               <span>
                 <p>
-                  Несколько часов... и вы в другой точке мира нежитесь на белоснежном пляже.
+                  Несколько часов...<br> и вы в другой точке мира нежитесь на белоснежном пляже.
                 </p>
                 <div class="btn-box">
                   <span class="hover-text">
@@ -109,64 +116,107 @@
             </article>
           </div>
           <div class="m-gal-box diamondswrap">
-
             <div class="m-gal__slide item">
               <a href="">
                 <img src="" alt="">
-
               </a>
             </div>
             <div class="m-gal__slide item">
-              <a href="">
+              <a href="#">
+                <div class="m-gal__shadow">
+                  <button type="button" name="button">Подобрать тур</button>
+                  <h5>ГОА</h5>
+                  <span class="m-gal__price">от 350 р.</span>
+                </div>
                 <img src="img/gallery.jpg" alt="">
               </a>
             </div>
             <div class="m-gal__slide item">
               <a href="">
+                <div class="m-gal__shadow">
+                  <button type="button" name="button">Подобрать тур</button>
+                  <h5>Грузия</h5>
+                  <span class="m-gal__price">от 350 р.</span>
+                </div>
                 <img src="img/gallery.jpg" alt="">
               </a>
             </div>
             <div class="m-gal__slide item">
               <a href="">
+                <div class="m-gal__shadow">
+                  <button type="button" name="button">Подобрать тур</button>
+                  <h5>Тайланд</h5>
+                  <span class="m-gal__price">от 350 р.</span>
+                </div>
                 <img src="img/gallery.jpg" alt="">
               </a>
             </div>
             <div class="m-gal__slide item">
               <a href="">
+                <div class="m-gal__shadow">
+                  <button type="button" name="button">Подобрать тур</button>
+                  <h5>ОАЭ</h5>
+                  <span class="m-gal__price">от 350 р.</span>
+                </div>
                 <img src="img/gallery.jpg" alt="">
               </a>
             </div>
             <div class="m-gal__slide item">
               <a href="">
+                <div class="m-gal__shadow">
+                  <button type="button" name="button">Подобрать тур</button>
+                  <h5>Куба</h5>
+                  <span class="m-gal__price">от 350 р.</span>
+                </div>
                 <img src="img/gallery.jpg" alt="">
               </a>
             </div>
             <div class="m-gal__slide item">
               <a href="">
+                <div class="m-gal__shadow">
+                  <button type="button" name="button">Подобрать тур</button>
+                  <h5>Испания</h5>
+                  <span class="m-gal__price">от 350 р.</span>
+                </div>
                 <img src="img/gallery.jpg" alt="">
               </a>
             </div>
             <div class="m-gal__slide item">
               <a href="">
+                <div class="m-gal__shadow">
+                  <button type="button" name="button">Подобрать тур</button>
+                  <h5>Египет</h5>
+                  <span class="m-gal__price">от 350 р.</span>
+                </div>
                 <img src="img/gallery.jpg" alt="">
               </a>
             </div>
             <div class="m-gal__slide item">
               <a href="">
+                <div class="m-gal__shadow">
+                  <button type="button" name="button">Подобрать тур</button>
+                  <h5>Турция</h5>
+                  <span class="m-gal__price">от 350 р.</span>
+                </div>
                 <img src="img/gallery.jpg" alt="">
               </a>
             </div>
             <div class="m-gal__slide item">
               <a href="">
+                <div class="m-gal__shadow">
+                  <button type="button" name="button">Подобрать тур</button>
+                  <h5>Вьетнам</h5>
+                  <span class="m-gal__price">от 350 р.</span>
+                </div>
                 <img src="img/gallery.jpg" alt="">
               </a>
             </div>
           </div>
         </div>
       </section>
-      <div class="auto">
-        <div class="container">
-          <article>
+      <section class="auto">
+        <article>
+          <div class="btn-text">
             <span class="section-title">
               PRO-
               <h3>
@@ -179,7 +229,15 @@
             <p>
               Новые открытия, впечатления, может быть знакомства, селфи...
             </p>
-          </article>
+          </div>
+          <div class="btn-box">
+            <span class="hover-text">
+              еще больше автобусных путешествий
+            </span>
+            <a href="">Поехали</a>
+          </div>
+        </article>
+        <div class="container">
           <section id="dg-container" class="dg-container">
 	           <div class="dg-wrapper">
 	           	<a href="#">
@@ -201,71 +259,49 @@
 	            </nav>
           </section>
           </div>
-          <div class="btn-box">
-            <span class="hover-text">
-              еще больше автобусных путешествий
-            </span>
-            <a href="">Поехали</a>
-          </div>
-        </div>
+
+        </section>
       </div>
-      <section class="insurance">
+      <section class="news">
+        <div class="section__title-box">
+          <span class="section-title">
+            PRO-
+            <h3>
+              Новости
+            </h3>
+          </span>
+          <span class="section-title">
+            PRO-
+            <h3>
+              нас в социальных сетях
+            </h3>
+          </span>
+        </div>
         <div class="container">
           <article>
             <div class="text-box">
-              <span class="section-title">
-                PRO-
-                <h3>
-                  страхование
-                </h3>
-              </span>
+              <a href="">
+                <img src="img/" alt="">
+              </a>
+
               <p>
-                Обязательным атрибутом любого современного отдыха является страхоавние.
-                Наше агенство застрахует любые ваши риски в путешествии, а также окажет такие услуги по страхованию как:
+                Топовая новость №1
               </p>
-              <ul>
-                <li>Медицинское страхование</li>
-                <li>Обязательное страхование транспорта</li>
-                <li>"Зеленая карта"</li>
-                <li>Автокаско</li>
-                <li>Страхование недвижимости</li>
-              </ul>
               <div class="btn-box">
-                <span class="hover-text">
-                  еще больше об услуге страховании
-                </span>
-                <a href="">страхование</a>
+                <a href="">Читать дальше</a>
               </div>
             </div>
             <div class="image-box">
               <img src="pro-insurance.jpg" alt="">
             </div>
           </article>
-        </div>
-      </section>
-      <section class="visa">
-        <div class="container">
-          <article>
-            <div class="text-box">
-              <span class="section-title">
-                PRO-
-                <h3>
-                  визовая поддержка
-                </h3>
-              </span>
-              <p>
-                Оказываем услуги по оформлению документов на визы
-              </p>
-              <div class="btn-box">
-                <span class="hover-text">
-                  заказать консультацию по оформлению документов на визу
-                </span>
-                <a href="">заказать консультацию</a>
-              </div>
-            </div>
-            <div class="image-box">
-              <img src="pro-insurance.jpg" alt="">
-            </div>
+          <article class="vigets">
+
+            <!-- VK Widget -->
+            <div id="vk_groups"></div>
+            <script type="text/javascript">
+            VK.Widgets.Group("vk_groups", {mode: 3, color1: 'FBF6D0', color3: '364B4E'}, 150143446);
+            </script>
           </article>
         </div>
       </section>
@@ -303,7 +339,7 @@
      jQuery(function($){
      $("#phone").mask("+375(99) 999-99-99");
      $(".diamondswrap").diamonds({
-      size: 350, // Size of the squares
+      size: 250, // Size of the squares
       gap: 5 // Pixels between squares
       });
      $('#dg-container').gallery();

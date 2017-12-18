@@ -244,11 +244,245 @@ span.hide-text {
 # Header
 --------------------------------------------------------------*/
 
+header {
+  margin-bottom: 60px;
+}
+
+.flout-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99998;
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  padding: 0.5em 1em 0.5em 3em;
+  box-sizing: border-box;
+  background-color: rgba(251, 246, 208, 0.7);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.7);
+}
+
+.contats_title {
+  float: right;
+  display: block;
+  width: 100px;
+}
+
+.wiget-phone,
+.wiget-mail,
+.wiget-skype {
+  position: relative;
+  display: none;
+  width: 100%;
+  padding: 0.5em;
+  padding-left: 40px;
+}
+
+.wiget-phone:nth-child(1) {
+  display: block;
+}
+
+.contats_title .wiget-phone::before {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  content: '';
+  filter: grayscale(1);
+}
+
+.contats_title .wiget-phone:hover::before {
+  cursor: pointer;
+  filter: grayscale(0);
+}
+
+.wiget-phone,
+.wiget-mail {
+  padding: 5px;
+  padding-left: 30px;
+}
+
+.wiget-mail {
+  padding-left: 40px;
+  font-size: 1.1em;
+  font-family: 'Neucha';
+}
+
+.wiget-phone::before,
+.wiget-mail::before {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  content: '';
+  border-radius: 50%;
+}
+
+.contats_title.velcom .wiget-phone::before {
+  background: url('../img/icon_velcom.png') no-repeat 50% 50%;
+  background-size: contain;
+}
+
+.contats_title.mts .wiget-phone::before {
+  background: url('../img/icon_mts.png') no-repeat 50% 50%;
+  background-size: contain;
+}
+
+.wiget-mail::before {
+  background: url('../img/icon_mail.png') no-repeat 50% 50%;
+  background-size: contain;
+}
+
+.contacts a:hover {
+  color: #d37225;
+  font-weight: bold;
+}
+
+.wiget-phone a {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+}
+
+.wiget-phone a::before {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #040404;
+  border-radius: 50%;
+  background: url('../img/icon_phone.png') no-repeat 50% 50%;
+  background-size: 70%;
+  content: '';
+}
+
+/*--------------------------------------------------------------
+# Header
+  ## Header mobile menu
+--------------------------------------------------------------*/
+
+.box-menu-toggle {
+  position: relative;
+}
+
+.left-panel.left-panel-show {
+  animation-name:show-panel;
+  animation-duration: 0.8s;
+  top: 65px;
+}
+
+.left-panel__menu-toggle {
+  position: absolute;
+  top: 10px;
+  right: -65px;
+  z-index: 99999;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 3px;
+  font-size: 0;
+  border: 1px solid #d37225;
+  border-radius: 5px;
+}
+
+.header-menu-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 3px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.header-menu-toggle span {
+  position: absolute;
+  display: block;
+  width: 26px;
+  top: 14px;
+  left: 2px;
+  height: 2px;
+  font-size: 0;
+  animation-name: show-span;
+  animation-duration: 0.8s;
+  background-color: #d37225;
+}
+
+.header-menu-toggle span::before,
+.header-menu-toggle span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #d37225;
+  content: "";
+}
+
+.header-menu-toggle span::before {
+  transform: rotate(-45deg);
+  animation-name: prerotate-up;
+  animation-duration: 0.8s;
+  transform: rotate(0deg);
+  top: -6px;
+}
+
+.header-menu-toggle span::after {
+  transform: rotate(45deg);
+  animation-name: prerotate-bottom;
+  animation-duration: 0.8s;
+  transform: rotate(0deg);
+  bottom: -6px;
+}
+
+.nav-show {
+  display: block;
+  animation-name: show-panel;
+  animation-duration: 0.5s;
+  left: 0;
+}
+
+.header-menu-toggle.btn-arrow-top span::before  {
+  animation-name: rotate-up;
+  animation-duration: 0.8s;
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.header-menu-toggle.btn-arrow-bottom span::after {
+  animation-name: rotate-bottom;
+  animation-duration: 0.8s;
+  transform: rotate(45deg);
+  bottom: 0;
+}
+
+.header-menu-toggle.btn-arrow-bottom span {
+  animation-name: hide-span;
+  animation-duration: 0.8s;
+  background-color: transparent;
+}
+
+/*--------------------------------------------------------------
+# Aside
+--------------------------------------------------------------*/
+
 .left-panel {
   position: fixed;
   top: 0;
   left: -240px;
-  z-index: 999;
+  z-index: 99999;
   display: block;
   width: 235px;
   height: 100%;
@@ -275,7 +509,7 @@ span.hide-text {
   text-align: center;
 }
 
-header .social-icons {
+aside .social-icons {
   display: inline-block;
   vertical-align: top;
   width: 32px;
@@ -285,7 +519,7 @@ header .social-icons {
   border-radius: 50%;
 }
 
-header .social-icons:hover {
+aside .social-icons:hover {
   cursor: pointer;
   background-color: rgba(211, 114, 37, 0.2);
   border: 1px solid rgba(211, 114, 37, 0.9);
@@ -337,87 +571,6 @@ header .social-icons:hover {
   margin-right: 2px;
 }
 
-header .contacts {
-  margin: 1em;
-}
-
-.contats_title span,
-.wiget-phone,
-.wiget-mail {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 0.5em;
-  padding-left: 40px;
-}
-
-.contats_title span::before {
-  position: absolute;
-  top: 5px;
-  left: 7px;
-  display: block;
-  width: 24px;
-  height: 24px;
-  content: '';
-  filter: grayscale(1);
-}
-
-.contats_title:hover span::before {
-  cursor: pointer;
-  filter: grayscale(0);
-}
-
-.contats_title.velcom span::before {
-  background: url('../img/icon_velcom.png') no-repeat 50% 50%;
-  background-size: contain;
-}
-
-.contats_title.mts span::before {
-  background: url('../img/icon_mts.png') no-repeat 50% 50%;
-  background-size: contain;
-}
-
-.wiget-phone,
-.wiget-mail {
-  padding: 5px;
-  padding-left: 30px;
-}
-
-.wiget-mail {
-  padding-left: 40px;
-  font-size: 1.1em;
-  font-family: 'Neucha';
-}
-
-.wiget-phone::before,
-.wiget-mail::before {
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  display: block;
-  width: 18px;
-  height: 18px;
-  content: '';
-
-}
-
-.wiget-phone::before {
-  background: url('../img/icon_phone.png') no-repeat 50% 50%;
-  background-size: contain;
-}
-
-.wiget-mail::before {
-  background: url('../img/icon_mail.png') no-repeat 50% 50%;
-  background-size: contain;
-}
-
-.contacts a:hover {
-  color: #d37225;
-  font-weight: bold;
-}
-
-
-
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -434,12 +587,16 @@ main {
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
+.main-slider {
+  position: relative;
+  z-index: 9999;
+}
+
 .a-sl-box a {
   display: block;
   width: 100%;
   position: relative;
 }
-
 
 .a-sl-box a::after {
   position: absolute;
@@ -453,7 +610,8 @@ main {
   content: '';
 }
 
-.call-section {
+.call-section,
+.auto article {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -465,32 +623,56 @@ main {
 }
 
 .call-section .call-section_text,
-.call-section .call-section_btn {
+.call-section .call-section_btn,
+.auto article .btn-text,
+.auto article .btn-box {
   display: block;
   width: 95%;
   font-size: 1.2em;
   line-height: 1.5em;
-  color: #ffffff;
+  color: #fbf6d0;
 }
 
-.call-section .call-section_text {
+.call-section .call-section_text,
+.auto article .btn-text {
   max-width: 600px;
 }
 
-.call-section .call-section_btn {
-  max-width: 300px;
-  padding: 1em;
+.call-section .call-section_btn,
+.auto article .btn-box {
+  max-width: 320px;
+  padding: 0.5em;
   text-align: center;
   text-transform: uppercase;
   font-family: 'MontserratAlternates-Regular', 'Arial', sans-serif;
   background-color: #364b4e;
-  border: 2px solid #ffffff;
+  border: 2px solid #eab728;
 }
 
-.call-section .call-section_btn:hover {
+.call-section .call-section_btn:hover,
+.auto article .btn-box:hover {
   cursor: pointer;
   color: #364b4e;
   background: #fbf6d0;
+}
+
+.auto article .btn-box {
+  position: relative;
+}
+
+.auto article .btn-box .hover-text {
+  position: absolute;
+  top: -4em;
+  left: 0;
+  display: none;
+  width: 300px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #000000;
+}
+
+.auto article .btn-box:hover .hover-text {
+  display: block;
 }
 
 .section-title {
@@ -508,7 +690,6 @@ main {
   text-shadow: none;
 }
 
-
 /*.m-gal-box {
   display: flex;
   flex-direction: column;
@@ -524,6 +705,117 @@ main {
   overflow: hidden;
 }
 */
+
+.call-section {
+  position: relative;
+  z-index: 9999;
+}
+
+.avia {
+  position: relative;
+  z-index: 999;
+  overflow-x: scroll;
+  background: url('../img/bg_avia.png') no-repeat 100% 100%;
+}
+
+.avia article {
+  position: absolute;
+  left: -255px;
+  top: -170px;
+  display: block;
+  width: 300px;
+  min-height: 130px;
+  padding: 230px 200px 1em 200px;
+  color: #fbf6d0;
+  background-color: #364b4e;
+  transform: rotate(-45deg);
+}
+
+.avia article h3 {
+  color: #fbf6d0;
+}
+
+.main-gallery {
+  width: 100%;
+  padding: 2em 0 0 0;
+}
+
+.m-gal__shadow {
+  position: absolute;
+  bottom: -0.5em;
+  display: block;
+  width: 100%;
+  padding: 0.5em 0;
+  padding-bottom: 2em;
+  color: #fbf6d0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.m-gal__shadow h5 {
+  margin: 0.5em;
+}
+
+.m-gal__shadow span,
+.m-gal__shadow button {
+  display: block;
+  margin: 0.5em auto;
+}
+
+.m-gal__shadow button {
+  padding: 0.2em 0.3em;
+  background-color: transparent;
+  border: 1px solid #fbf6d0;
+  border-radius: 5px;
+  color: #fbf6d0;
+}
+
+.m-gal__shadow button:hover {
+  cursor: pointer;
+  color: #364b4e;
+  background-color: #fbf6d0;
+}
+
+.auto {
+  background: url('../img/bg_bus.jpg') no-repeat 0 0;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.auto article {
+  margin-bottom: 2em;
+  padding: 1em;
+  box-sizing: border-box;
+  background-color: #040404;
+  color: #ffffff;
+}
+
+.auto article h3 {
+  color: #ffffff;
+}
+
+.auto .dg-container {
+  height: 330px;
+}
+
+.auto .dg-wrapper {
+  width: 300px;
+  height: 205px;
+}
+
+.auto .dg-wrapper a {
+  width: 300px;
+  height: 205px;
+}
+
+.section__title-box {
+  padding: 1em;
+  background-color: #364b4e;
+  color: #fbf6d0;
+}
+
+.section__title-box h3 {
+  color: #fbf6d0;
+}
 
 /*--------------------------------------------------------------
 # Popup form
@@ -709,6 +1001,10 @@ footer .copy {
   /*--------------------------------------------------------------
   # Content
   --------------------------------------------------------------*/
+
+  .m-gal-box {
+    margin-left: 6em;
+  }
 
   /*--------------------------------------------------------------
   # Footer
