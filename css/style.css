@@ -245,21 +245,27 @@ span.hide-text {
 --------------------------------------------------------------*/
 
 header {
-  margin-bottom: 60px;
+  margin-bottom: 65px;
 }
 
-.flout-header {
+.float-header {
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 99998;
   display: block;
   width: 100%;
   min-height: 40px;
   padding: 0.5em 1em 0.5em 3em;
   box-sizing: border-box;
-  background-color: rgba(251, 246, 208, 0.7);
+  background-color: rgba(251, 246, 208, 0.85);
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.7);
+  transform: translate(240px);
+  transition-duration: 0.5s;
+  left: -240px;
+}
+
+.float-header .contacts {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .contats_title {
@@ -447,8 +453,14 @@ header {
   bottom: -6px;
 }
 
-.nav-show {
+.left-panel.nav-show {
   display: block;
+  animation-name: show-panel;
+  animation-duration: 0.5s;
+  left: 0;
+}
+
+.float-header.nav-show {
   animation-name: show-panel;
   animation-duration: 0.5s;
   left: 0;
@@ -481,7 +493,6 @@ header {
 .left-panel {
   position: fixed;
   top: 0;
-  left: -240px;
   z-index: 99999;
   display: block;
   width: 235px;
@@ -491,6 +502,9 @@ header {
   color: #354b4d;
   background-color: #fbf5cf;
   box-shadow: 2px 0 5px 3px rgba(0, 0, 0, 0.5);
+  animation-name: hidden-panel;
+  animation-duration: 0.5s;
+  left: -240px;
 }
 
 .logo-box {
@@ -581,7 +595,7 @@ main {
   width: 100%;
   max-width: 1420px;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0.1em 0;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.75);
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
@@ -611,7 +625,8 @@ main {
 }
 
 .call-section,
-.auto article {
+.auto article,
+.arrow-section {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -619,7 +634,42 @@ main {
   width: 100%;
   padding: 1em;
   box-sizing: border-box;
+  color: #fbf6d0;
   background-color: #364b4e;
+}
+
+.arrow-section .big-text {
+  text-transform: uppercase;
+}
+
+.box-arrow a {
+  position: relative;
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 1em;
+  font-size: 0;
+}
+
+.box-arrow a::after,
+.box-arrow a::before {
+  position: absolute;
+  bottom: 10px;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #eab728;
+  content: '';
+}
+
+.box-arrow a::after {
+  left: 16px;
+  transform: rotate(-45deg);
+}
+
+.box-arrow a::before {
+  right: 16px;
+  transform: rotate(45deg);
 }
 
 .call-section .call-section_text,
@@ -633,9 +683,15 @@ main {
   color: #fbf6d0;
 }
 
+.call-section .call-section_btn,
+.auto article .btn-box {
+  color: #eab728;
+}
+
 .call-section .call-section_text,
 .auto article .btn-text {
   max-width: 600px;
+  margin-right: 1em;
 }
 
 .call-section .call-section_btn,
@@ -662,17 +718,25 @@ main {
 
 .auto article .btn-box .hover-text {
   position: absolute;
-  top: -4em;
-  left: 0;
+  top: -5em;
+  left: -15px;
   display: none;
-  width: 300px;
+  width: 280px;
+  font-size: 0.7em;
   color: #ffffff;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.3);
   border: 1px solid #000000;
+  border-radius: 5px;
+  animation-name: hide-popup;
+  animation-duration: 0.3s;
+  opacity: 0;
 }
 
 .auto article .btn-box:hover .hover-text {
   display: block;
+  animation-name: show-popup;
+  animation-duration: 0.3s;
+  opacity: 1;
 }
 
 .section-title {
@@ -764,9 +828,9 @@ main {
 .m-gal__shadow button {
   padding: 0.2em 0.3em;
   background-color: transparent;
-  border: 1px solid #fbf6d0;
+  border: 1px solid #eab728;
   border-radius: 5px;
-  color: #fbf6d0;
+  color: #eab728;
 }
 
 .m-gal__shadow button:hover {
@@ -776,9 +840,13 @@ main {
 }
 
 .auto {
-  background: url('../img/bg_bus.jpg') no-repeat 0 0;
+  background: url('../img/bg_bus.jpg') no-repeat 50% 0;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.auto .container {
+  overflow-x: hidden;
 }
 
 .auto article {
@@ -815,6 +883,33 @@ main {
 
 .section__title-box h3 {
   color: #fbf6d0;
+}
+
+.news .container {
+  margin: 1em;
+}
+
+.news-box a {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.news-box p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.5em;
+  color: #fbf6d0;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.news-box p span {
+  display: block;
 }
 
 /*--------------------------------------------------------------
@@ -940,6 +1035,31 @@ footer .copy {
   # Content
   --------------------------------------------------------------*/
 
+  .call-section, .auto article {
+    flex-direction: row;
+  }
+
+  .call-section .call-section_btn,
+  .auto article .btn-box {
+    max-width: 240px;
+  }
+
+  .news {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .news .news-box,
+  .news .social-box {
+    width: 50%;
+  }
+
+  .news .container {
+    width: 85%;
+  }
+
+
+
   /*--------------------------------------------------------------
   # Footer
   --------------------------------------------------------------*/
@@ -966,6 +1086,55 @@ footer .copy {
     left: 0;
   }
 
+  .left-panel__menu-toggle {
+    display: none;
+  }
+
+  .float-header {
+    padding: 0 0 0 240px;
+    box-sizing: border-box;
+  }
+
+  .float-header .contacts {
+    display: flex;
+    align-items: center;
+  }
+
+  .contats_title {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 100%;
+  }
+
+  .wiget-phone,
+  .wiget-mail,
+  .wiget-skype {
+    display: block;
+    width: auto;
+  }
+
+  .wiget-phone a {
+    width: 100%;
+    height: auto;
+    font-size: 1.1em;
+  }
+
+  .wiget-phone a::before {
+    display: none;
+  }
+
+  .float-header .contacts .contats_title {
+    float: none;
+  }
+
+  .contats_title .wiget-phone::before {
+    width: 18px;
+    height: 18px;
+  }
+
+}
+
 
   /*--------------------------------------------------------------
   # Content
@@ -979,6 +1148,10 @@ footer .copy {
 
   .call-section {
     flex-direction: row;
+  }
+
+  .box-arrow a::after, .box-arrow a::before {
+    height: 5px;
   }
 
   /*--------------------------------------------------------------
