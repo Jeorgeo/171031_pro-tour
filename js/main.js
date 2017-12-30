@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 // mobile menu
 
 var menuNav = document.querySelector('.left-panel');
@@ -20,6 +22,18 @@ function moveMenu(){
       float_header.classList.add('nav-show');
       }
 };
+
+//scroll
+
+$("a[href*=#]").on("click", function(e){
+        var anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top
+        }, 777);
+        e.preventDefault();
+        return false;
+    });
+
 
 // popup windows
 
@@ -117,7 +131,6 @@ winPopup.addEventListener("click", function(event) {
 
 });
 
-$(document).ready(function() {
 
 	//E-mail Ajax Send
 	$(".order-form").submit(function() { //Change

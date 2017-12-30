@@ -254,7 +254,7 @@ header {
   z-index: 99998;
   display: block;
   width: 100%;
-  min-height: 40px;
+  min-height: 60px;
   padding: 0.5em 1em 0.5em 3em;
   box-sizing: border-box;
   background-color: rgba(251, 246, 208, 0.85);
@@ -265,6 +265,11 @@ header {
 }
 
 .float-header .contacts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -284,7 +289,10 @@ header {
   padding-left: 40px;
 }
 
-.wiget-phone:nth-child(1) {
+.wiget-phone:nth-child(1),
+footer .wiget-phone,
+footer .wiget-mail,
+footer .wiget-skype {
   display: block;
 }
 
@@ -317,7 +325,8 @@ header {
 }
 
 .wiget-phone::before,
-.wiget-mail::before {
+.wiget-mail::before,
+.wiget-skype::before {
   position: absolute;
   top: 5px;
   left: 10px;
@@ -343,6 +352,11 @@ header {
   background-size: contain;
 }
 
+.wiget-skype::before {
+  background: url('../img/icon_skype.png') no-repeat 50% 50%;
+  background-size: contain;
+}
+
 .contacts a:hover {
   color: #d37225;
   font-weight: bold;
@@ -361,12 +375,12 @@ header {
   top: 0;
   left: 16px;
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 46px;
+  height: 46px;
   border: 1px solid #040404;
   border-radius: 50%;
   background: url('../img/icon_phone.png') no-repeat 50% 50%;
-  background-size: 70%;
+  background-size: 60%;
   content: '';
 }
 
@@ -523,7 +537,9 @@ header {
   text-align: center;
 }
 
-aside .social-icons {
+.social-icons,
+.social-icons a {
+  position: relative;
   display: inline-block;
   vertical-align: top;
   width: 32px;
@@ -533,29 +549,34 @@ aside .social-icons {
   border-radius: 50%;
 }
 
-aside .social-icons:hover {
+.social-icons a {
+  margin: 0;
+  display: block;
+}
+
+.social-icons a:hover {
   cursor: pointer;
   background-color: rgba(211, 114, 37, 0.2);
   border: 1px solid rgba(211, 114, 37, 0.9);
 }
 
-.social-icons.social_vk {
-  background: url('../img/vk_icon.png') no-repeat 50% 50%;
+.social-icons.social_vk a {
+  background: url('../img/icon_vk.png') no-repeat 50% 50%;
   background-size: 60%;
 }
 
-.social-icons.social_ok {
-  background: url('../img/vk_icon.png') no-repeat 50% 50%;
+.social-icons.social_ok a {
+  background: url('../img/icon_ok.png') no-repeat 50% 50%;
   background-size: 60%;
 }
 
-.social-icons.social_f {
-  background: url('../img/fb_icon.png') no-repeat 50% 50%;
+.social-icons.social_f a {
+  background: url('../img/icon_fb.png') no-repeat 50% 50%;
   background-size: 60%;
 }
 
-.social-icons.social_inst {
-  background: url('../img/in_icon.png') no-repeat 50% 50%;
+.social-icons.social_inst a {
+  background: url('../img/icon_in.png') no-repeat 50% 50%;
   background-size: 60%;
 }
 
@@ -583,6 +604,24 @@ aside .social-icons:hover {
   font-size: 1em;
   font-family: 'MontserratAlternates-Bold';
   margin-right: 2px;
+}
+
+aside .column-3 {
+  padding: 0 1em;
+}
+
+.column-3 a {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0.1em;
+  padding: 0.3em;
+  font-size: 0.95em;
+  color: rgba(251, 245, 207, 1);
+  background-color: #eab728;
+}
+
+.column-3 a:hover {
+  color: #040404;
 }
 
 /*--------------------------------------------------------------
@@ -646,8 +685,8 @@ main {
   position: relative;
   display: block;
   width: 46px;
-  height: 46px;
-  margin-bottom: 1em;
+  height: 30px;
+  margin-bottom: 1.5em;
   font-size: 0;
 }
 
@@ -670,6 +709,18 @@ main {
 .box-arrow a::before {
   right: 16px;
   transform: rotate(45deg);
+}
+
+#search_results button.btn.btn-block.btn-success::after {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  content: 'заказать';
+}
+
+#search_results button .btn-success {
+  background-color: red;
 }
 
 .call-section .call-section_text,
@@ -703,6 +754,10 @@ main {
   font-family: 'MontserratAlternates-Regular', 'Arial', sans-serif;
   background-color: #364b4e;
   border: 2px solid #eab728;
+}
+
+.auto article .btn-box {
+  background-color: transparent;
 }
 
 .call-section .call-section_btn:hover,
@@ -778,7 +833,7 @@ main {
 .avia {
   position: relative;
   z-index: 999;
-  overflow-x: scroll;
+  overflow: scroll;
   background: url('../img/bg_avia.png') no-repeat 100% 100%;
 }
 
@@ -887,6 +942,7 @@ main {
 
 .news .container {
   margin: 1em;
+  max-width: 92%;
 }
 
 .news-box a {
@@ -1009,30 +1065,191 @@ main {
 footer {
   position: relative;
   z-index: 99;
+  display: flex;
+  flex-direction: column;
   padding: 1em 0;
   background-color: #354b4d;
 }
 
-footer .copy {
+footer .footer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .column-1,
+footer .column-2,
+footer .column-3 {
   width: 100%;
-  text-align: center;
+  max-width: 300px;
+  margin: 1em auto 0 auto;
   color: #fcf6d0;
 }
 
+footer .column-2 {
+  margin-top: 0;
+}
+
+footer .column-1 .logo-box {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 1px;
+  color: #040404;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+  box-shadow: 0 0 3px 5px #fcf6d0;
+}
+
+footer .column-1 .logo-box:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background: url('../img/bg_body1.jpg') repeat 0;
+  background-attachment: fixed;
+}
+
+footer .social-icons,
+footer .social-icons a {
+  margin: 1em 10px 0 10px;
+  border: 1px solid rgba(211, 114, 37, 0.5);
+  border-radius: 50%;
+}
+
+footer .social-icons a {
+  margin: 0;
+}
+
+footer .social-icons.social_vk a {
+  background: rgba(251, 245, 207, 1) url('../img/icon_vk.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+footer .social-icons.social_ok a {
+  background: rgba(251, 245, 207, 1) url('../img/icon_ok.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+footer .social-icons.social_f a {
+  background: rgba(251, 245, 207, 1) url('../img/icon_fb.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+footer .column-2 .social {
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+footer .social-icons.social_inst a {
+  background: rgba(251, 245, 207, 1) url('../img/icon_in.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+footer .social-icons.social_viber a {
+  background: rgba(251, 245, 207, 1) url('../img/icon_viber.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+footer .social-icons.social_watsapp a {
+  background: rgba(251, 245, 207, 1) url('../img/icon_wapp.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+footer .social-icons.social_telegram a {
+  background: rgba(251, 245, 207, 1) url('../img/icon_telegram.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+footer .social-icons.social_skype a {
+  background: rgba(251, 245, 207, 1) url('../img/icon_skype.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+footer .social-icons a:hover {
+  cursor: pointer;
+  background-color: rgba(211, 114, 37, 1);
+  border: 1px solid rgba(211, 114, 37, 0.9);
+}
+
+footer .wiget-phone,
+footer .wiget-mail,
+footer .wiget-skype {
+  padding-left: 40px;
+}
+
+footer .wiget-phone a:hover,
+footer .wiget-mail a:hover,
+footer .wiget-skype a:hover {
+  color: #d37225;
+}
+
+footer .wiget-phone::before,
+footer .wiget-mail::before,
+footer .wiget-skype::before {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  content: '';
+  border-radius: 50%;
+}
+
+.wiget-mail::before {
+  background: rgba(251, 245, 207, 1) url('../img/icon_mail.png') no-repeat 50% 50%;
+  background-size: 60%;
+}
+
+.wiget-skype::before {
+  background: rgba(251, 245, 207, 1) url('../img/icon_skype.png') no-repeat 50% 50%;
+  background-size: contain;
+}
+
+footer .column-3 a {
+  color: rgba(251, 245, 207, 1);
+  background-color: #d37225;
+}
+
+footer .column-3 a:hover {
+  color: #040404;
+}
+
+footer .wiget-phone a::before {
+  display: none;
+}
+
+footer .contats_title {
+  width: 100%;
+}
+
+footer .wiget a {
+  width: 100%;
+  font-size: 1em;
+}
+
+.footer-title {
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
 
 /*============== for tablets 768px ===========================*/
 @media screen and (min-width: 768px) {
 
   /*--------------------------------------------------------------
-  # Typography
+  # Typography 768px
   --------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
-  # Header
+  # Header 768px
   --------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
-  # Content
+  # Content 768px
   --------------------------------------------------------------*/
 
   .call-section, .auto article {
@@ -1042,6 +1259,10 @@ footer .copy {
   .call-section .call-section_btn,
   .auto article .btn-box {
     max-width: 240px;
+  }
+
+  .auto article {
+    margin-bottom: 4em;
   }
 
   .news {
@@ -1055,32 +1276,53 @@ footer .copy {
   }
 
   .news .container {
+    margin: 2em 1em;
+  }
+
+  .news-box .container {
     width: 85%;
   }
 
-
-
   /*--------------------------------------------------------------
-  # Footer
+  # Footer 768px
   --------------------------------------------------------------*/
 
-}
+  footer .footer-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  footer .column-1,
+  footer .column-2,
+  footer .column-3 {
+    margin-left: 1.5em;
+  }
+
+  footer .column-1 .social {
+    margin: 2em 0;
+  }
+
+
 
 /*============== for tablets 1024px ===========================*/
 @media screen and (min-width: 1024px) {
 
   /*--------------------------------------------------------------
-  # Typography
+  # Typography 1024px
   --------------------------------------------------------------*/
 
   .container {
     max-width: 960px;
   }
 
-
   /*--------------------------------------------------------------
-  # Header
+  # Header 1024px
   --------------------------------------------------------------*/
+
+  .float-header {
+    min-height: 40px;
+  }
+
   .left-panel {
     position: fixed;
     left: 0;
@@ -1096,6 +1338,7 @@ footer .copy {
   }
 
   .float-header .contacts {
+    position: static;
     display: flex;
     align-items: center;
   }
@@ -1133,14 +1376,11 @@ footer .copy {
     height: 18px;
   }
 
-}
-
-
   /*--------------------------------------------------------------
-  # Content
+  # Content 1024px
   --------------------------------------------------------------*/
-
-  main {
+  main,
+  .footer-container {
     width: calc(100% - 235px);
     margin-left: 235px;
     padding: 0;
@@ -1155,7 +1395,7 @@ footer .copy {
   }
 
   /*--------------------------------------------------------------
-  # Footer
+  # Footer 1024px
   --------------------------------------------------------------*/
 
 }
@@ -1164,23 +1404,27 @@ footer .copy {
 @media screen and (min-width: 1280px) {
 
   /*--------------------------------------------------------------
-  # Typography
+  # Typography 1280px
   --------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
-  # Header
+  # Header 1280px
   --------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
-  # Content
+  # Content 1280px
   --------------------------------------------------------------*/
 
   .m-gal-box {
     margin-left: 6em;
   }
 
+  .avia {
+    overflow: auto;
+  }
+
   /*--------------------------------------------------------------
-  # Footer
+  # Footer 1280px
   --------------------------------------------------------------*/
 
 }
@@ -1189,19 +1433,19 @@ footer .copy {
 @media screen and (min-width: 1366px) {
 
   /*--------------------------------------------------------------
-  # Typography
+  # Typography 1366px
   --------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
-  # Header
+  # Header 1366px
   --------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
-  # Content
+  # Content 1366px
   --------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
-  # Footer
+  # Footer 1366px
   --------------------------------------------------------------*/
 
 }
@@ -1210,19 +1454,19 @@ footer .copy {
 @media screen and (min-width: 1600px) {
 
   /*--------------------------------------------------------------
-  # Typography
+  # Typography 1600px
   --------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
-  # Header
+  # Header 1600px
   --------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
-  # Content
+  # Content 1600px
   --------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
-  # Footer
+  # Footer 1600px
   --------------------------------------------------------------*/
 
 }
