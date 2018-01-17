@@ -25,7 +25,7 @@ function moveMenu(){
 
 //scroll
 
-$("a[href*=#]").on("click", function(e){
+$("a[href*=#search]").on("click", function(e){
         var anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $(anchor.attr('href')).offset().top
@@ -33,17 +33,6 @@ $("a[href*=#]").on("click", function(e){
         e.preventDefault();
         return false;
     });
-
-// phonemask
-
-$("#phone").mask("+375(99) 999-99-99");
-
-// diamonds
-$(".diamondswrap").diamonds({
- size: 250, // Size of the squares
- gap: 5 // Pixels between squares
- });
-$('#dg-container').gallery();
 
 // popup windows
 

@@ -15,7 +15,7 @@
 	<div class="footer-container">
 		<div class="column-1">
 			<figure class="logo-box">
-				<img src="img/logo.png" alt="Туристическое агенство Pro-tour.by">
+				<img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="Туристическое агенство Pro-tour.by">
 				<h1>Туристическое агенство <span class="hide-text">Pro-tour.by</span></h1>
 			</figure>
 			<div class="copy">
@@ -59,7 +59,7 @@
 
 		</div>
 		<div class="column-3">
-			<a href="https://yandex.ru/maps/?um=constructor%3A757851fc4193a68925c2e5d76d2b133fe756d6bda2adf5a7c0e0e84ec0cbfcbf&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A757851fc4193a68925c2e5d76d2b133fe756d6bda2adf5a7c0e0e84ec0cbfcbf&amp;width=320&amp;height=400&amp;lang=ru_RU" alt="" style="border: 0;" /></a>
+				<img src="<?php bloginfo('template_url'); ?>/img/map.jpg" alt="">
 		</div>
 	</div>
 </footer>
@@ -77,6 +77,17 @@
 </div>
 
 <?php wp_footer(); ?>
+
+<script type="text/javascript">
+ jQuery(function($){
+ $("#phone").mask("+375(99) 999-99-99");
+ $(".diamondswrap").diamonds({
+	size: 250, // Size of the squares
+	gap: 5 // Pixels between squares
+	});
+ $('#dg-container').gallery();
+ });
+ </script>
 
 </body>
 </html>

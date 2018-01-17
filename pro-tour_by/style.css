@@ -319,7 +319,7 @@ footer .wiget-skype {
 .contats_title .wiget-phone::before {
   position: absolute;
   top: 5px;
-  left: 7px;
+  left: 14px;
   display: block;
   width: 32px;
   height: 32px;
@@ -752,7 +752,7 @@ main {
   width: 95%;
   font-size: 1.2em;
   line-height: 1.5em;
-  color: #fbf6d0;
+  color: #ffffff;
 }
 
 .call-section .call-section_btn,
@@ -866,13 +866,13 @@ main {
   width: 300px;
   min-height: 130px;
   padding: 230px 200px 1em 200px;
-  color: #fbf6d0;
+  color: #ffffff;
   background-color: #364b4e;
   transform: rotate(-45deg);
 }
 
 .avia article h3 {
-  color: #fbf6d0;
+  color: #ffffff;
 }
 
 .main-gallery {
@@ -958,7 +958,7 @@ main {
 }
 
 .section__title-box h3 {
-  color: #fbf6d0;
+  color: #ffffff;
 }
 
 .news .container {
@@ -1095,6 +1095,7 @@ footer {
 footer .footer-container {
   display: flex;
   flex-direction: column;
+  max-width: 1600px;
 }
 
 footer .column-1,
@@ -1231,9 +1232,18 @@ footer .wiget-skype::before {
   background-size: contain;
 }
 
-footer .column-3 a {
-  color: rgba(251, 245, 207, 1);
-  background-color: #d37225;
+footer .column-3 {
+  position: relative;
+}
+
+footer .column-3::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  box-shadow: inset 0 0 3px 5px #364b4e;
 }
 
 footer .column-3 a:hover {
@@ -1311,6 +1321,7 @@ footer .wiget a {
   footer .footer-container {
     flex-direction: row;
     flex-wrap: nowrap;
+    max-width: 1600px;
   }
 
   footer .column-1,

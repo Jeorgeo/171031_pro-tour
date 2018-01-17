@@ -15,7 +15,7 @@
 			<button class="header-menu-toggle"><span>menu</span></button>
 		</div>
 		<figure class="logo-box">
-			<img src="img/logo.png" alt="Туристическое агенство Pro-tour.by">
+			<img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="Туристическое агенство Pro-tour.by">
 			<h1>Туристическое агенство <span class="hide-text">Pro-tour.by</span></h1>
 		</figure>
 		<div class="social">
