@@ -183,7 +183,7 @@ require get_template_directory() . '/tgm/tgm-files.php';
 /**
  * Require portfolio.
  */
-require get_template_directory() . '/inc/wslider.php';
+require get_template_directory() . '/inc/tops.php';
 
 /**
  * Require reviews.

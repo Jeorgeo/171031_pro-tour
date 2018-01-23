@@ -1,5 +1,5 @@
 <?php
-add_action('init', 'register_post_types');
+add_action('init', 'register_post_types_av');
 function register_post_types_av(){
 	register_post_type('avia', array(
 		'label'  => 'avia',

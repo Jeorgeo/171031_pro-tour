@@ -1,5 +1,5 @@
 <?php
-add_action('init', 'register_post_types');
+add_action('init', 'register_post_types_au');
 function register_post_types_au(){
 	register_post_type('auto', array(
 		'label'  => 'auto',

@@ -1,5 +1,5 @@
 <?php
-add_action('init', 'register_post_types');
+add_action('init', 'register_post_types_n');
 function register_post_types_n(){
 	register_post_type('news', array(
 		'label'  => 'news',

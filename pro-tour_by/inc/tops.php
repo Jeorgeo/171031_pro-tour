@@ -1,8 +1,8 @@
 <?php
 add_action('init', 'register_post_types');
 function register_post_types(){
-	register_post_type('wslider', array(
-		'label'  => 'wslider',
+	register_post_type('tops', array(
+		'label'  => 'tops',
 		'labels' => array(
 			'name'               => 'Слайдер', // основное название для типа записи
 			'singular_name'      => 'Слайд', // название для одной записи этого типа
