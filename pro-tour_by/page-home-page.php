@@ -172,7 +172,7 @@ $news = get_posts(
 						}
 				 ?>
 				<div class="m-gal__slide item">
-					<a href="<?php echo $obj->post_name; ?>">
+					<a href="/avia/<?php echo $obj->post_name; ?>" target="_blank">
 						<div class="m-gal__shadow">
 							<button type="button" name="button">Полетели</button>
 							<h5><?php echo $obj->post_title; ?></h5>
@@ -222,7 +222,7 @@ $news = get_posts(
 					<a href="<?php echo $obj->post_name; ?>">
 						<img src="<?php echo get_field('d_img',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
 						<div>
-							<?php echo $obj->post_title; ?><br>
+							<?php echo $obj->post_title; ?>
 							<span><?php echo get_field('d_price',$obj->ID); ?></span>
 						</div>
 					</a>
@@ -256,8 +256,8 @@ $news = get_posts(
 					 }
 				?>
 				<article>
-					<a href="<?php echo $obj->post_name; ?>">
-						<img src="<<?php echo get_field('n_img',$obj->ID); ?>">
+					<a href="/news/<?php echo $obj->post_name; ?>">
+						<img src="<?php echo get_field('n_img',$obj->ID); ?>">
 						<p>
 							<?php echo $obj->post_title; ?>
 							<span><?php echo get_field('n_descript',$obj->ID); ?></span>

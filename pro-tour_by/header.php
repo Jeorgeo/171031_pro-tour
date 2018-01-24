@@ -26,16 +26,16 @@
 		<div class="float-header">
 			<div class="contacts clearfix">
 				<div class="contats_title velcom">
-					<div class="wiget-phone"><a href="tel:+375291321800">+375 29 132-18-00</a></div>
-					<div class="wiget-phone"><a href="tel:+375444770448">+375 44 477-04-48</a></div>
+					<?php dynamic_sidebar( 'phone-v1' ); ?>
+					<?php dynamic_sidebar( 'phone-v2' ); ?>
 				</div>
 				<div class="contats_title mts">
-					<div class="wiget-phone"><a href="tel:+375298991800">+375 29 899-18-00</a></div>
-					<div class="wiget-phone"><a href="tel:+375295804594">+375 29 580-45-94</a></div>
+					<?php dynamic_sidebar( 'phone-m1' ); ?>
+					<?php dynamic_sidebar( 'phone-m2' ); ?>
 				</div>
 				<div class="contats_title">
-					<div class="wiget-mail"><a href="mailto:info@pro-tour.by">info@pro-tour.by</a></div>
-					<div class="wiget-skype"><a href="#">protour</a></div>
+					<?php dynamic_sidebar( 'mail' ); ?>
+					<?php dynamic_sidebar( 'skype' ); ?>
 				</div>
 			</div>
 		</div>

@@ -14,24 +14,27 @@
 <footer>
 	<div class="footer-container">
 		<div class="column-1">
-			<figure class="logo-box">
-				<img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="Туристическое агенство Pro-tour.by">
-				<h1>Туристическое агенство <span class="hide-text">Pro-tour.by</span></h1>
-			</figure>
+			<a href="<?php echo get_home_url(); ?>">
+				<figure class="logo-box">
+					<img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="Туристическое агенство Pro-tour.by">
+					<h1>Туристическое агенство <span class="hide-text">Pro-tour.by</span></h1>
+				</figure>
+			</a>
 			<div class="copy">
 				<p>
 					&copy; ООО "ПРО-ТУР"<br>
 					УНП 591361984<br>
 					Все права защищены.
+					Предложение не является публичной офертой.
 				</p>
 			</div>
 		</div>
 		<div class="column-2">
 			<div class="social">
-				<div class="social-icons social_vk"><a href="#"></a></div>
-				<div class="social-icons social_ok"><a href=""></a></div>
-				<div class="social-icons social_f"><a href=""></a></div>
-				<div class="social-icons social_inst"><a href=""></a></div>
+				<?php dynamic_sidebar( 'social_vk' ); ?>
+				<?php dynamic_sidebar( 'social_ok' ); ?>
+				<?php dynamic_sidebar( 'social_f' ); ?>
+				<?php dynamic_sidebar( 'social_inst' ); ?>
 			</div>
 			<p>
 				Наш адрес:<br>
@@ -39,21 +42,21 @@
 				(Торгово-сервисный центр)
 			</p>
 			<div class="social">
-				<div class="social-icons social_viber"><a href=""></a></div>
-				<div class="social-icons social_watsapp"><a href=""></a></div>
-				<div class="social-icons social_telegram"><a href=""></a></div>
+				<div class="social-icons social_viber"><a href="tel:+375291321800"></a></div>
+				<div class="social-icons social_watsapp"><a href="tel:+375291321800"></a></div>
+				<div class="social-icons social_telegram"><a href="tel:+375291321800"></a></div>
 			</div>
 			<div class="contats_title velcom">
-				<div class="wiget wiget-phone"><a href="tel:+375291321800">+375 29 132-18-00</a></div>
-				<div class="wiget wiget-phone"><a href="tel:+375444770448">+375 44 477-04-48</a></div>
+				<?php dynamic_sidebar( 'phone-v1' ); ?>
+				<?php dynamic_sidebar( 'phone-v2' ); ?>
 			</div>
 			<div class="contats_title mts">
-				<div class="wiget wiget-phone"><a href="tel:+375298991800">+375 29 899-18-00</a></div>
-				<div class="wiget wiget-phone"><a href="tel:+375295804594">+375 29 580-45-94</a></div>
+				<?php dynamic_sidebar( 'phone-m1' ); ?>
+				<?php dynamic_sidebar( 'phone-m2' ); ?>
 			</div>
 			<div class="contats_title">
-				<div class="wiget wiget-mail"><a href="mailto:info@pro-tour.by">info@pro-tour.by</a></div>
-				<div class="wiget wiget-skype"><a href="skype:[protour]?call">protour</a></div>
+				<?php dynamic_sidebar( 'mail' ); ?>
+				<?php dynamic_sidebar( 'skype' ); ?>
 			</div>
 
 

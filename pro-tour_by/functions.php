@@ -102,14 +102,124 @@ add_action( 'after_setup_theme', 'pro_tour_by_content_width', 0 );
  */
 function pro_tour_by_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'pro-tour_by' ),
-		'id'            => 'sidebar-1',
+		'name'          => esc_html__( 'Велком-1', 'pro-tour_by' ),
+		'id'            => 'phone-v1',
 		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
+		'before_widget' => '<div class="wiget-phone">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Велком-2', 'pro-tour_by' ),
+		'id'            => 'phone-v2',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="wiget-phone">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'МТС-1', 'pro-tour_by' ),
+		'id'            => 'phone-m1',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="wiget-phone">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'МТС-2', 'pro-tour_by' ),
+		'id'            => 'phone-m2',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="wiget-phone">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'МТС-2', 'pro-tour_by' ),
+		'id'            => 'phone-m2',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="wiget-phone">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'почта для шапки', 'pro-tour_by' ),
+		'id'            => 'mail',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="wiget-mail">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'skype', 'pro-tour_by' ),
+		'id'            => 'skype',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="wiget-skype">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Социальные сети ВК', 'pro-tour_by' ),
+		'id'            => 'social_vk',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="social-icons social_vk">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Социальные сети ОК', 'pro-tour_by' ),
+		'id'            => 'social_ok',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="social-icons social_ok">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Социальные сети Фейсбук', 'pro-tour_by' ),
+		'id'            => 'social_f',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="social-icons social_f">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Социальные сети Инстаграмм', 'pro-tour_by' ),
+		'id'            => 'social_inst',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="social-icons social_inst">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Виджет в сайдбар', 'pro-tour_by' ),
+		'id'            => 'wiget_aside',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="wiget_aside">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Облако тегов', 'pro-tour_by' ),
+		'id'            => 'tags',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="column-3">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+
 }
 add_action( 'widgets_init', 'pro_tour_by_widgets_init' );
 
