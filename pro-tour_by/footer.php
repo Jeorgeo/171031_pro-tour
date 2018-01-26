@@ -67,7 +67,35 @@
 	</div>
 </footer>
 <div class="wrap"></div>
-<div class="popup-question">
+<div id="window" class="popup-question">
+	<div class="popup-question-close">
+		close
+	</div>
+	<div class="details-form">
+		<form id="js_form" method="post" class="cloud-form order-form">
+			<!-- Hidden Required Fields -->
+			<input type="hidden" name="project_name" value="pro-tour.by">
+			<!--input type="hidden" name="admin_email" value=""!-->
+			<?php dynamic_sidebar( 'admin_mail' ); ?>
+			<input type="hidden" name="form_subject" value="Заявка с сайта.Консультация">
+			<!-- END Hidden Required Fields -->
+			<label class="cloud-form__phone" for="phone">Ваш Телефон</label>
+			<input id="phone" class="cloud-form__phone" type="text" name="phone"
+			value="" placeholder="+375(___) ___-__-__" required>
+			<label  class="cloud-form__message" for="message">Ваши пожелания</label>
+			<textarea id="message" class="cloud-form__message" name="message"
+			rows="4" cols="80" placeholder=""></textarea>
+			<button id="submit" class="cloud-form__submit" type="submit" name="submit">
+				Заказать звонок
+			</button>
+			<input id="сonsent-p" class="cloud-form__сonsent" type="checkbox" name="сonsent" value="" required checked>
+			<label class="cloud-form__сonsent" for="сonsent-p">
+				Согласие на обработку персональных данных
+			</label>
+		</form>
+	</div>
+</div>
+<div class="popup-question-thanks">
 	<div class="popup-question-close">
 		close
 	</div>

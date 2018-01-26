@@ -135,7 +135,7 @@ $news = get_posts(
 			 <?php echo get_field( 'button-text' ); ?>
 			</p>
 		</div>
-		<button class="btn order-btn call-section_btn" type="button" name="button">Начать путешествие</button>
+		<button class="btn order-btn call-section_btn cloud-link" type="button" name="button">Начать путешествие</button>
 	</section>
 	<section class="avia">
 		<div class="main-gallery">
@@ -174,13 +174,14 @@ $news = get_posts(
 				<div class="m-gal__slide item">
 					<a href="/avia/<?php echo $obj->post_name; ?>" target="_blank">
 						<div class="m-gal__shadow">
-							<button type="button" name="button">Полетели</button>
 							<h5><?php echo $obj->post_title; ?></h5>
 							<span class="m-gal__price"><?php echo get_field('d_price',$obj->ID); ?></span>
 						</div>
 						<img src="<?php echo get_field('d_img',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
 					</a>
+					<button class="cloud-link" type="button" name="button">Полетели</button>
 				</div>
+
 				<?php
 	 				}
 	 			 ?>
@@ -207,7 +208,7 @@ $news = get_posts(
 				<span class="hover-text">
 					еще больше автобусных путешествий
 				</span>
-				<a href="#">Поехали</a>
+				<a href="#" class="cloud-link">Поехали</a>
 			</div>
 		</article>
 		<div class="container">

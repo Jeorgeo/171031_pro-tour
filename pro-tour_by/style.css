@@ -293,7 +293,7 @@ header {
   height: 100%;
 }
 
-.contats_title {
+header .contats_title {
   float: right;
   display: block;
   width: 100px;
@@ -303,28 +303,37 @@ header {
 .wiget-mail,
 .wiget-skype {
   position: relative;
-  display: none;
   width: 100%;
+  margin: 0.3em 0;
   padding: 0.5em;
   padding-left: 40px;
 }
 
-.wiget-phone:nth-child(1),
-footer .wiget-phone,
-footer .wiget-mail,
-footer .wiget-skype {
-  display: block;
+header .wiget-phone,
+header .wiget-mail,
+header .wiget-skype {
+  margin: 0;
+}
+
+header .wiget-phone:nth-child(2),
+header .wiget-mail,
+header .wiget-skype {
+  display: none;
 }
 
 .contats_title .wiget-phone::before {
   position: absolute;
-  top: 5px;
+  top: -1px;
   left: 14px;
   display: block;
   width: 32px;
   height: 32px;
   content: '';
   filter: grayscale(1);
+}
+
+header .contats_title .wiget-phone::before {
+  top: 14px;
 }
 
 .contats_title .wiget-phone:hover::before {
@@ -335,13 +344,24 @@ footer .wiget-skype {
 .wiget-phone,
 .wiget-mail {
   padding: 5px;
+  padding-left: 50px;
+}
+
+header .wiget-phone,
+header .wiget-mail {
+  padding: 5px;
   padding-left: 30px;
 }
 
-.wiget-mail {
-  padding-left: 40px;
+.wiget-mail,
+.wiget-skype {
+  padding-left: 55px;
   font-size: 1.1em;
   font-family: 'Neucha';
+}
+
+header .wiget-mail {
+  padding-left: 40px;
 }
 
 .wiget-phone::before,
@@ -349,12 +369,18 @@ footer .wiget-skype {
 .wiget-skype::before {
   position: absolute;
   top: 5px;
-  left: 10px;
+  left: 17px;
   display: block;
   width: 24px;
   height: 24px;
   content: '';
   border-radius: 50%;
+}
+
+header .wiget-phone::before,
+header .wiget-mail::before,
+header .wiget-skype::before {
+  left: 10px;
 }
 
 .contats_title.velcom .wiget-phone::before {
@@ -385,12 +411,20 @@ footer .wiget-skype {
 .wiget-phone a {
   position: relative;
   display: block;
+  width: 100%;
+  height: auto;
+  font-size: 1.1em;
+}
+
+header .wiget-phone a {
+  position: relative;
+  display: block;
   width: 32px;
   height: 32px;
   font-size: 0;
 }
 
-.wiget-phone a::before {
+header .wiget-phone a::before {
   position: absolute;
   top: 0;
   left: 16px;
@@ -884,7 +918,7 @@ main {
   bottom: -0.5em;
   display: block;
   width: 100%;
-  padding: 0.5em 0;
+  padding: 2.5em 0;
   padding-bottom: 2em;
   color: #fbf6d0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -895,12 +929,13 @@ main {
 }
 
 .m-gal__shadow span,
-.m-gal__shadow button {
+.m-gal__slide button {
   display: block;
   margin: 0.5em auto;
 }
 
-.m-gal__shadow button {
+.m-gal__slide button {
+  position: relative;
   padding: 0.2em 0.3em;
   background-color: transparent;
   border: 1px solid #eab728;
@@ -908,7 +943,7 @@ main {
   color: #eab728;
 }
 
-.m-gal__shadow button:hover {
+.m-gal__slide button:hover {
   cursor: pointer;
   color: #364b4e;
   background-color: #fbf6d0;
@@ -969,6 +1004,7 @@ main {
   position: relative;
   display: block;
   width: 100%;
+  max-width: 360px;
 }
 
 .news-box p {
@@ -986,6 +1022,33 @@ main {
 
 .news-box p span {
   display: block;
+}
+
+/*--------------------------------------------------------------
+# pages
+--------------------------------------------------------------*/
+
+.partners {
+
+}
+
+.partners_img ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.partners_img li {
+  margin: 0.2em;
+}
+
+.partners_principles {
+  width: 95%;
+  margin: auto;
+}
+
+.adress {
+
 }
 
 /*--------------------------------------------------------------
@@ -1007,7 +1070,8 @@ main {
   display: none;
 }
 
-.popup-question {
+.popup-question,
+.popup-question-thanks {
   position: fixed;
   left: 0;
   right: 0;
@@ -1064,6 +1128,40 @@ main {
   transform: rotate(-180deg);
 }
 
+.popup-question input,
+.popup-question label,
+.popup-question textarea {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.popup-question .cloud-form__сonsent {
+  display: inline-block;
+  vertical-align: top;
+  width: 75%;
+}
+
+.popup-question input.cloud-form__сonsent {
+  width: 15%;
+}
+
+.popup-question label.cloud-form__сonsent {
+  margin: 0;
+}
+
+.popup-question button {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+  padding: 6px;
+  box-sizing: border-box;
+  color: #ffffff;
+  background-color: #d37225;
+}
+
 .modal-content-show {
   display: block;
   animation-name: show-popup;
@@ -1075,6 +1173,10 @@ main {
   animation-name: hide-popup;
   animation-duration: 0.4s;
   opacity: 0;
+}
+
+.popup-question {
+  text-align: left;
 }
 
 
@@ -1110,6 +1212,10 @@ footer .column-2 {
   margin-top: 0;
 }
 
+footer .column-2 p {
+  margin: 0.5em 0 0.5em 1em;
+}
+
 footer .column-1 .logo-box {
   position: relative;
   width: 100%;
@@ -1136,7 +1242,7 @@ footer .column-1 .logo-box:after {
 
 footer .social-icons,
 footer .social-icons a {
-  margin: 1em 10px 0 10px;
+  margin: 1em 6px 0 6px;
   border: 1px solid rgba(211, 114, 37, 0.5);
   border-radius: 50%;
 }
@@ -1196,10 +1302,13 @@ footer .social-icons a:hover {
   border: 1px solid rgba(211, 114, 37, 0.9);
 }
 
-footer .wiget-phone,
+footer .wiget-phone {
+  padding-left: 40px;
+}
+
 footer .wiget-mail,
 footer .wiget-skype {
-  padding-left: 40px;
+  padding-left: 50px;
 }
 
 footer .wiget-phone a:hover,
@@ -1213,7 +1322,7 @@ footer .wiget-mail::before,
 footer .wiget-skype::before {
   position: absolute;
   top: 5px;
-  left: 10px;
+  left: 17px;
   display: block;
   width: 24px;
   height: 24px;
@@ -1374,27 +1483,33 @@ footer .wiget a {
     align-items: center;
   }
 
-  .contats_title {
+  header .wiget-phone:nth-child(2),
+  header .wiget-mail,
+  header .wiget-skype {
+    display: block;
+}
+
+  header .contats_title {
     display: flex;
     flex-direction: column;
     align-items: baseline;
     width: 100%;
   }
 
-  .wiget-phone,
-  .wiget-mail,
-  .wiget-skype {
+  header .wiget-phone,
+  header .wiget-mail,
+  header .wiget-skype {
     display: block;
     width: auto;
   }
 
-  .wiget-phone a {
+  header .wiget-phone a {
     width: 100%;
     height: auto;
     font-size: 1.1em;
   }
 
-  .wiget-phone a::before {
+  header .wiget-phone a::before {
     display: none;
   }
 
@@ -1402,7 +1517,8 @@ footer .wiget a {
     float: none;
   }
 
-  .contats_title .wiget-phone::before {
+  header .contats_title .wiget-phone::before {
+    top: 5px;
     width: 18px;
     height: 18px;
   }

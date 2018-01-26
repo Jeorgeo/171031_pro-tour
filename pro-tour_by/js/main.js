@@ -36,56 +36,21 @@ $("a[href*=#search]").on("click", function(e){
 
 // popup windows
 
-var popup = document.querySelector(".popup-question")
-var close = document.querySelector(".popup-question-close");
+var popup = document.querySelector(".popup-question");
+var popupS = document.querySelector(".popup-question-thanks");
+var popupBtn = document.querySelectorAll(".cloud-link");
+var close = document.querySelectorAll(".popup-question-close");
 var winPopup = document.querySelector(".wrap");
-var videoLink = document.querySelectorAll(".popup-link");
-var i = 0;
-var k = 0;
-var x = 0;
-var y = 0;
-var w = videoLink.length;
 
-for (var k = 0; k < w; k++) {
-  videoLink[k].addEventListener('click', function(evt) {
-     evt.preventDefault();
-     var current = evt.currentTarget;
-     if (current.classList.contains("popup-link")) {
-     var m = w;
-     while(m--) {
-        if(videoLink[m] == current) {
-           var y = m;
-           break;
-        }
-     }
-     popup.classList.add("modal-content-show");
-     winPopup.classList.add("modal-content-show");
-     videoBox = '<video class="popup__video" autoplay controls><source src="' + videoLink[y].href + '" type="video/mp4"><source src="' + videoLink[y].href + '"type="video/webm"></video>';
-     popup.insertAdjacentHTML('afterbegin', videoBox);
-   } else {
-      evt.preventDefault();
-     }
-  });
-};
-
-function showThank() {
-  winPopup.classList.add("modal-content-show");
+function showPopup() {
   popup.classList.add("modal-content-show");
-  setTimeout(function() {
-    popup.classList.add("modal-content-hide");
-    winPopup.classList.add("modal-content-hide");
-  }, 5000);
-  setTimeout(function() {
-    popup.classList.remove("modal-content-show");
-    winPopup.classList.remove("modal-content-show");
-    popup.classList.remove("modal-content-hide");
-    winPopup.classList.remove("modal-content-hide");
-  }, 5500);
+  winPopup.classList.add("modal-content-show");
 };
 
 function removePopup() {
   popup.classList.add("modal-content-hide");
   winPopup.classList.add("modal-content-hide");
+  popupS.classList.remove("modal-content-show");
   setTimeout(function() {
     popup.classList.remove("modal-content-show");
     winPopup.classList.remove("modal-content-show");
@@ -95,16 +60,42 @@ function removePopup() {
 
 };
 
+function showThank() {
+  winPopup.classList.add("modal-content-show");
+  popup.classList.remove("modal-content-show");
+  popupS.classList.add("modal-content-show");
+  setTimeout(function() {
+    popupS.classList.add("modal-content-hide");
+    winPopup.classList.add("modal-content-hide");
+  }, 59000);
+  setTimeout(function() {
+    popupS.classList.remove("modal-content-show");
+    winPopup.classList.remove("modal-content-show");
+    popupS.classList.remove("modal-content-hide");
+    winPopup.classList.remove("modal-content-hide");
+  }, 60000);
+};
 
+for (var i = 0; i < popupBtn.length; i++) {
+  popupBtn[i].addEventListener("click", function(event) {
 
-  close.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    showPopup();
+
+  });
+}
+
+for (var i = 0; i < close.length; i++) {
+
+  close[i].addEventListener("click", function(event) {
 
     event.preventDefault();
 
     removePopup();
 
   });
-
+}
 
 window.addEventListener("keydown", function(event) {
 

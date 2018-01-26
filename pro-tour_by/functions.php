@@ -291,24 +291,29 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/tgm/tgm-files.php';
 
 /**
- * Require portfolio.
+ * Require slider.
  */
 require get_template_directory() . '/inc/tops.php';
 
 /**
- * Require reviews.
+ * Require aviatours.
  */
 require get_template_directory() . '/inc/avia.php';
 
 /**
- * Require services.
+ * Require autotours.
  */
 require get_template_directory() . '/inc/auto.php';
 
 /**
- * Require breadcrumbs.
+ * Require news.
  */
 require get_template_directory() . '/inc/news.php';
+
+/**
+ * Require operators.
+ */
+require get_template_directory() . '/inc/opers.php';
 
 /**
  * Load Jetpack compatibility file.
