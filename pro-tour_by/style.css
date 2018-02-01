@@ -137,6 +137,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   to   { transform: rotate(0deg); }
 }
 
+@keyframes show-more {
+  from { left: -320px; }
+  to   { left: 0; }
+}
+
+@keyframes hide-more {
+  from { left: 0; }
+  to   { left: -320px; }
+}
+
 @keyframes show-popup {
   from { opacity: 0;}
   to   { opacity: 1; }
@@ -236,6 +246,7 @@ span.hide-text {
 }
 
 .text_pro {
+  text-transform: uppercase;
   color: #d37225;
 }
 
@@ -299,6 +310,10 @@ header .contats_title {
   width: 100px;
 }
 
+.slogan {
+  display: none;
+}
+
 .wiget-phone,
 .wiget-mail,
 .wiget-skype {
@@ -350,7 +365,7 @@ header .contats_title .wiget-phone::before {
 header .wiget-phone,
 header .wiget-mail {
   padding: 5px;
-  padding-left: 30px;
+  padding-left: 36px;
 }
 
 .wiget-mail,
@@ -904,7 +919,9 @@ main {
   transform: rotate(-45deg);
 }
 
-.avia article h3 {
+.avia article h3,
+.auto article h3,
+.section__title-box h3 {
   color: #ffffff;
 }
 
@@ -967,10 +984,6 @@ main {
   color: #ffffff;
 }
 
-.auto article h3 {
-  color: #ffffff;
-}
-
 .auto .dg-container {
   height: 330px;
 }
@@ -981,18 +994,27 @@ main {
 }
 
 .auto .dg-wrapper a {
-  width: 300px;
-  height: 205px;
+  width: 230px;
+  height: 180px;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 7px;
+}
+
+.auto .dg-wrapper a div {
+  max-width: 260px;
+  bottom: 10px;
+  line-height: 1em;
+}
+
+.auto .dg-wrapper a img {
+    padding: 0;
 }
 
 .section__title-box {
   padding: 1em;
   background-color: #364b4e;
   color: #fbf6d0;
-}
-
-.section__title-box h3 {
-  color: #ffffff;
 }
 
 .news .container {
@@ -1028,28 +1050,248 @@ main {
 # pages
 --------------------------------------------------------------*/
 
-.partners {
+.content-title {
+  margin: -0.1em 0;
+  padding: 1em 0;
+  text-align: center;
+  font-size: 1.3em;
+  color: #ffffff;
+  background-color: #354b4d;
+}
 
+.content-box,
+.adress_contacts,
+.form-box,
+.table-box,
+.entry-content {
+  width: 95%;
+  margin: auto;
+}
+
+.entry-content ul {
+  margin-left: 1em;
+  list-style: disc;
+}
+
+.entry-content li {
+  margin: 0.5em;
+}
+
+.content-box {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.content-box .page-content,
+.content-box .page-image {
+  margin: 1em auto;
+}
+
+.content-box .page-content a,
+.table-box table a {
+  color: #d37225;
+  border-bottom: 1px dotted #d37225;
+}
+
+.content-box .page-content a:hover,
+.table-box table a:hover {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #d37225;
+}
+
+.partners {
+  margin: 1em 0;
 }
 
 .partners_img ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 1em 0;
 }
 
 .partners_img li {
   margin: 0.2em;
 }
 
-.partners_principles {
+.partners_principles ul {
   width: 95%;
   margin: auto;
 }
 
-.adress {
+.partners_principles li {
+  position: relative;
+  margin: 1.5em 0;
+}
+
+.partners_principles li::after {
+  position: absolute;
+  bottom: -1em;
+  left: 20%;
+  width: 60%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #d37225;
+  content: '';
+}
+
+.adress,
+.about-form {
+  background-color: #fbf5cf;
+}
+
+.adress .adress_map iframe {
+  width: 100%;
+  height: 250px;
+}
+
+.form-box {
+  padding-bottom: 2em;
+}
+
+.form-box p {
+  color: #040404;
+}
+
+.about-form input,
+.about-form textarea,
+.about-form button {
+  width: 100%;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  background-color: #fbf5cf;
+  border: 2px solid #d37225;
+  border-radius: 2px;
+  outline: none;
+}
+
+.about-form button {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: #fbf5cf;
+  background-color: rgba(211, 114, 37, 0.7);
+}
+
+.about-form button:hover {
+  cursor: pointer;
+  color: #fbf5cf;
+  background-color: #d37225;
+}
+
+.adress h6 {
+  margin: 1em 0.5em;
+}
+
+.table-box table {
+  width: 100%;
+  margin: 1em auto;
+  border-collapse: collapse;
+}
+
+.table-box th,
+.table-box td {
+  padding: 0.5em;
+  border: 2px solid #d37225;
+}
+
+.avia__cards {
+  padding: 1em 0;
+}
+
+.avia__card {
+  width: 320px;
+  margin: 1em auto;
+  box-shadow: 1px 1px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.avia__card_img {
+  position: relative;
+  display: block;
+  width: 320px;
+  height: 280px;
+  overflow: hidden;
+}
+
+.avia__card_img .card_img-more,
+.avia__card_img .cards_img-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 63%;
+  color: #ffffff;
+  background: rgba(54, 75, 78, 0.3);
+  box-sizing: border-box;
 
 }
+
+.avia__card_img .card_img-more {
+  left: 0;
+  padding: 25% 1em;
+  text-transform: uppercase;
+  animation-name: hide-more;
+  animation-duration: 0.5s;
+  left: -320px;
+}
+
+.avia__card_img:hover .card_img-more {
+  animation-name: show-more;
+  animation-duration: 0.5s;
+  left: 0;
+}
+
+.avia__card_img .cards_img-stars {
+  top: 63%;
+  height: 37%;
+  margin: 0;
+  padding: 1em;
+}
+
+.avia__card_img .cards_img-stars span {
+  position: relative;
+  display: block;
+  padding-left: 95px;
+}
+
+.avia__card_img .cards_img-stars span::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 35px;
+  height: 100%;
+  background: url('img/icon_stars.png') repeat-x 0 0;
+  background-size: contain;
+  content: '';
+}
+
+
+.avia__card_img .cards_img-stars span.three-stars::after {
+  width: 55px;
+}
+
+.avia__card_img .cards_img-stars span.four-stars::after {
+  width: 70px;
+}
+
+.avia__card_img .cards_img-stars span.five-stars::after {
+  width: 90px;
+}
+
+.avia__card_btn {
+  display: block;
+  width: 320px;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #d37225;
+  box-sizing: border-box;
+}
+
+
+
 
 /*--------------------------------------------------------------
 # Popup form
@@ -1138,17 +1380,17 @@ main {
   box-sizing: border-box;
 }
 
-.popup-question .cloud-form__сonsent {
+form .cloud-form__сonsent {
   display: inline-block;
   vertical-align: top;
   width: 75%;
 }
 
-.popup-question input.cloud-form__сonsent {
+form input.cloud-form__сonsent {
   width: 15%;
 }
 
-.popup-question label.cloud-form__сonsent {
+form label.cloud-form__сonsent {
   margin: 0;
 }
 
@@ -1391,6 +1633,10 @@ footer .wiget a {
   # Content 768px
   --------------------------------------------------------------*/
 
+  .entry-content {
+    padding-bottom: 2em;
+  }
+
   .call-section, .auto article {
     flex-direction: row;
   }
@@ -1420,6 +1666,111 @@ footer .wiget a {
 
   .news-box .container {
     width: 85%;
+  }
+
+  .content-title {
+    padding-left: 3%;
+    text-align: left;
+  }
+
+  .partners h3.content-title {
+    padding-left: 6%;
+  }
+
+  .content-box {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .content-box .page-content,
+  .content-box .page-image {
+    width: 100%;
+  }
+
+  .content-box .page-content {
+    padding-right: 5%;
+  }
+
+  .content-box .page-content p:first-child {
+    margin-top: 0;
+  }
+
+  .partners {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .partners .partners_img,
+  .partners .partners_principles {
+    width: 50%;
+  }
+
+  .partners .partners_img ul,
+  .partners .partners_principles ul {
+    width: 95%;
+    margin: auto;
+  }
+
+  .partners .partners_img ul {
+    justify-content: end;
+    margin-top: 1.5em;
+    padding-right: 1em;
+  }
+
+  .partners .partners_principles ul {
+    padding-right: 10%;
+    box-sizing: border-box;
+  }
+
+  .partners_principles li::after {
+    position: absolute;
+    bottom: 0.5em;
+    left: -1em;
+    width: 4px;
+    height: 60%;
+    border-radius: 2px;
+    background-color: #d37225;
+    content: '';
+  }
+
+  .adress_contacts,
+  .adress_map {
+    display: inline-block;
+    width: 39%;
+    margin: 0.5em 2.5%;
+  }
+
+  .adress_map {
+    width: 50%;
+  }
+
+  .adress .adress_map iframe {
+    height: 480px;
+  }
+
+  .about-form .form-box {
+    padding-bottom: 1em;
+    padding-top: 1em;
+  }
+
+  .about-form .order-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .about-form .order-form input {
+    width: 48%;
+  }
+
+  .table-box table {
+    margin: 1.5em auto;
+  }
+
+  .avia__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   /*--------------------------------------------------------------
@@ -1463,6 +1814,18 @@ footer .wiget a {
     min-height: 40px;
   }
 
+  .slogan {
+    display: block;
+    width: 77%;
+  }
+
+  .slogan p {
+    font-size: 1em;
+    margin: 0;
+    text-transform: uppercase;
+    border-right: 4px solid #d37225;
+  }
+
   .left-panel {
     position: fixed;
     left: 0;
@@ -1473,7 +1836,7 @@ footer .wiget a {
   }
 
   .float-header {
-    padding: 0 0 0 280px;
+    padding: 0 0 0 265px;
     box-sizing: border-box;
   }
 
@@ -1575,6 +1938,12 @@ footer .wiget a {
   # Header 1280px
   --------------------------------------------------------------*/
 
+  .slogan {
+    display: block;
+    width: 90%;
+    margin-right: 3%;
+  }
+
   /*--------------------------------------------------------------
   # Content 1280px
   --------------------------------------------------------------*/
@@ -1585,6 +1954,26 @@ footer .wiget a {
 
   .avia {
     overflow: auto;
+  }
+
+  .about-form .order-form input,
+  .about-form .order-form button {
+    width: 33%;
+  }
+
+  .adress_contacts p {
+    margin-left: 1em;
+  }
+
+  .about-form form input.cloud-form__сonsent {
+    width: 30px;
+  }
+
+  .about-form form .cloud-form__сonsent {
+    width: 95%;
+    padding-top: 0.4em;
+    display: inline-block;
+    vertical-align: baseline;
   }
 
   /*--------------------------------------------------------------
@@ -1603,6 +1992,14 @@ footer .wiget a {
   /*--------------------------------------------------------------
   # Header 1366px
   --------------------------------------------------------------*/
+
+  .float-header .contacts {
+    max-width: 1420px;
+  }
+
+  .slogan {
+    width: 85%;
+  }
 
   /*--------------------------------------------------------------
   # Content 1366px
@@ -1628,6 +2025,18 @@ footer .wiget a {
   /*--------------------------------------------------------------
   # Content 1600px
   --------------------------------------------------------------*/
+  .partners .partners_img ul {
+    max-width: 480px;
+    margin-right: 0;
+  }
+
+  .adress_map {
+    margin-top: 1.5em;
+  }
+
+  .adress .adress_map iframe {
+    height: 450px;
+  }
 
   /*--------------------------------------------------------------
   # Footer 1600px

@@ -35,19 +35,21 @@ $opers = get_posts(
 
 <main>
 	<section class="about">
-		<h3 class="content-title"><?php echo get_field( 'page-title' ); ?></h3>
-		<div class="content-box">
-			<div class="page-content">
-				<?php echo get_field( 'page-content' ); ?>
-			</div>
-			<div class="page-image">
-				<img src="<?php echo get_field( 'page-image' ); ?>">
-			</div>
-		</div>
+		<?php the_post(); ?>
+		<?php the_content(); ?>
+			<!--<p>
+				Новое путешествие - событие волнующее и захватывающее.
+				Вместе с тем, все новое и неизвестное вызывает опасения.
+				Команда PRO-tour.by - фанаты путешествий. Миссия компании - сделать выбор и покупку отдыха простым и доступным,
+				предоставить максимальную информацию, отсеять все страхи и сомнения в Вашем путешествии.
+			</p>
+			<p>
+				С уважением, Анастасия Шаховская.
+			</p>!-->
 	</section>
 	<section class="partners">
 		<div class="partners_img">
-			<h3 class="content-title">Наши <span class="text_pro">партнеры</span></h3>
+			<h3>Наши <span class="text_pro">партнеры</span></h3>
 			<ul>
 				<?php
 					foreach ($opers as $obj) {
@@ -64,7 +66,7 @@ $opers = get_posts(
 			</ul>
 		</div>
 		<div class="partners_principles">
-			<h3 class="content-title">Наши<span class="text_pro"> принципы</span></h3>
+			<h3>Наши<span class="text_pro"> принципы</span></h3>
 			<ul>
 				<li>
 					Работаем только с проверенными туроператорами.
@@ -88,7 +90,7 @@ $opers = get_posts(
 		</div>
 	</section>
 	<section class="adress">
-		<h3 class="content-title">Наши <span class="text_pro">контакты</span></h3>
+		<h3>Наши <span class="text_pro">контакты</span></h3>
 		<div class="adress_contacts">
 			<h6>
 				ООО "ПРО-ТУР"<br>
@@ -123,7 +125,7 @@ $opers = get_posts(
 		</div>
 	</section>
 	<section class="about-form">
-		<h3 class="content-title">Остались <span class="text_pro">вопросы?</span> Хотите заказать консультацию?</h3>
+		<h3>Остались <span class="text_pro">вопросы?</span> Хотите заказать консультацию?</h3>
 		<div class="form-box">
 			<p>заполните поля и мы свяжемся с Вами в течении 10 минут</p>
 			<form id="about_form" method="post" class="order-form">

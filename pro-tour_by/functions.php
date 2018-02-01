@@ -156,6 +156,15 @@ function pro_tour_by_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
+		'name'          => esc_html__( 'почта дублирующая', 'pro-tour_by' ),
+		'id'            => 'mail-2',
+		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
+		'before_widget' => '<div class="wiget-mail">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
 		'name'          => esc_html__( 'skype', 'pro-tour_by' ),
 		'id'            => 'skype',
 		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
@@ -314,6 +323,11 @@ require get_template_directory() . '/inc/news.php';
  * Require operators.
  */
 require get_template_directory() . '/inc/opers.php';
+
+/**
+ * Require operators.
+ */
+require get_template_directory() . '/inc/tabs.php';
 
 /**
  * Load Jetpack compatibility file.

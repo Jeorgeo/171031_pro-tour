@@ -25,6 +25,11 @@
 	<header>
 		<div class="float-header">
 			<div class="contacts clearfix">
+				<div class="slogan">
+					<p>
+						Достойный отдых в любой точке мира
+					</p>
+				</div>
 				<div class="contats_title velcom">
 					<?php dynamic_sidebar( 'phone-v1' ); ?>
 					<?php dynamic_sidebar( 'phone-v2' ); ?>
