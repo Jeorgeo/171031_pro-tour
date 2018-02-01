@@ -157,6 +157,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   to   { opacity: 0; }
 }
 
+@keyframes hover-btn {
+  from { background-color: #d37225; }
+  to   { background-color: #ab321d; }
+}
+
+@keyframes disshover-btn {
+  from { background-color: #ab321d; }
+  to   { background-color: #d37225; }
+}
+
 
 /*--------------------------------------------------------------
 # Typography
@@ -930,13 +940,17 @@ main {
   padding: 2em 0 0 0;
 }
 
+.m-gal__slide img {
+  max-width: 115%;
+}
+
 .m-gal__shadow {
   position: absolute;
-  bottom: -0.5em;
+  bottom: 0em;
   display: block;
   width: 100%;
-  padding: 2.5em 0;
-  padding-bottom: 2em;
+  padding: 0.5em 0;
+  padding-bottom: 4em;
   color: #fbf6d0;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -952,7 +966,9 @@ main {
 }
 
 .m-gal__slide button {
-  position: relative;
+  position: absolute;
+  top: 10em;
+  left: 5em;
   padding: 0.2em 0.3em;
   background-color: transparent;
   border: 1px solid #eab728;
@@ -1219,7 +1235,7 @@ main {
   top: 0;
   left: 0;
   width: 100%;
-  height: 63%;
+  height: 60%;
   color: #ffffff;
   background: rgba(54, 75, 78, 0.3);
   box-sizing: border-box;
@@ -1242,10 +1258,16 @@ main {
 }
 
 .avia__card_img .cards_img-stars {
-  top: 63%;
-  height: 37%;
+  top: 0%;
+  height: 100%;
   margin: 0;
   padding: 1em;
+  text-transform: uppercase;
+}
+
+.avia__card_img .cards_img-stars h5 {
+  margin-top: 1em;
+  margin-bottom: 45%;
 }
 
 .avia__card_img .cards_img-stars span {
@@ -1286,9 +1308,18 @@ main {
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
+  animation-name: disshover-btn;
+  animation-duration: 0.5s;
   background-color: #d37225;
   box-sizing: border-box;
 }
+
+.avia__card_btn:hover {
+  animation-name: hover-btn;
+  animation-duration: 0.5s;
+  background-color: #ab321d;
+}
+
 
 
 

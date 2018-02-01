@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Авиатуры
+ * Template Name: Автобусные туры
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -15,7 +15,7 @@
 get_header();
 get_sidebar();
 
-$avia = get_posts(
+$auto = get_posts(
 		array(
 				'numberposts' => -1,
 				'offset' => 0,
@@ -26,23 +26,19 @@ $avia = get_posts(
 				'exclude' => '',
 				'meta_key' => '',
 				'meta_value' => '',
-				'post_type' => 'avia',
+				'post_type' => 'auto',
 				'post_parent' => '',
 				'post_status' => 'publish'
 		)
 );
  ?>
 
-<main>
+<main class="autobus">
 	<h3 class="content-title"><?php echo get_field( 'page-title' ); ?></h3>
-	<?php the_post(); ?>
-	<?php the_content(); ?>
-	<section class="search-section">
-		<?php echo get_field( 'search-box' ); ?>
-	</section>
+
 	<section class="avia__cards">
 		<?php
-			foreach ($avia as $obj) {
+			foreach ($auto as $obj) {
 				if($obj->post_name == 'archive') {
 						continue;
 				}
@@ -53,14 +49,12 @@ $avia = get_posts(
 				<img src="<?php echo get_field('d_img',$obj->ID); ?>">
 				<figure class="cards_img-stars">
 					<h5><?php echo $obj->post_title; ?></h5>
-					<span class="stars two-stars"><?php echo get_field('d_price-two',$obj->ID); ?></span>
-					<span class="stars three-stars"><?php echo get_field('d_price-three',$obj->ID); ?></span>
-					<span class="stars four-stars"><?php echo get_field('d_price-four',$obj->ID); ?></span>
-					<span class="stars five-stars"><?php echo get_field('d_price-five',$obj->ID); ?></span>
+					<span><?php echo get_field('d_price',$obj->ID); ?></span>
+
 				</figure>
 			</a>
 			<a href="#" class="avia__card_btn">
-				Полетели!
+				Поехали!
 			</a>
 		</div>
 		<?php
