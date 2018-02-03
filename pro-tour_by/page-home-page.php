@@ -241,7 +241,7 @@ $news = get_posts(
 			</div>
 		</section>
 	</div>
-	<section class="news">
+	<section class="news-section">
 		<div class="news-box">
 			<div class="section__title-box">
 				<span class="section-title">

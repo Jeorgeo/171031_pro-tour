@@ -1033,7 +1033,7 @@ main {
   color: #fbf6d0;
 }
 
-.news .container {
+.news-section .container {
   margin: 1em;
   max-width: 92%;
 }
@@ -1082,6 +1082,10 @@ main {
 .entry-content {
   width: 95%;
   margin: auto;
+}
+
+.news .entry-content {
+  width: 100%
 }
 
 .entry-content ul {
@@ -1741,17 +1745,17 @@ footer .wiget a {
     margin-bottom: 4em;
   }
 
-  .news {
+  .news-section {
     display: flex;
     flex-direction: row;
   }
 
-  .news .news-box,
-  .news .social-box {
+  .news-section .news-box,
+  .news-section .social-box {
     width: 50%;
   }
 
-  .news .container {
+  .news-section .container {
     margin: 2em 1em;
   }
 
