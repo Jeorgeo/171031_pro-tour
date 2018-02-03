@@ -84,41 +84,26 @@ $news = get_posts(
 	<section class="main-slider">
 		<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
 		<div id="wowslider-container1">
-			<div class="ws_images">
-				<ul>
-					<?php
-						foreach ($tops as $obj) {
-							if($obj->post_name == 'archive') {
-								continue;
-							}
-			 			?>
-						<li>
-							<a href="<?php echo get_field('s_link',$obj->ID); ?>" target="_blank"><img src="<?php echo get_field('s_img',$obj->ID); ?>" alt="<?php echo get_field('s_title',$obj->ID); ?>" title="<?php echo get_field('s_title',$obj->ID); ?>" id="<?php echo get_field('s_id',$obj->ID); ?>"/></a>
-						</li>
-						<?php
- 							}
- 			 			?>
-					</ul>
-				</div>
-		<div class="ws_bullets">
-			<div>
-				<?php
-					foreach ($tops as $obj) {
-						if($obj->post_name == 'archive') {
-								continue;
-						}
-				 ?>
-			  <a href="#" title="<?php echo get_field('short_title',$obj->ID); ?>">
-					<span><img src="<?php echo get_field('s_img',$obj->ID); ?>" width="96" height="48" alt="<?php echo get_field('s_title',$obj->ID); ?>"/><?php echo get_field('short_title',$obj->ID); ?></span>
-					</a>
-				<?php
-	 				}
-	 			 ?>
-			</div>
-		</div>
+		<div class="ws_images"><ul>
+			<li><img src="http://pro-tour.ru/data/images/16860.jpg" alt="16860" title="16860" id="wows1_0"/></li>
+			<li><img src="http://pro-tour.ru/data/images/13840478023135767nevseoboi.com.ua.jpg" alt="1384047802-3135767-nevseoboi.com.ua" title="1384047802-3135767-nevseoboi.com.ua" id="wows1_1"/></li>
+			<li><img src="http://pro-tour.ru/data/images/img_lastminute_268195.jpg" alt="img_lastminute_268195" title="img_lastminute_268195" id="wows1_2"/></li>
+			<li><a href="http://wowslider.net"><img src="http://pro-tour.ru/data/images/turupobelarusi.jpg" alt="bootstrap slider" title="Turu-po-Belarusi" id="wows1_3"/></a></li>
+			<li><img src="http://pro-tour.ru/data/images/fin.jpg" alt="fin" title="fin" id="wows1_4"/></li>
+		</ul></div>
+		<div class="ws_bullets"><div>
+			<a href="#" title="16860"><span><img src="http://pro-tour.ru/data/tooltips/16860.jpg" alt="16860"/>1</span></a>
+			<a href="#" title="1384047802-3135767-nevseoboi.com.ua"><span><img src="http://pro-tour.ru/data/tooltips/13840478023135767nevseoboi.com.ua.jpg" alt="1384047802-3135767-nevseoboi.com.ua"/>2</span></a>
+			<a href="#" title="img_lastminute_268195"><span><img src="http://pro-tour.ru/data/tooltips/img_lastminute_268195.jpg" alt="img_lastminute_268195"/>3</span></a>
+			<a href="#" title="Turu-po-Belarusi"><span><img src="http://pro-tour.ru/data/tooltips/turupobelarusi.jpg" alt="Turu-po-Belarusi"/>4</span></a>
+			<a href="#" title="fin"><span><img src="http://pro-tour.ru/data/tooltips/fin.jpg" alt="fin"/>5</span></a>
+		</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">bootstrap carousel example</a> by WOWSlider.com v8.8</div>
 		<div class="ws_shadow"></div>
 		</div>
+		<script type="text/javascript" src="engine1/wowslider.js"></script>
+		<script type="text/javascript" src="engine1/script.js"></script>
 		<!-- End WOWSlider.com BODY section -->
+
 	</section>
 	<section class="arrow-section">
 		<div class="box-arrow">

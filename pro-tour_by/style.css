@@ -1235,9 +1235,8 @@ main {
   top: 0;
   left: 0;
   width: 100%;
-  height: 60%;
+  height: 100%;
   color: #ffffff;
-  background: rgba(54, 75, 78, 0.3);
   box-sizing: border-box;
 
 }
@@ -1246,6 +1245,7 @@ main {
   left: 0;
   padding: 25% 1em;
   text-transform: uppercase;
+  background: rgba(54, 75, 78, 0.5);
   animation-name: hide-more;
   animation-duration: 0.5s;
   left: -320px;
@@ -1258,8 +1258,6 @@ main {
 }
 
 .avia__card_img .cards_img-stars {
-  top: 0%;
-  height: 100%;
   margin: 0;
   padding: 1em;
   text-transform: uppercase;
@@ -1268,15 +1266,24 @@ main {
 .avia__card_img .cards_img-stars h5 {
   margin-top: 1em;
   margin-bottom: 45%;
+  padding: 0.5em;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.avia__card_img .cards_img-stars span {
+.avia__card_img .cards_img-stars .stars-box {
+  position: absolute;
+  bottom: 0.5em;
+  padding: 0.5em;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.avia__card_img .cards_img-stars .stars {
   position: relative;
   display: block;
   padding-left: 95px;
 }
 
-.avia__card_img .cards_img-stars span::after {
+.avia__card_img .cards_img-stars .stars::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -1289,15 +1296,15 @@ main {
 }
 
 
-.avia__card_img .cards_img-stars span.three-stars::after {
+.avia__card_img .cards_img-stars .stars.three-stars::after {
   width: 55px;
 }
 
-.avia__card_img .cards_img-stars span.four-stars::after {
+.avia__card_img .cards_img-stars .stars.four-stars::after {
   width: 70px;
 }
 
-.avia__card_img .cards_img-stars span.five-stars::after {
+.avia__card_img .cards_img-stars .stars.five-stars::after {
   width: 90px;
 }
 
@@ -1319,9 +1326,6 @@ main {
   animation-duration: 0.5s;
   background-color: #ab321d;
 }
-
-
-
 
 
 /*--------------------------------------------------------------
@@ -1649,6 +1653,62 @@ footer .wiget a {
   text-transform: uppercase;
 }
 
+.page-404 {
+  position: relative;
+}
+
+.error-404 {
+  position: relative;
+  z-index: 9999;
+  min-height: 360px;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.error-404 h1 {
+  font-size: 1.4em;
+}
+
+.page-404 .bg-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: url('img/pro-tour_404_sl.jpg') no-repeat 50% 65%;
+  background-size: cover;
+}
+
+.error-404 a {
+  margin: 1.5em 0;
+  border-bottom: 1px dotted #d37225;
+}
+
+.error-404 a:hover {
+  color: #d37225;
+  border-bottom: 1px solid #d37225;
+}
+
+.error-404 .search-form {
+  margin-bottom: 1em;
+}
+
+.error-404 .search-submit {
+  width: 280px;
+  margin: 0.3em;
+  padding: 0.5em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #d37225;
+}
+
+.error-404 .search-submit:hover {
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
 /*============== for tablets 768px ===========================*/
 @media screen and (min-width: 768px) {
 
@@ -1939,6 +1999,11 @@ footer .wiget a {
     margin-bottom: 1em;
   }
 
+  .page-404 .bg-box {
+    background: url('img/pro-tour_404_xl.jpg') no-repeat 50% 65%;
+    background-size: cover;
+  }
+
   /*--------------------------------------------------------------
   # Footer 1024px
   --------------------------------------------------------------*/
@@ -2067,6 +2132,11 @@ footer .wiget a {
 
   .adress .adress_map iframe {
     height: 450px;
+  }
+
+  .main-slider #wowslider-container1 .ws_images {
+    height: 640px;
+    max-height: 640px;
   }
 
   /*--------------------------------------------------------------

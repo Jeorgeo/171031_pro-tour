@@ -48,15 +48,17 @@ $avia = get_posts(
 				}
 		 ?>
 		<div class="avia__card">
-			<a href="/<?php echo $obj->post_name; ?>" target="_blank" class="avia__card_img">
+			<a href="<?php echo $obj->post_name; ?>" target="_blank" class="avia__card_img">
 				<span class="card_img-more">Узнать подробнее</span>
 				<img src="<?php echo get_field('d_img',$obj->ID); ?>">
 				<figure class="cards_img-stars">
 					<h5><?php echo $obj->post_title; ?></h5>
-					<span class="stars two-stars"><?php echo get_field('d_price-two',$obj->ID); ?></span>
-					<span class="stars three-stars"><?php echo get_field('d_price-three',$obj->ID); ?></span>
-					<span class="stars four-stars"><?php echo get_field('d_price-four',$obj->ID); ?></span>
-					<span class="stars five-stars"><?php echo get_field('d_price-five',$obj->ID); ?></span>
+					<div class="stars-box">
+						<span class="stars two-stars"><?php echo get_field('d_price-two',$obj->ID); ?></span>
+						<span class="stars three-stars"><?php echo get_field('d_price-three',$obj->ID); ?></span>
+						<span class="stars four-stars"><?php echo get_field('d_price-four',$obj->ID); ?></span>
+						<span class="stars five-stars"><?php echo get_field('d_price-five',$obj->ID); ?></span>
+					</div>
 				</figure>
 			</a>
 			<a href="#" class="avia__card_btn">
