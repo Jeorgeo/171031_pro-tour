@@ -919,6 +919,65 @@ main {
   color: #ffffff;
 }
 
+.avia_slide-bg {
+  position: relative;
+  min-height: 480px;
+  margin: 0;
+}
+
+.avia_slide-bg .country {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.country__title-box,
+.country__info-box {
+  display: flex;
+  width: 320px;
+  margin: 0.2em auto;
+  padding: 6px 12px;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.country__title-box {
+  vertical-align: middle;
+}
+
+.country__title-box .flag {
+  display: block;
+  width: 55px;
+}
+
+.country__title-box p {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.2em;
+  padding-left: 1em;
+  font-size: 1.3em;
+}
+
+.country__info-box {
+  flex-direction: column;
+}
+
+.country__info-box li {
+  display: block;
+  margin: 0.5em 0;
+}
+
+.country__info-box span {
+  font-weight: bold;
+  color: #364b4e;
+}
+
 .main-gallery {
   width: 100%;
   padding: 2em 0 0 0;
@@ -1732,6 +1791,16 @@ footer .wiget a {
     flex-direction: row;
   }
 
+  .avia_slide-bg {
+    min-height: 400px;
+  }
+
+  .avia_slide-bg .country {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 1.5em;
+  }
+
   .call-section .call-section_btn,
   .auto article .btn-box {
     max-width: 240px;
@@ -1779,7 +1848,7 @@ footer .wiget a {
   }
 
   .content-box .page-content {
-    padding-right: 5%;
+    padding-left: 5%;
   }
 
   .content-box .page-content p:first-child {
@@ -2072,6 +2141,11 @@ footer .wiget a {
     vertical-align: baseline;
   }
 
+  .avia_slide-bg {
+    height: 530px;
+    overflow: hidden;
+  }
+
   /*--------------------------------------------------------------
   # Footer 1280px
   --------------------------------------------------------------*/
@@ -2100,6 +2174,10 @@ footer .wiget a {
   /*--------------------------------------------------------------
   # Content 1366px
   --------------------------------------------------------------*/
+
+  .avia_slide-bg > img {
+    width: 100%;
+  }
 
   /*--------------------------------------------------------------
   # Footer 1366px
@@ -2137,6 +2215,10 @@ footer .wiget a {
   .main-slider #wowslider-container1 .ws_images {
     height: 640px;
     max-height: 640px;
+  }
+
+  .avia_slide-bg {
+    height: 700px;
   }
 
   /*--------------------------------------------------------------

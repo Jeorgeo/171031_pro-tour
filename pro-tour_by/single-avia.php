@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/avia', get_post_type() );
+			get_template_part( 'template-parts/content-avia', get_post_type() );
 
 			the_post_navigation();
 
