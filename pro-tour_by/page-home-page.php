@@ -225,7 +225,6 @@ $news = get_posts(
 					<a href="<?php echo $obj->post_name; ?>">
 						<img src="<?php echo get_field('d_img',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
 						<div>
-							<?php echo $obj->post_title; ?>
 							<span><?php echo get_field('d_price',$obj->ID); ?></span>
 						</div>
 					</a>

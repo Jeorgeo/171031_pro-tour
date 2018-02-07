@@ -888,22 +888,6 @@ main {
   text-shadow: none;
 }
 
-/*.m-gal-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.m-gal__slide {
-  display: block;
-  width: 300px;
-  height: 300px;
-  margin: 16px auto;
-  overflow: hidden;
-}
-*/
-
 .call-section {
   position: relative;
   z-index: 9999;
@@ -1000,6 +984,10 @@ main {
   color: #ffffff;
 }
 
+article.auto .panel-layout {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 .auto .dg-container {
   height: 330px;
 }
@@ -1065,6 +1053,10 @@ main {
 /*--------------------------------------------------------------
 # pages
 --------------------------------------------------------------*/
+
+.site-main {
+  padding-bottom: 1em;
+}
 
 .content-title {
   margin: -0.1em 0;
@@ -1231,6 +1223,10 @@ main {
   width: 320px;
   height: 280px;
   overflow: hidden;
+}
+
+.autobus .avia__card_img {
+  height: 183px;
 }
 
 .avia__card_img .card_img-more,

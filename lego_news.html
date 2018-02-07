@@ -1,6 +1,8 @@
 <style media="screen">
 
-img {
+.widht-100 img,
+.lego_box-img img,
+.lego_box__block a img {
   width: 100%!important;
   height: 100%!important;
 }
@@ -12,7 +14,7 @@ img {
 }
 
 .lego_box__block.widht-640 {
-  max-width: 640px;
+  max-width: 720px;
   margin: auto;
 }
 
@@ -24,10 +26,6 @@ img {
   background-color: #d00001;
 }
 
-.yellow-block {
-  background-color: #ffdb01;
-}
-
 .green-block {
   background-color: #649e00;
 }
@@ -36,32 +34,100 @@ img {
   background-color: #009de0;
 }
 
+.dblue-block {
+  background-color:#00364D;
+}
+
 .lego_box-2 {
   background-color: #2c2c2c;
+}
+
+.lego_box__block h5 {
+  text-transform: uppercase;
+  color: #FFC100
+}
+
+.lego_box__block {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.lego_box-2 .lego_box__block.widht-100 {
+  padding: 0;
+}
+
+.lego_box-1 .lego_box__block,
+.lego_box-2 .lego_box__block {
+  padding: 1em;
+}
+
+.lego_box__block a {
+  display: block;
+  width: 100%;
+}
+
+.lego_box__block-box {
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.lego h3 {
+  text-transform: uppercase;
+  font-size: 1.5em;
 }
 
 @media (min-width: 768px) {
   .lego_box {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: stretch;
   }
 
-  .lego_box-2 {
+  .lego_box-1 {
+    flex-wrap: nowrap;
+  }
+
+  .lego_box__block {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .lego_box-1 .lego_box__block {
+    flex-direction: column;
     flex-wrap: wrap;
+  }
+
+  .lego_box__block a,
+  .lego_box__block-box {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1360px) {
+  .lego_box__block {
+    width: 50%;
+  }
+
+  .lego_box-2 .lego_box__block {
+    width: 100%;
   }
 }
 
 </style>
 
 <div class="lego">
-  <section class="lego_slider">
-    <img src="http://pro-tour.by/wp-content/uploads/2018/02/pro-tour_lego.jpg" alt="Выставка Лего">
+  <section class="lego_slider widht-100">
+    <img src="http://pro-tour.by/wp-content/uploads/2018/02/galereya_jurowiecka.jpg" alt="Выставка Лего">
   </section>
-  <h3 class="content-title">4 причины посетить выставку</h3>
+  <h3 class="content-title">4 причины посетить выставку "Мир LEGO"</h3>
   <section class="lego_box lego_box-1">
     <div class="lego_box__block red-block">
-      <p>ВЫСТАВКА КУБИКОВ LEGO</p>
+      <p>Идеи для LEGO</p>
       <ul>
         <li>Удивительные, большие здания из нескольких миллионов кубиков</li>
         <li>Интерактивные экспонаты</li>
@@ -71,7 +137,7 @@ img {
         <li>Сотни экспонатов для детей и взрослых</li>
       </ul>
     </div>
-    <div class="lego_box__block yellow-block">
+    <div class="lego_box__block dblue-block">
       <p>ОБРАЗОВАНИЕ</p>
       <ul>
         <li>Человеческое тело - необычный урок биологии</li>
@@ -109,7 +175,10 @@ img {
   <section class="lego_box lego_box-2">
     <div class="lego_box__block">
       <p>
-        Выставка в Белостоке, которая проходит в галерее Jurowiecka c 04.11.2017 по 04.02.2018 - необычное событие, как по масштабам страны, так и по всему миру.
+        Выставка "МИР LEGO" проходит в Белостоке, в галерее Jurowiecka c 04.11.2017 по 04.02.2018. Это необычное событие, как по масштабам страны, так и в мировом масштабе.
+      </p>
+      <p>
+        Чем же так интересна выставка? Проведем маленькую экскурсию.
       </p>
     </div>
     <div class="lego_box__block widht-640">
@@ -123,7 +192,181 @@ img {
     <div class="lego_box__block widht-100">
       <img src="http://pro-tour.by/wp-content/uploads/2018/02/pro-tour-lego-pic2.jpg" alt="Выставка Лего">
     </div>
-
   </section>
-
+  <section class="lego_box lego_box-3">
+    <div class="lego_box__block blue-block">
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/chelovecheskoe-telo.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/chelovecheskoe-telo.jpg" width="452" height="452" alt="Выставка Лего человеческое тело">
+      </a>
+      <div class="lego_box__block-box">
+        <h5>ЧЕЛОВЕЧЕСКИЙ ТЕЛО - необычный урок биологии</h5>
+        <p>
+          Увлекательные модели, показывающие структуру человеческих органов, позволяют малышам получить информацию о функционировании организма .  Здесь можно проверить знания об анатомии и физиологии человека. Вы можете увидеть строение основных систем: дыхательной , пищеварительной и структуру скелета.
+        </p>
+      </div>
+    </div>
+    <div class="lego_box__block blue-block">
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/zvezdnye-vojny.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/zvezdnye-vojny.jpg" width="452" height="452" alt="Выставка Лего Звездные войны">
+      </a>
+      <div class="lego_box__block-box">
+        <h5>ВЕЛИКИЙ МИР ЗВЕЗДНЫХ ВОЙН</h5>
+        <p>
+          Хитом выставки является впечатляющая коллекция «Звездных войн».  «Жемчужина выставки» - построена из нескольких десятков тысяч LEGO, 2-метрового звездного разрушителя. Коллекция представлена такими экспозициями как «мастер Йода», «Сокол» «Миллениум», «Звезда Смерти», «Дарт Мол», «R2-D2» и многие другие для поклонников «Звездных войн».
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="lego_box lego_box-4">
+    <div class="lego_box__block green-block">
+      <div class="lego_box__block-box">
+        <h5>LEGO® Technic</h5>
+        <p>
+          Технологии в мире «4х4» и не только. Автомобили, которые поражают не только детей, но и взрослых. Краны, внедорожники, гоночные автомобили, вертолеты, строительные машины - все с двигателями, трансмиссиями и т. д. Как в реальном мире. На выставке представлены следующие модели: TECHNIC AIR-CONDITION TECHNIC VOLVO
+        </p>
+      </div>
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/tehno.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/tehno.jpg" width="452" height="452" alt="Выставка Лего Мир Техно">
+      </a>
+    </div>
+    <div class="lego_box__block green-block">
+      <div class="lego_box__block-box">
+        <h5>ЛУНАПАРК</h5>
+        <p>
+          10 квадратных метров и почти 1 метр в высоту и несколько кнопок, позволяющих зрителям запускать отдельные элементы этого удивительного парка аттракционов.
+        </p>
+      </div>
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/lunapark.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/lunapark.jpg" width="452" height="452" alt="Выставка Лего Лунапарк">
+      </a>
+    </div>
+  </section>
+  <section class="lego_box lego_box-img">
+    <img src="http://pro-tour.by/wp-content/uploads/2018/02/zheleznaya-doroga.jpg" width="1600" height="800" alt="Выставка Лего Железная дорога">
+  </section>
+  <section class="lego_box lego_box-5">
+    <div class="lego_box__block red-block">
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/zamok.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/zamok.jpg" width="452" height="452" alt="Выставка Лего Средневековье">
+      </a>
+      <div class="lego_box__block-box">
+        <h5>LEGO® CASTLE & KINGS</h5>
+        <p>
+          Макет представляет собой средневековый город с замками и особняком.
+        </p>
+      </div>
+    </div>
+    <div class="lego_box__block red-block">
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/tehno-2.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/tehno-2.jpg" width="452" height="452" alt="Выставка Лего Mindstorms">
+      </a>
+      <div class="lego_box__block-box">
+        <h5>MINDSTORMS</h5>
+        <p>
+          Сложные блоки и многое другое в мире LEGO® Mindstorms - мир интерактивных роботов и машин - здесь даже выдающиеся инженеры хватают головы. Только с нами вы сможете полюбоваться и проверить, как они работают:
+          <br>Robot Gripper - полностью программируемый. Оснащен 3 двигателями и датчиком освещенности. Распознает 7 разных цветов.
+          <br>Cobra - робот-змея, реагирующий на движение
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="lego_box lego_box-6">
+    <div class="lego_box__block dblue-block">
+      <div class="lego_box__block-box">
+        <h5>Лондонские многоквартирные дома</h5>
+        <p>
+          Макет показывает прекрасные, созданные с большим вниманием к деталям, многоквартирные дома серии LEGO Modular Buildings: зоомагазин, универмаг, ратуша, кинотеатр.
+        </p>
+      </div>
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/Angliya.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/Angliya.jpg" width="452" height="452" alt="Выставка Лего Лондонские многоквартирные дома">
+      </a>
+    </div>
+    <div class="lego_box__block dblue-block">
+      <div class="lego_box__block-box">
+        <h5>Макеты военного положения</h5>
+        <p>
+          Первая модель показывает повседневную жизнь военного положения с вездесущими очередями в магазинах, характерные объявления о стенах и сценографию интерьера квартиры того периода. В общем, в типичном пейзаже для этих времен - мы увидим магазин Pewex, молочный бар и супермаркет, а также на улицах, маленьких, сирены и большие Fiats. Второй изображает город ночью, когда после того, как генерал Ярузельский объявил 13 декабря 1981 года военное положение, танки и бронетранспортеры вышли на улицы и был введен милицейский час.
+        </p>
+      </div>
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/voennoe-polozhenie.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/voennoe-polozhenie.jpg" width="452" height="452" alt="Выставка Лего Макеты военного положения">
+      </a>
+    </div>
+  </section>
+  <section class="lego_box lego_box-7">
+    <div class="lego_box__block green-block">
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/druzya.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/druzya.jpg" width="452" height="452" alt="Выставка Лего LEGO® FRIENDS">
+      </a>
+      <div class="lego_box__block-box">
+        <h5>LEGO® FRIENDS</h5>
+        <p>
+          Макет, показывающий центр Хартлейка с магазинами, школой, конюшней и домом Оливии. Макет выполнен в климате курортных тропиков: дом на пляже, бассейны, сцена, изображающая действие по спасению животных.
+        </p>
+      </div>
+    </div>
+    <div class="lego_box__block green-block">
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/zheleznaya-doroga-1.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/zheleznaya-doroga-1.jpg" width="452" height="452" alt="Выставка Лего ЖЕЛЕЗНОДОРОЖНЫЙ МАКЕТ">
+      </a>
+      <div class="lego_box__block-box">
+        <h5>ЖЕЛЕЗНОДОРОЖНЫЙ МАКЕТ</h5>
+        <p>
+          Незабываемые впечатления детям принесет экспозиция с железнодорожными моделями и проезжающими поездами. Подвижной состав - это реконструкция локомотивов и автомобилей, известных в Польше. На стенде есть кнопки управления
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="lego_box lego_box-img">
+    <img src="http://pro-tour.by/wp-content/uploads/2018/02/lego-3.jpg" alt="Выставка Лего Фантастические бои">
+  </section>
+  <section class="lego_box lego_box-8">
+    <div class="lego_box__block red-block">
+      <div class="lego_box__block-box">
+        <h5>LEGO® city</h5>
+        <p>
+          Макет представляет собой сцены из городской жизни, расположенные в вымышленном городе Хардллейк-Сити. Макет выполнен в атмосфере экзотических приключений. На аварийной базе всегда что-то происходит! Посмотрите, как Оливия пытается спасти медведя возле дикого водопада или попасть в Эмму на спасательный мотоцикл и попасть в патруль.
+        </p>
+      </div>
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/siti.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/siti.jpg" width="452" height="452" alt="Выставка Лего LEGO® city">
+      </a>
+    </div>
+    <div class="lego_box__block red-block">
+      <div class="lego_box__block-box">
+        <h5>АРХИТЕКТУРА</h5>
+        <p>
+          Прекрасная возможность лучше узнать мировую архитектуру. Копии знаменитых и интересных зданий со всего мира, таких как Пизанская башня, Белый дом, Биг Бен, Эмпайр-стейт-билдинг, Сиднейский оперный театр, Мост через реку Темза и Тадж-Махал - впечатляющие здания более 10 000 человек. Все из кирпичиков Lego.
+        </p>
+      </div>
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/arhitektura.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/arhitektura.jpg" width="452" height="452" alt="Выставка Лего Архитектура">
+      </a>
+    </div>
+  </section>
+  <section class="lego_box lego_box-9">
+    <div class="lego_box__block dblue-block">
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/Simpsony.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/Simpsony.jpg" width="452" height="452" alt="Выставка Лего LEGO® city">
+      </a>
+      <div class="lego_box__block-box">
+        <h5>Симпсоны</h5>
+        <p>
+          Макет, изображающий семейный дом Симпсона из Спрингфилда, помимо семьи экспозицию представляют и другие герои мульт-сериала - Фландрия, клоун Крусти, Апу, Милхаус, Ральф, Нельсон, г-н Бернс, комиссар Виггум и герои сказки «Деперок и Похаратка».
+        </p>
+      </div>
+    </div>
+    <div class="lego_box__block dblue-block">
+      <a href="http://pro-tour.by/wp-content/uploads/2018/02/lego-2.jpg">
+        <img src="http://pro-tour.by/wp-content/uploads/2018/02/lego-2.jpg" width="452" height="452" alt="Выставка Лего Архитектура">
+      </a>
+      <div class="lego_box__block-box">
+        <h5>... и многое другое ждет вас на выставке "Мир LEGO"</h5>
+        <p>
+          А все интересующие вопросы вы можете задать специалистам нашей команды
+        </p>
+      </div>
+    </div>
+  </section>
 </div>
