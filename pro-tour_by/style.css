@@ -1851,6 +1851,12 @@ footer .wiget a {
     padding-left: 5%;
   }
 
+  .about .content-box .page-content {
+    padding-right: 5%;
+    padding-left: 1em;
+    box-sizing: border-box;
+  }
+
   .content-box .page-content p:first-child {
     margin-top: 0;
   }
@@ -2168,7 +2174,7 @@ footer .wiget a {
   }
 
   .slogan {
-    width: 85%;
+    width: 95%;
   }
 
   /*--------------------------------------------------------------
@@ -2219,6 +2225,10 @@ footer .wiget a {
 
   .avia_slide-bg {
     height: 700px;
+  }
+
+  .slogan {
+    width: 75%;
   }
 
   /*--------------------------------------------------------------

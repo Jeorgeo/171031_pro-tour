@@ -27,7 +27,8 @@
 			<div class="contacts clearfix">
 				<div class="slogan">
 					<p>
-						Достойный отдых в любой точке мира
+						It's time to travel<br>
+						Время путешествовать!
 					</p>
 				</div>
 				<div class="contats_title velcom">

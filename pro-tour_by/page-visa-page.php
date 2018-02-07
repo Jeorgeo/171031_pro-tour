@@ -95,13 +95,13 @@ $tabs = get_posts(
 	<section class="about-form">
 		<h3 class="content-title">Остались <span class="text_pro">вопросы?</span> Хотите заказать <span class="text_pro">консультацию?<span></h3>
 		<div class="form-box">
-			<p>заполните поля и мы свяжемся с Вами в течении 10 минут</p>
+			<p>заполните поля и мы свяжемся с Вами в ближайшее время</p>
 			<form id="about_form" method="post" class="order-form">
 				<!-- Hidden Required Fields -->
 				<input type="hidden" name="project_name" value="pro-tour.by">
 				<!--input type="hidden" name="admin_email" value=""!-->
 				<?php dynamic_sidebar( 'admin_mail' ); ?>
-				<input type="hidden" name="form_subject" value="Заявка со страницы о нас">
+				<input type="hidden" name="form_subject" value="Заявка со страницы о визах">
 				<!-- END Hidden Required Fields -->
 				<textarea id="message" class="form__message" name="message" placeholder="Задайте вопрос"></textarea>
 				<input id="name" class="form__name" type="text" name="name"

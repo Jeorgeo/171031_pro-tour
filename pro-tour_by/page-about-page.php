@@ -64,7 +64,7 @@ $opers = get_posts(
 			</ul>
 		</div>
 		<div class="partners_principles">
-			<h3 class="content-title">Наши<span class="text_pro"> принципы</span></h3>
+			<h3 class="content-title" style="color: transparent;">Наши принципы</h3>
 			<ul>
 				<li>
 					Работаем только с проверенными туроператорами.
@@ -122,7 +122,7 @@ $opers = get_posts(
 	<section class="about-form">
 		<h3 class="content-title">Остались <span class="text_pro">вопросы?</span> Хотите заказать консультацию?</h3>
 		<div class="form-box">
-			<p>заполните поля и мы свяжемся с Вами в течении 10 минут</p>
+			<p>заполните поля и мы свяжемся с Вами в ближайшее время</p>
 			<form id="about_form" method="post" class="order-form">
 				<!-- Hidden Required Fields -->
 				<input type="hidden" name="project_name" value="pro-tour.by">
