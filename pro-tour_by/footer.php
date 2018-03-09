@@ -39,7 +39,7 @@
 			</div>
 			<p>
 				Наш адрес:<br>
-				г. Лида, ул. Победы, к.308<br>
+				г. Лида, ул. Победы, д.37, к.308<br>
 				(Торгово-сервисный центр)
 			</p>
 			<div class="social">
@@ -76,9 +76,8 @@
 		<form id="js_form" method="post" class="cloud-form order-form">
 			<!-- Hidden Required Fields -->
 			<input type="hidden" name="project_name" value="pro-tour.by">
-			<!--input type="hidden" name="admin_email" value=""!-->
 			<?php dynamic_sidebar( 'admin_mail' ); ?>
-			<input type="hidden" name="form_subject" value="Заявка с сайта.Консультация">
+			<input class="cloud-title" type="hidden" name="form_subject" value="Заявка с сайта.Консультация">
 			<!-- END Hidden Required Fields -->
 			<label class="cloud-form__phone" for="phone">Ваш Телефон</label>
 			<input id="phone" class="cloud-form__phone" type="text" name="phone"

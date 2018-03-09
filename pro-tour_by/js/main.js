@@ -41,6 +41,9 @@ var popupS = document.querySelector(".popup-question-thanks");
 var popupBtn = document.querySelectorAll(".cloud-link");
 var close = document.querySelectorAll(".popup-question-close");
 var winPopup = document.querySelector(".wrap");
+var formMark = document.querySelectorAll(".cloud-mark");
+var formTitle = document.querySelector(".cloud-title");
+var z = popupBtn.length;
 
 function showPopup() {
   popup.classList.add("modal-content-show");
@@ -76,7 +79,27 @@ function showThank() {
   }, 60000);
 };
 
-for (var i = 0; i < popupBtn.length; i++) {
+for (var i = 0; i < z; i++) {
+  popupBtn[i].addEventListener('click', function(evt) {
+     evt.preventDefault();
+     var current = evt.currentTarget;
+     if (current.classList.contains("cloud-link")) {
+     var n = z;
+     while(n--) {
+        if(popupBtn[n] == current) {
+           var x = n;
+           break;
+        }
+     }
+     showPopup();
+     formTitle.value  = 'Заявка с сайта.' + formMark[x].innerText;
+   } else {
+      evt.preventDefault();
+     }
+  });
+};
+
+/*for (var i = 0; i < popupBtn.length; i++) {
   popupBtn[i].addEventListener("click", function(event) {
 
     event.preventDefault();
@@ -85,6 +108,7 @@ for (var i = 0; i < popupBtn.length; i++) {
 
   });
 }
+*/
 
 for (var i = 0; i < close.length; i++) {
 
@@ -127,7 +151,7 @@ winPopup.addEventListener("click", function(event) {
 		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "mail.php", //Change
+			url: "http://pro-tour.by/mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
 			showThank();

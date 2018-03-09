@@ -33,7 +33,7 @@ get_header(); ?>
 						<!-- END Hidden Required Fields -->
 						<textarea id="message" class="form__message" name="message" placeholder="Задайте вопрос"></textarea>
 						<input id="name" class="form__name" type="text" name="name"
-						value="" placeholder="Ваше имя" required>
+						value="" placeholder="Ваше имя" pattern="^([A-Za-zА-Яа-яЁё\.\-]{2,20})" required>
 						<input id="phone" class="cloud-form__phone" type="text" name="phone"
 						value="" placeholder="Ваш телефон" required>
 						<button id="submit" class="cloud-form__submit" type="submit" name="submit">

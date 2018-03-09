@@ -137,7 +137,7 @@ $news = get_posts(
 			 <?php echo get_field( 'button-text' ); ?>
 			</p>
 		</div>
-		<button class="btn order-btn call-section_btn cloud-link" type="button" name="button">Начать путешествие</button>
+		<button class="btn order-btn call-section_btn cloud-link" type="button" name="button">Начать путешествие <span class="cloud-mark">первая форма</span></button>
 	</section>
 	<section class="avia">
 		<div class="main-gallery">
@@ -181,7 +181,7 @@ $news = get_posts(
 						</div>
 						<img src="<?php echo get_field('d_img',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
 					</a>
-					<button class="cloud-link" type="button" name="button">Полетели</button>
+					<button class="cloud-link" type="button" name="button">Полетели<span class="cloud-mark"><?php echo $obj->post_title; ?></span></button>
 				</div>
 
 				<?php
@@ -210,7 +210,7 @@ $news = get_posts(
 				<span class="hover-text">
 					еще больше автобусных путешествий
 				</span>
-				<a href="#" class="cloud-link">Поехали</a>
+				<a href="#" class="cloud-link">Поехали<span class="cloud-mark">Автобусные туры</span></a>
 			</div>
 		</article>
 		<div class="container">
@@ -222,7 +222,7 @@ $news = get_posts(
 	 								continue;
 	 						}
 	 				 ?>
-					<a href="<?php echo $obj->post_name; ?>">
+					<a href="<?php echo $obj->post_name; ?>" target="_blank">
 						<img src="<?php echo get_field('d_img',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
 						<div>
 							<span><?php echo get_field('d_price',$obj->ID); ?></span>

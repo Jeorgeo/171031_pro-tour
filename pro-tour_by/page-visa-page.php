@@ -47,6 +47,7 @@ $tabs = get_posts(
 	</section>
 	<section class="visa_tabs">
 		<h3 class="content-title">Визы и <span class="text_pro">страны</span></h3>
+		<span id="table"></span>
 		<div class="table-box">
 			<table>
 				<tbody>
@@ -64,13 +65,14 @@ $tabs = get_posts(
 							Сайт представительства (визового центра)
 						</th>
 					</tr>
-					<tr>
-						<?php
-							foreach ($tabs as $obj) {
-								if($obj->post_name == 'archive') {
-										continue;
-								}
-						 ?>
+
+					<?php
+						foreach ($tabs as $obj) {
+							if($obj->post_name == 'archive') {
+									continue;
+							}
+					 ?>
+					 <tr>
 						 <td>
 						 	<?php echo get_field('country',$obj->ID); ?>
 						 </td>
@@ -84,10 +86,11 @@ $tabs = get_posts(
 							 <a href="<?php echo get_field('visa_link',$obj->ID); ?>" target="_blank"><?php echo get_field('visa_link',$obj->ID); ?></a>
 
 						 </td>
+					 </tr>
 						 <?php
 	 		 				}
 	 		 			 ?>
-					</tr>
+
 				</tbody>
 			</table>
 		</div>

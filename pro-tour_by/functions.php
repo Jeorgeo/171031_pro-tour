@@ -102,6 +102,15 @@ add_action( 'after_setup_theme', 'pro_tour_by_content_width', 0 );
  */
 function pro_tour_by_widgets_init() {
 	register_sidebar( array(
+		'name'          => esc_html__( 'Почта для формы', 'pro-tour_by' ),
+		'id'            => 'admin_mail',
+		'description'   => esc_html__( 'Add admin_mail here.', 'pro-tour_by' ),
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
 		'name'          => esc_html__( 'Велком-1', 'pro-tour_by' ),
 		'id'            => 'phone-v1',
 		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
@@ -236,7 +245,6 @@ add_action( 'widgets_init', 'pro_tour_by_widgets_init' );
  * Enqueue scripts and styles.
  */
 function pro_tour_by_scripts() {
-	wp_enqueue_style( 'pro-tour_by-normalize', get_template_directory_uri() . '/css/normalize.css');
 
 	wp_enqueue_style( 'pro-tour_by-diamonds-style', get_template_directory_uri() . '/css/diamonds.css');
 
@@ -245,8 +253,6 @@ function pro_tour_by_scripts() {
 	wp_enqueue_style( 'pro-tour_by-wowstyle', get_template_directory_uri() . '/engine/style.css');
 
 	wp_enqueue_style( 'pro-tour_by-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'pro-tour_by-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'pro-tour_by-modernizr', get_template_directory_uri() . '/js/modernizr.custom.53451.js', array(), '20151215', true );
 
@@ -264,9 +270,7 @@ function pro_tour_by_scripts() {
 
 	wp_enqueue_script( 'pro-tour_by-wowscript', get_template_directory_uri() . '/engine/script.js', array(), '1', true );
 
-	wp_enqueue_script( 'pro-tour_by-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1', true );
-
-		wp_enqueue_script( 'pro-tour_by-main', get_template_directory_uri() . '/js/main.js', array(), '1', true );
+	wp_enqueue_script( 'pro-tour_by-main', get_template_directory_uri() . '/js/main.js', array(), '1', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

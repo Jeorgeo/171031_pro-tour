@@ -56,7 +56,9 @@ $opers = get_posts(
 						}
 				 ?>
 				<li>
-					<img src="<?php echo get_field('p_img',$obj->ID); ?>" />
+					<a href="<?php echo get_field('p_link',$obj->ID); ?>">
+						<img src="<?php echo get_field('p_img',$obj->ID); ?>" />
+					</a>
 				</li>
 				<?php
 	 				}
@@ -64,24 +66,7 @@ $opers = get_posts(
 			</ul>
 		</div>
 		<div class="partners_principles">
-			<h3 class="content-title" style="color: transparent;">Наши принципы</h3>
-			<ul>
-				<li>
-					Работаем только с проверенными туроператорами.
-				</li>
-				<li>
-					Предоставляем честные цены от "производителя".
-				</li>
-				<li>
-					Не навязываем предложения. Даем возможность самостоятельного подбора отдыха удобным поисковиком на нашем сайте
-				</li>
-				<li>
-					Предоставлем услуги по страхованию от внезапных заболеваний и несчастных случаев на время поездки за границу
-				</li>
-				<li>
-			    Оказываем помощь в оформлении виз для выезда за границу.
-				</li>
-			</ul>
+			<?php echo get_field( 'page-description' ); ?>
 		</div>
 	</section>
 	<section class="adress">
@@ -132,7 +117,7 @@ $opers = get_posts(
 				<!-- END Hidden Required Fields -->
 				<textarea id="message" class="form__message" name="message" placeholder="Задайте вопрос"></textarea>
 				<input id="name" class="form__name" type="text" name="name"
-				value="" placeholder="Ваше имя" required>
+				value="" placeholder="Ваше имя" pattern="^([A-Za-zА-Яа-яЁё\.\-]{2,20})" required>
 				<input id="phone" class="cloud-form__phone" type="text" name="phone"
 				value="" placeholder="Ваш телефон" required>
 				<button id="submit" class="cloud-form__submit" type="submit" name="submit">

@@ -1,0 +1,77 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-icon_fb {
+    width: 128px;
+    height: 128px;
+    background-position: -5px -5px;
+}
+
+.sprite-icon_in {
+    width: 128px;
+    height: 128px;
+    background-position: -5px -143px;
+}
+
+.sprite-icon_mail {
+    width: 128px;
+    height: 89px;
+    background-position: -5px -281px;
+}
+
+.sprite-icon_mts {
+    width: 128px;
+    height: 128px;
+    background-position: -5px -380px;
+}
+
+.sprite-icon_ok {
+    width: 128px;
+    height: 128px;
+    background-position: -5px -518px;
+}
+
+.sprite-icon_phone {
+    width: 128px;
+    height: 128px;
+    background-position: -5px -656px;
+}
+
+.sprite-icon_skype {
+    width: 128px;
+    height: 128px;
+    background-position: -5px -794px;
+}
+
+.sprite-icon_telegram {
+    width: 128px;
+    height: 128px;
+    background-position: -5px -932px;
+}
+
+.sprite-icon_velcom {
+    width: 128px;
+    height: 128px;
+    background-position: -5px -1070px;
+}
+
+.sprite-icon_viber {
+    width: 128px;
+    height: 135px;
+    background-position: -5px -1208px;
+}
+
+.sprite-icon_vk {
+    width: 128px;
+    height: 128px;
+    background-position: -5px -1353px;
+}
+
+.sprite-icon_wapp {
+    width: 128px;
+    height: 128px;
+    background-position: -5px -1491px;
+}
