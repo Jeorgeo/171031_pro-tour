@@ -19,7 +19,7 @@
 				<img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="Туристическое агенство Pro-tour.by">
 				<h1>Туристическое агенство <span class="hide-text">Pro-tour.by</span></h1>
 			</figure>
-		</a>		
+		</a>
 		<div class="social">
 			<?php dynamic_sidebar( 'social_vk' ); ?>
 			<?php dynamic_sidebar( 'social_ok' ); ?>
@@ -34,10 +34,8 @@
 				) );
 			?>
 		</nav>
-		<span class="line"></span>
 		<?php dynamic_sidebar( 'wiget_aside' ); ?>
-		<span class="line"></span>
-		<?php dynamic_sidebar( 'tags' ); ?>
+		<?php dynamic_sidebar( 'wiget_tags' ); ?>
 
 	</div>
 </aside>

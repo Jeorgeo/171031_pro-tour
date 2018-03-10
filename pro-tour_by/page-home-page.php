@@ -168,13 +168,18 @@ $news = get_posts(
 					</a>
 				</div>
 				<?php
+				$avia_count = 0;
 					foreach ($avia as $obj) {
 						if($obj->post_name == 'archive') {
 								continue;
 						}
+						if ($avia_count > 8 ) {
+								break;
+						}
 				 ?>
+
 				<div class="m-gal__slide item">
-					<a href="<?php echo $obj->post_name; ?>" target="_blank">
+					<a href="avia/<?php echo $obj->post_name; ?>" target="_blank">
 						<div class="m-gal__shadow">
 							<h5><?php echo $obj->post_title; ?></h5>
 							<span class="m-gal__price"><?php echo get_field('d_price',$obj->ID); ?></span>
@@ -185,6 +190,7 @@ $news = get_posts(
 				</div>
 
 				<?php
+				  $avia_count++;
 	 				}
 	 			 ?>
 			</div>
@@ -256,18 +262,22 @@ $news = get_posts(
 					 if($obj->post_name == 'archive') {
 							 continue;
 					 }
+					 if ($news_count > 3 ) {
+							 break;
+					 }
 				?>
 				<article>
 					<a href="<?php echo $obj->post_name; ?>">
 						<img src="<?php echo get_field('n_img',$obj->ID); ?>">
 						<p>
 							<?php echo $obj->post_title; ?>
-							<span><?php echo get_field('n_descript',$obj->ID); ?></span>
-							<span>Читать далee...</span>
+							<span><?php echo get_field('n_descript',$obj->ID); ?>...</span>
+							<span>...Читать далee</span>
 						</p>
 					</a>
 				</article>
 				<?php
+					$news_count++;
 					}
 				 ?>
 			</div>

@@ -229,9 +229,9 @@ function pro_tour_by_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Облако тегов', 'pro-tour_by' ),
-		'id'            => 'tags',
+		'id'            => 'wiget_tags',
 		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="column-3">',
+		'before_widget' => '<div class="wiget_aside column-3">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',

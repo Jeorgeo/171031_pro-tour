@@ -1119,7 +1119,7 @@ header .wiget-phone a::before {
 }
 
 .main-menu {
-  margin: 1em 0;
+  margin: 1em 0 0 0;
 }
 
 .main-menu li {
@@ -1148,18 +1148,23 @@ aside .column-3 {
   padding: 0 1em;
 }
 
-.column-3 a {
+aside .column-3 a {
   display: inline-block;
   vertical-align: top;
   margin: 0.1em 0;
   padding: 0.3em;
   font-size: 0.8em;
-  color: rgba(251, 245, 207, 1);
+  color: #040404;
   background-color: #eab728;
 }
 
-.column-3 a:hover {
-  color: #040404;
+aside .column-3 a:hover {
+  color: #ffffff;
+  background-color: #d37225;
+}
+
+.wiget_aside.column-3 p {
+  margin: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1390,12 +1395,23 @@ main {
   color: #ffffff;
   background-color: #364b4e;
   transform: rotate(-45deg);
+  z-index: 99999;
 }
 
 .avia article h3,
 .auto article h3,
 .section__title-box h3 {
   color: #ffffff;
+}
+
+.avia article a {
+  border-bottom: 1px dotted #d37225;
+  color: #eab728;
+}
+
+.avia article a:hover {
+  border-bottom: 1px solid #d37225;
+  color: #d37225;
 }
 
 .avia_slide-bg {
@@ -1518,7 +1534,7 @@ main {
   margin-bottom: 2em;
   padding: 1em;
   box-sizing: border-box;
-  background-color: #040404;
+  background-color: #364b4e;
   color: #ffffff;
 }
 
@@ -2590,10 +2606,6 @@ footer .wiget a {
     height: 5px;
   }
 
-  .wiget_aside {
-    margin-bottom: 1em;
-  }
-
   .page-404 .bg-box {
     background: url('img/pro-tour_404_xl.jpg') no-repeat 50% 65%;
     background-size: cover;
@@ -2677,6 +2689,22 @@ footer .wiget a {
     overflow: hidden;
   }
 
+  .news-section .news-box {
+    width: 85%;
+  }
+
+  .news-section .news-box .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .news-box .container article {
+    max-width: 49%;
+  }
+
+
   /*--------------------------------------------------------------
   # Footer 1280px
   --------------------------------------------------------------*/
@@ -2754,6 +2782,14 @@ footer .wiget a {
 
   .slogan {
     width: 75%;
+  }
+
+  .news-section .news-box {
+    width: 65%;
+  }
+
+  .news-box .container article {
+    max-width: 50%;
   }
 
   /*--------------------------------------------------------------
