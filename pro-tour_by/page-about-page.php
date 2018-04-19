@@ -70,7 +70,7 @@ $opers = get_posts(
 		</div>
 	</section>
 	<section class="adress">
-		<h3 class="content-title">Наши <span class="text_pro">контакты</span></h3>
+		<h1 class="content-title"><span class="text_pro">Наши</span> контакты</h1>
 		<div class="adress_contacts">
 			<h6>
 				ООО "ПРО-ТУР"<br>

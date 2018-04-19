@@ -34,7 +34,7 @@ $avia = get_posts(
  ?>
 
 <main>
-	<h3 class="content-title"><?php echo get_field( 'page-title' ); ?></h3>
+	<h1 class="content-title"><?php echo get_field( 'page-title' ); ?></h1>
 	<?php the_post(); ?>
 	<?php the_content(); ?>
 	<section class="search-section">

@@ -35,7 +35,7 @@ $tabs = get_posts(
 
 <main>
 	<section class="visa">
-		<h3 class="content-title"><?php echo get_field( 'page-title' ); ?></h3>
+		<h1 class="content-title"><?php echo get_field( 'page-title' ); ?></h1>
 		<div class="content-box">
 			<div class="page-image">
 				<img src="<?php echo get_field( 'page-image' ); ?>">

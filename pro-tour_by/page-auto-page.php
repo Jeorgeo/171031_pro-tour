@@ -34,7 +34,7 @@ $auto = get_posts(
  ?>
 
 <main class="autobus">
-	<h3 class="content-title"><?php echo get_field( 'page-title' ); ?></h3>
+	<h1 class="content-title"><?php echo get_field( 'page-title' ); ?></h1>
 
 	<section class="avia__cards">
 		<?php
