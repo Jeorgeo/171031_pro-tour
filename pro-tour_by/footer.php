@@ -40,7 +40,10 @@
 			<p>
 				Наш адрес:<br>
 				г. Лида, ул. Победы, д.37, к.308<br>
-				(Торгово-сервисный центр)
+				(Торгово-сервисный центр)<br>
+				Режим работы:<br>
+				пн-пт: 10:00 - 17:30<br>
+				сб-вс: 10:00 - 16:00
 			</p>
 			<div class="social">
 				<div class="social-icons social_viber"><a href="tel:+375291321800"></a></div>
@@ -79,19 +82,15 @@
 			<?php dynamic_sidebar( 'admin_mail' ); ?>
 			<input class="cloud-title" type="hidden" name="form_subject" value="Заявка с сайта.Консультация">
 			<!-- END Hidden Required Fields -->
-			<label class="cloud-form__phone" for="phone">Ваш Телефон</label>
+			<label class="cloud-form__phone" for="phone">Оставьте Ваш номер телефона. Мы учтем все Ваши пожелания (если есть) и расскажем о самых интересных предложениях!</label>
 			<input id="phone" class="cloud-form__phone" type="text" name="phone"
 			value="" placeholder="+375(___) ___-__-__" required>
-			<label  class="cloud-form__message" for="message">Ваши пожелания</label>
+			<label  class="cloud-form__message" for="message">Ваши пожелания по отдыху</label>
 			<textarea id="message" class="cloud-form__message" name="message"
 			rows="4" cols="80" placeholder=""></textarea>
 			<button id="submit" class="cloud-form__submit" type="submit" name="submit">
 				Заказать звонок
 			</button>
-			<input id="сonsent-p" class="cloud-form__сonsent" type="checkbox" name="сonsent" value="" required checked>
-			<label class="cloud-form__сonsent" for="сonsent-p">
-				Согласие на обработку персональных данных
-			</label>
 		</form>
 	</div>
 </div>
@@ -101,9 +100,9 @@
 	</div>
 	<div class="box-content">
 		<p class="thanks">
-			УРА! Спасибо!
+			Спасибо!)
 		</p>
-		<p>Сейчас наши специалисты закончат танцевать от счастья<span class="smile"></span><br> и мы сразу же вам перезвоним!</p>
+		<p>Сейчас наши специалисты закончат танцевать от радости<span class="smile"></span><br> и мы сразу же вам перезвоним!</p>
 	</div>
 </div>
 
@@ -119,6 +118,11 @@
  $('#dg-container').gallery();
  });
  </script>
+ <!-- BEGIN JIVOSITE CODE -->
+<script type='text/javascript'>
+(function(){ var widget_id = '21omWdZUFZ';var d=document;var w=window;function l(){
+var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+<!-- END JIVOSITE CODE -->
 
 </body>
 </html>

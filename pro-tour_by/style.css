@@ -779,6 +779,13 @@ header .contats_title {
   width: 100px;
 }
 
+header .contats_btn {
+  float: left;
+  display: block;
+  width: 100%;
+  margin-top: 1.4em;
+}
+
 .slogan {
   display: none;
 }
@@ -1280,7 +1287,7 @@ main {
   width: 95%;
   font-size: 1.2em;
   line-height: 1.5em;
-  color: #ffffff;
+  color: #fbf5cf;
 }
 
 .call-section .call-section_btn,
@@ -1296,14 +1303,36 @@ main {
 
 .call-section .call-section_btn,
 .auto article .btn-box,
-.btn-box-single {
+.btn-box-single,
+.header-btn,
+.avia_slide-search_btn {
   max-width: 320px;
-  padding: 0.5em;
+  padding: 1em;
   text-align: center;
   text-transform: uppercase;
+  letter-spacing: 2px;
   font-family: 'MontserratAlternates-Regular', 'Arial', sans-serif;
   background-color: #364b4e;
   border: 2px solid #eab728;
+}
+
+header .header-btn,
+.country .avia_slide-search_btn {
+  background-color: #eab728;
+  border: 2px solid rgba(211, 114, 37, 1);
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.7);
+}
+
+.country .avia_slide-search_btn {
+  display: block;
+  margin: 1em auto 0 auto;
+}
+
+header .header-btn:hover,
+.country .avia_slide-search_btn:hover {
+  color: #ffffff;
+  background-color: rgba(211, 114, 37, 1);
+  box-shadow: none;
 }
 
 .auto article .btn-box {
@@ -1323,7 +1352,8 @@ main {
 }
 
 .call-section .call-section_btn:hover,
-.auto article .btn-box:hover {
+.auto article .btn-box:hover,
+.header-btn:hover {
   cursor: pointer;
   color: #364b4e;
   background: #fbf6d0;
@@ -1416,7 +1446,7 @@ main {
 
 .avia_slide-bg {
   position: relative;
-  min-height: 480px;
+  min-height: 500px;
   margin: 0;
 }
 
@@ -1427,7 +1457,14 @@ main {
   left: 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   margin: auto;
+  padding-top: 3em;
+}
+
+.avia_slide-bg .country__box {
+  display: block;
+  max-width: 320px;
 }
 
 .country__title-box,
@@ -1918,7 +1955,7 @@ article.auto .panel-layout {
   position: fixed;
   left: 0;
   right: 0;
-  top: 100px;
+  top: 25px;
   z-index: 99999;
   width: 300px;
   min-height: 50px;
@@ -2324,11 +2361,12 @@ footer .wiget a {
     flex-direction: row;
     align-items: flex-start;
     margin-top: 1.5em;
+    padding-top: 0;
   }
 
   .call-section .call-section_btn,
   .auto article .btn-box {
-    max-width: 240px;
+    max-width: 280px;
   }
 
   .auto article {
@@ -2483,6 +2521,11 @@ footer .wiget a {
   footer .column-1 .social {
     margin: 2em 0;
   }
+
+  .popup-question,
+  .popup-question-thanks {
+    top: 100px;
+  }
 }
 
 
@@ -2509,12 +2552,16 @@ footer .wiget a {
   .slogan {
     display: block;
     width: 77%;
+    margin: 1em 0;
   }
 
   .slogan p {
     font-size: 1em;
     margin: 0;
+    padding-right: 1em;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
     border-right: 4px solid #d37225;
   }
 
@@ -2548,7 +2595,11 @@ footer .wiget a {
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    width: 100%;
+    width: 90%;
+  }
+
+  header .contats_btn {
+    margin: 0;
   }
 
   header .wiget-phone,
@@ -2614,6 +2665,10 @@ footer .wiget a {
   .table-box {
     padding: 1em 2.5%;
     overflow-x: auto;
+  }
+
+  .avia_slide-bg .country__box {
+    margin-left: 30px;
   }
 
   /*--------------------------------------------------------------
@@ -2682,11 +2737,6 @@ footer .wiget a {
     padding-top: 0.4em;
     display: inline-block;
     vertical-align: baseline;
-  }
-
-  .avia_slide-bg {
-    height: 530px;
-    overflow: hidden;
   }
 
   .news-section .news-box {
@@ -2774,10 +2824,6 @@ footer .wiget a {
   .main-slider #wowslider-container1 .ws_images {
     height: 640px;
     max-height: 640px;
-  }
-
-  .avia_slide-bg {
-    height: 700px;
   }
 
   .slogan {

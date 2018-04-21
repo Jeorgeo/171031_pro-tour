@@ -14,14 +14,17 @@
     <figure class="avia_slide-bg">
       <img src="<?php echo get_field( 'c_img' ); ?>" alt="  <?php echo get_field( 'c_title' ); ?>">
       <div class="country">
-        <a href="<?php echo get_field( 'c_link' ); ?>" class="country__title-box" target="_blank">
-          <span class="flag">
-            <img src="<?php echo get_field( 'c_flag' ); ?>" alt="<?php echo get_field( 'c_title' ); ?>">
-          </span>
-          <p>
-            <?php echo get_field( 'c_title' ); ?>
-          </p>
-        </a>
+        <div class="country__box">
+          <a href="<?php echo get_field( 'c_link' ); ?>" class="country__title-box" target="_blank">
+            <span class="flag">
+              <img src="<?php echo get_field( 'c_flag' ); ?>" alt="<?php echo get_field( 'c_title' ); ?>">
+            </span>
+            <p>
+              <?php echo get_field( 'c_title' ); ?>
+            </p>
+          </a>
+          <a class="avia_slide-search_btn" href="#search">Начать поиск</a>
+        </div>    
         <ul class="country__info-box">
           <li>
             <span>Язык:</span>
@@ -42,14 +45,9 @@
 
     </figure>
   </section>
-  <section class="arrow-section">
-		<div class="box-arrow">
-			<a href="#search">search</a>
-		</div>
-		<span id="search"></span>
-	</section>
 	<?php the_post(); ?>
 	<?php the_content(); ?>
+  <span id="search"></span>
 	<section class="search-section">
 		<?php echo get_field( 'search-box' ); ?>
 	</section>

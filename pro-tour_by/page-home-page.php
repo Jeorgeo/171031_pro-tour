@@ -15,22 +15,6 @@
 get_header();
 get_sidebar();
 
-$tops = get_posts(
-		array(
-				'numberposts' => -1,
-				'offset' => 0,
-				'orderby'     => 'date',
-				'order'       => 'DESC',
-				'category' => '',
-				'include' => '',
-				'exclude' => '',
-				'meta_key' => '',
-				'meta_value' => '',
-				'post_type' => 'tops',
-				'post_parent' => '',
-				'post_status' => 'publish'
-		)
-);
 $avia = get_posts(
 		array(
 				'numberposts' => -1,
@@ -81,51 +65,6 @@ $news = get_posts(
 ); ?>
 
 <main>
-	<section class="main-slider">
-		<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
-		<div id="wowslider-container1">
-			<div class="ws_images">
-				<ul>
-					<?php
-						foreach ($tops as $obj) {
-							if($obj->post_name == 'archive') {
-								continue;
-							}
-			 			?>
-						<li>
-							<a href="<?php echo get_field('s_link',$obj->ID); ?>" target="_blank"><img src="<?php echo get_field('s_img',$obj->ID); ?>" alt="<?php echo get_field('s_title',$obj->ID); ?>" title="<?php echo get_field('s_title',$obj->ID); ?>" id="<?php echo get_field('s_id',$obj->ID); ?>"/></a>
-						</li>
-						<?php
- 							}
- 			 			?>
-					</ul>
-				</div>
-		<div class="ws_bullets">
-			<div>
-				<?php
-					foreach ($tops as $obj) {
-						if($obj->post_name == 'archive') {
-								continue;
-						}
-				 ?>
-			  <a href="#" title="<?php echo get_field('short_title',$obj->ID); ?>">
-					<span><img src="<?php echo get_field('s_img',$obj->ID); ?>" width="96" height="48" alt="<?php echo get_field('s_title',$obj->ID); ?>"/><?php echo get_field('short_title',$obj->ID); ?></span>
-					</a>
-				<?php
-	 				}
-	 			 ?>
-			</div>
-		</div>
-		<div class="ws_shadow"></div>
-		</div>
-		<!-- End WOWSlider.com BODY section -->
-	</section>
-	<section class="arrow-section">
-		<div class="box-arrow">
-			<a href="#search">search</a>
-		</div>
-		<span id="search"></span>
-	</section>
 
 	<section class="search-section">
 		<?php echo get_field( 'search-box' ); ?>
@@ -133,11 +72,10 @@ $news = get_posts(
 
 	<section class="call-section">
 		<div class="call-section_text">
-			<p>
-			 <?php echo get_field( 'button-text' ); ?>
-			</p>
+			<?php the_post(); ?>
+			<?php the_content(); ?>
 		</div>
-		<button class="btn order-btn call-section_btn cloud-link" type="button" name="button">Начать путешествие <span class="cloud-mark">первая форма</span></button>
+		<button class="btn order-btn call-section_btn cloud-link" type="button" name="button">Оставить заявку <span class="cloud-mark">первая форма</span></button>
 	</section>
 	<section class="avia">
 		<div class="main-gallery">
@@ -186,7 +124,7 @@ $news = get_posts(
 						</div>
 						<img src="<?php echo get_field('d_img',$obj->ID); ?>" alt="<?php echo $obj->post_title; ?>">
 					</a>
-					<button class="cloud-link" type="button" name="button">Полетели<span class="cloud-mark"><?php echo $obj->post_title; ?></span></button>
+					<button class="cloud-link" type="button" name="button">Полетели!!!<span class="cloud-mark"><?php echo $obj->post_title; ?></span></button>
 				</div>
 
 				<?php
@@ -216,7 +154,7 @@ $news = get_posts(
 				<span class="hover-text">
 					еще больше автобусных путешествий
 				</span>
-				<a href="#" class="cloud-link">Поехали<span class="cloud-mark">Автобусные туры</span></a>
+				<a href="#" class="cloud-link">Поехали!!!<span class="cloud-mark">Автобусные туры</span></a>
 			</div>
 		</article>
 		<div class="container">
