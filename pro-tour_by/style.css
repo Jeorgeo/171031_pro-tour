@@ -2624,11 +2624,6 @@ footer .wiget a {
     position: relative;
   }
 
-  .column-1 .copy {
-    position: absolute;
-    bottom: 0;
-  }
-
   .column-2 p {
     margin-left: 1em;
   }
