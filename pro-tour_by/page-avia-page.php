@@ -48,7 +48,7 @@ $avia = get_posts(
 				}
 		 ?>
 		<div class="avia__card">
-			<a href="<?php echo $obj->post_name; ?>" target="_blank" class="avia__card_img">
+			<a href="/avia/<?php echo $obj->post_name; ?>" target="_blank" class="avia__card_img">
 				<span class="card_img-more">Узнать подробнее</span>
 				<img src="<?php echo get_field('d_img',$obj->ID); ?>">
 				<figure class="cards_img-stars">
