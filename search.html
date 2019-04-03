@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="wide wow-animation desktop landscape"><div id="saka-gui-root" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 2147483647; opacity: 1; pointer-events: none;"><div><div><style>
+@font-face {
+  font-family: Roboto; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased;
+  font-style: normal; font-weight: normal; src: url(moz-extension://23125604-8581-445d-9bc1-fade8b84d646/Roboto-Regular.tff) format('tff');
+}
+.saka-hint-body {
+  all: initial;
+position: absolute;
+z-index: 2147483647;
+opacity: 1;
+font-family: Roboto, sans-serif;
+font-weight: 900;
+padding: 0.15rem 0.25rem;
+border: 0px solid;
+text-align: center;
+text-decoration: none;
+text-transform: uppercase;
+vertical-align: middle;
+font-size: 12px;
+color: #3f51F5;
+background-color: #ffffff;
+border-color: #ffffff;
+box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+border-radius: 4px;
+transform: translate3d(0%, -50%, 0)
+}
+.saka-hint-normal-char {
+
+}
+.saka-hint-active-char {
+  opacity: 0.5
+}</style><div style="position: absolute; left: 0px; top: 0px;"></div></div></div></div><head>
+<title>Приключения ждут</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="shortcut icon" href="" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="css/style.php?Module_Font=Arial&amp;Module_BgColor=%23f3eed7&amp;Module_HrefColor=%23ce931a&amp;Module_Color1=%233d5974&amp;Module_Color2=%23d37225&amp;Module_TextColor1=%233d5974&amp;Module_TextColor2=%233d5974&amp;Module_OpacityValue=0.70">
+</head>
+<body>
+<div id="HotelsDiv" style="position: absolute; display: none; z-index: 99;"><select multiple="" id="HotelsList" onclick="ListClick('Hotels')" style="overflow: auto;"></select></div><div id="ResortsDiv" style="position: absolute; display: none; z-index: 99;"><select multiple="" id="ResortsList" onclick="ListClick('Resorts')" style="overflow: auto;"></select></div><div class="page text-center"><header class="page-header" style="background: no-repeat url('http://pro-tour.by/wp-content/uploads/2018/03/pro-tourby_Albaniya-2.jpg') top; background-size: cover;"><div class="shell shell-wide section-70 section-lg-bottom-140 parallax-scene-wrapper"><div class="range range-xs-center parallax-scene-js parallax-scene" data-scalar-x="5" data-scalar-y="5" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative;"><div id="SearchFormContainer" class="cell-xl-8 cell-lg-8 cell-md-11 text-left wow flipInY" style="visibility: visible; position: relative; z-index: 5; animation-name: flipInY;"><div id="tab" class="responsive-tabs text-md-left nav-custom-light" data-type="horizontal" style="display: block; width: 100%;"><ul class="nav-custom-tabs resp-tabs-list" style="user-select: none;"><li onclick="setTimeout(function(){OnResizeWindow();}, 250);" style="display:inline;" class="nav-item resp-tab-item resp-tab-active" aria-controls="tab_item-0" role="tab"><span class="icon fa-plane"></span><span id="ready_status">Приключения ждут</span></li><li onclick="setTimeout(function(){OnResizeWindow();}, 250);" style="display:inline;" class="nav-item resp-tab-item" aria-controls="tab_item-1" role="tab"><span class="icon fa-gear"></span><span>Опции</span></li><li onclick="setTimeout(function(){OnResizeWindow();}, 250);" style="display:inline;" class="nav-item resp-tab-item" aria-controls="tab_item-2" role="tab"><span class="icon fa-info-circle"></span><span>Справка</span></li></ul><div id="SearchControls" class="resp-tabs-container nav-custom-tab nav-custom-wide" style=" background-image: url('http://5.45.70.112/up/gif/34.gif'); background-repeat: no-repeat; background-repeat: no-repeat; background-position: center right;background-size: contain;"><div class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span><span class="icon fa-plane"></span><span id="ready_status">Приключения ждут</span></div><div id="Tab_1" class="resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block"><div class="range"><div class="range offset-top-0"><div class="cell-xs"><div id="StarsForm" class="form-group radio-inline-wrapper"><label id="StarsFormLabel">Звёздность отеля:</label><span id="hotel_stars_label"><label class="radio-inline"><input id="hotel_2_stars" name="hotel" type="radio" onclick="HotelClassChanged()" class="radio-custom"><span class="radio-custom-dummy"></span><span class="icon fa-star"></span><span class="icon fa-star"></span></label>
+<label class="radio-inline"><input id="hotel_3_stars" name="hotel" type="radio" onclick="HotelClassChanged()" class="radio-custom"><span class="radio-custom-dummy"></span><span class="icon fa-star"></span><span class="icon fa-star"></span><span class="icon fa-star"></span></label><label class="radio-inline"><input id="hotel_4_stars" name="hotel" type="radio" onclick="HotelClassChanged()" class="radio-custom"><span class="radio-custom-dummy"></span><span class="icon fa-star"></span><span class="icon fa-star"></span><span class="icon fa-star"></span><span class="icon fa-star"></span></label><label class="radio-inline"><input id="hotel_5_stars" name="hotel" type="radio" onclick="HotelClassChanged()" class="radio-custom"><span class="radio-custom-dummy"></span><span class="icon fa-star"></span><span class="icon fa-star"></span><span class="icon fa-star"></span><span class="icon fa-star"></span><span class="icon fa-star"></span></label>
+<label style="display:;" class="checkbox-inline"><input id="hotel_better" type="checkbox" checked="" class="checkbox-custom"><span class="checkbox-custom-dummy"></span>и лучше</label></span></div></div></div><div class="range offset-top-0"><div class="cell-xs">
+<div class="form-group radio-inline-wrapper"><label>Питание:</label><label class="radio-inline"><input id="pansion_RO" name="pansion" type="radio" onclick="PansionClassChanged()" class="radio-custom"><span class="radio-custom-dummy"></span><b>RO</b> нет</label><label class="radio-inline"><input id="pansion_BB" name="pansion" type="radio" onclick="PansionClassChanged()" class="radio-custom"><span class="radio-custom-dummy"></span><b>BB</b> завтрак</label><label class="radio-inline"><input id="pansion_HB" name="pansion" type="radio" onclick="PansionClassChanged()" class="radio-custom"><span class="radio-custom-dummy"></span><b>HB</b> полупансион</label><label class="radio-inline"><input id="pansion_FB" name="pansion" type="radio" onclick="PansionClassChanged()" class="radio-custom"><span class="radio-custom-dummy"></span><b>FB</b> пансион</label><label class="radio-inline"><input id="pansion_AI" name="pansion" type="radio" onclick="PansionClassChanged()" class="radio-custom"><span class="radio-custom-dummy"></span><b>AI</b> всё включено</label><label style="display:;" class="checkbox-inline"><input id="pansion_better" type="checkbox" checked="" class="checkbox-custom"><span class="checkbox-custom-dummy"></span>и лучше</label></div></div></div><div class="range offset-top-0"><div class="cell-xs offset-top-10"><div class="form-group"><div style="white-space:nowrap"><label class="form-group-label"><span class="icon fa-map-marker"></span> Откуда</label></div>
+
+<select style="cursor:pointer;" id="City" onclick="SaveUserSettings();" onchange="CityChanged();" class="form-control">
+
+<option value="Брест">Брест</option>
+<option value="Варшава">Варшава</option>
+<option value="Вильнюс">Вильнюс</option>
+<option value="Витебск">Витебск</option>
+<option value="Гомель">Гомель</option>
+<option value="Гродно">Гродно</option>
+<option value="Киев">Киев</option>
+<option value="Львов">Львов</option>
+<option value="Минск">Минск</option>
+<option value="Москва">Москва</option></select></div></div><div class="cell-xs offset-top-10"><div class="form-group"><div style="white-space:nowrap"><label class="form-group-label"><span class="icon fa-flag"></span> Куда</label></div>
+
+<select style="cursor:pointer;" id="Country" onclick="SaveUserSettings();" onchange="CountryChanged();" class="form-control">
+
+<option value="Абхазия">Абхазия</option>
+<option value="Австрия">Австрия</option>
+<option value="Азербайджан">Азербайджан</option>
+<option value="Албания">Албания</option>
+<option value="Англия">Англия</option>
+<option value="Андорра">Андорра</option>
+<option value="Беларусь">Беларусь</option>
+<option value="Бельгия">Бельгия</option>
+<option value="Болгария">Болгария</option>
+<option value="Вьетнам">Вьетнам</option>
+<option value="Германия">Германия</option>
+<option value="Греция">Греция</option>
+<option value="Грузия">Грузия</option>
+<option value="Дания">Дания</option>
+<option value="Доминикана">Доминикана</option>
+<option value="Египет">Египет</option>
+<option value="Израиль">Израиль</option>
+<option value="Индия">Индия</option>
+<option value="Индонезия">Индонезия</option>
+<option value="Испания">Испания</option>
+<option value="Италия">Италия</option>
+<option value="Кипр">Кипр</option>
+<option value="Китай">Китай</option>
+<option value="Куба">Куба</option>
+<option value="Латвия">Латвия</option>
+<option value="Литва">Литва</option>
+<option value="Маврикий">Маврикий</option>
+<option value="Малайзия" disabled="disabled">Малайзия</option>
+<option value="Мальдивы">Мальдивы</option>
+<option value="Мальта">Мальта</option>
+<option value="Марокко">Марокко</option>
+<option value="Мексика">Мексика</option>
+<option value="Монако" disabled="disabled">Монако</option>
+<option value="ОАЭ">ОАЭ</option>
+<option value="Португалия">Португалия</option>
+<option value="Россия">Россия</option>
+<option value="Сейшелы">Сейшелы</option>
+<option value="Таиланд">Таиланд</option>
+<option value="Танзания">Танзания</option>
+<option value="Тунис">Тунис</option>
+<option value="Турция">Турция</option>
+<option value="Украина">Украина</option>
+<option value="Филиппины">Филиппины</option>
+<option value="Финляндия">Финляндия</option>
+<option value="Франция">Франция</option>
+<option value="Черногория">Черногория</option>
+<option value="Чехия">Чехия</option>
+<option value="Швейцария">Швейцария</option>
+<option value="Швеция">Швеция</option>
+<option value="ШриЛанка">ШриЛанка</option></select></div></div><div class="cell-sm offset-top-10" style="min-width: 225px;"><div class="form-group"><div style="white-space:nowrap"><label class="form-group-label"><span class="icon fa-calendar"></span> Когда</label></div><input style="cursor:pointer;" id="DateRange" class="form-control" type="text"></div></div><div class="cell-lg-5 offset-top-10 offset-sm-top-0"><div class="range">  <div class="cell-xs offset-top-10"><div class="form-group"><div style="white-space:nowrap"><label class="form-group-label"><span class="icon fa-moon-o"></span> От</label></div><select style="cursor:pointer;" id="NightsCountFrom" onchange="NightsCountChanged();" class="form-control"><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option></select></div></div><div class="cell-xs offset-top-10"><div class="form-group"><div style="white-space:nowrap"><label class="form-group-label"><span class="icon fa-moon-o"></span> До</label></div><select style="cursor:pointer;" id="NightsCountTo" onchange="NightsCountChanged();" class="form-control"><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option></select></div></div><div class="cell-xs offset-top-10"><div class="form-group"><div style="white-space:nowrap"><label class="form-group-label"><span class="icon fa-user"></span> Взр</label></div><select style="cursor:pointer;" id="Adults" class="form-control"><option value="1">1</option>
+<option value="2">2</option><option value="3">3</option></select></div></div><div class="cell-xs offset-top-10"><div class="form-group"><div style="white-space:nowrap"><label class="form-group-label"><span class="icon fa-child"></span> Реб</label></div><select style="cursor:pointer;" id="Childs" onchange="ChildsChanged();" class="form-control"><option value="0">0</option><option value="1">1</option><option value="2">2</option></select></div></div></div></div></div>
+<div class="range offset-top-0"><div id="ResortKeyWordDiv" class="cell-xs offset-top-10"><div style="min-width: 125px;" class="form-group"><div style="white-space:nowrap"><label class="form-group-label"><span class="icon fa-map-signs"></span> Курорт</label></div><input id="ResortKeyWord" style="text-overflow: ellipsis;" onkeyup="KeyWordChanged('Filter', 'Resorts')" onclick="KeyWordChanged('ShowAll', 'Resorts')" onfocus="this.placeholder='Введите ключевое слово'" onblur="this.placeholder='Выбор курорта'" class="form-control" type="text" placeholder="Выбор курорта"></div></div><div style="min-width: 125px;" id="HotelKeyWordDiv" class="cell-xs offset-top-10"><div class="form-group"><div style="white-space:nowrap"><label class="form-group-label"><span class="icon fa-hotel"></span> Отель</label></div><input id="HotelKeyWord" style="text-overflow: ellipsis;" onkeyup="KeyWordChanged('Filter', 'Hotels')" onclick="KeyWordChanged('ShowAll', 'Hotels')" onfocus="this.placeholder='Введите ключевое слово'" onblur="this.placeholder='Выбор отеля'" class="form-control" type="text" placeholder="Выбор отеля">
+</div></div><div id="Chd1" style="display: none; min-width: 100px;" class="cell-xs offset-top-10"><div class="form-group"><label class="form-group-label"><span class="icon fa-birthday-cake"></span></label><input style="display:none;" id="DateChd1" class="form-control" type="text"><select style="cursor:pointer;" id="AgeChd1" onchange="AgeChd1Changed();" class="form-control"><option value="0">0 лет</option><option value="1">1 год</option><option value="2">2 года</option><option value="3">3 года</option><option value="4">4 года</option><option value="5">5 лет</option><option value="6">6 лет</option><option value="7">7 лет</option><option value="8">8 лет</option><option value="9">9 лет</option><option value="10">10 лет</option><option value="11">11 лет</option><option value="12">12 лет</option></select></div></div><div id="Chd2" style="display: none; min-width: 100px;" class="cell-xs offset-top-10"><div class="form-group"><label class="form-group-label"><span class="icon fa-birthday-cake"></span></label><input style="display:none;" id="DateChd2" class="form-control" type="text"><select style="cursor:pointer;" id="AgeChd2" onchange="AgeChd2Changed();" class="form-control"><option value="0">0 лет</option><option value="1">1 год</option><option value="2">2 года</option><option value="3">3 года</option><option value="4">4 года</option><option value="5">5 лет</option><option value="6">6 лет</option><option value="7">7 лет</option><option value="8">8 лет</option><option value="9">9 лет</option><option value="10">10 лет</option><option value="11">11 лет</option><option value="12">12 лет</option></select></div></div><div style="min-width: 250px; display: none;" class="cell-xs offset-top-10 cell-sm-bottom text-center">
+<div class="form-group"><label style="visibility:hidden;" class="form-group-label"><span class="icon fa-gear"></span></label><div id="TourOperatorLoading" style="display: none;"><div class="spinner"><div class="rect1"></div> <div class="rect2"></div> <div class="rect3"></div> <div class="rect4"></div> <div class="rect5"></div></div></div><div class="btn-group bootstrap-select show-tick form-control"><button type="button" class="dropdown-toggle bs-placeholder btn btn-touroperator btn-sm" data-toggle="dropdown" role="button" data-id="TourOperator" title="Все ТО (5)"><span class="filter-option pull-left">Все ТО (5)</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="8"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Аэротрэвел</span><span class="glyphicon fa-check check-mark"></span></a></li><li data-original-index="9"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Джоин Ап!</span><span class="glyphicon fa-check check-mark"></span></a></li><li data-original-index="10"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Ростинг</span><span class="glyphicon fa-check check-mark"></span></a></li><li data-original-index="11"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Тайм Вояж</span><span class="glyphicon fa-check check-mark"></span></a></li><li data-original-index="12"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">ЦентрКурорт</span><span class="glyphicon fa-check check-mark"></span></a></li></ul></div><select id="TourOperator" style="display:none;" onchange="TourOperatorChanged();" class="form-control" multiple="" size="1" tabindex="-98"><option value="pegas" disabled="disabled">Пегас Туристик</option><option value="bg" disabled="disabled">Библио Глобус</option><option value="tez" disabled="disabled">Тез Тур</option><option value="mouzenidis" disabled="disabled">Музенидис Трэвел</option><option value="tuiru" disabled="disabled">Туи RU</option><option value="kompastour" disabled="disabled">Компас</option><option value="alatan" disabled="disabled">АлатанТур</option><option value="abstour" disabled="disabled">АэроБелСервис</option><option value="airtravel">Аэротрэвел</option><option value="joinup">Джоин Ап!</option><option value="rosting">Ростинг</option><option value="tusson">Тайм Вояж</option><option value="otpusk">ЦентрКурорт</option><option value="balkan" disabled="disabled">Балканинтур</option><option value="vtour" disabled="disabled">ВояжТур</option><option value="ltours" disabled="disabled">Л-Турс</option><option value="podevus" disabled="disabled">Подевюс</option><option value="smok" disabled="disabled">Смок Травел</option><option value="smolyanka" disabled="disabled">Смолянка</option><option value="solvex" disabled="disabled">Солвекс BY</option><option value="toptour" disabled="disabled">Топ-Тур</option><option value="anextourua" disabled="disabled">Анекс тур UA</option><option value="tuiua" disabled="disabled">Туи UA</option></select></div></div></div><div class="cell-xs offset-top-10 cell-sm-bottom text-center"><div style="display:none;" id="SelectedToursTr"><span id="GoToSelectedTours" style="font-size:12px;"><a href="javascript:;" onclick="GoToSelectedTours()"><span class="icon fa-shopping-basket"></span></a></span><span id="ResetSelectedTours" style="font-size:12px;"><a href="javascript:;" onclick="ResetSelectedTours()"><span class="icon fa-remove"></span></a></span></div><button id="Button_search" onclick="OnSearchButton();" class="btn btn-primary btn-sm btn-naira btn-naira-up" style="min-width: 250px;">
+<span id="Button_search_icon" class="icon fa-search"></span><span id="Button_search_text">Найти туры</span></button></div></div></div> <div class="range offset-top-0" id="SelectedResortsOrHotels" style="font-size: 12px; display: none;"></div></div><div class="resp-accordion" role="tab" aria-controls="tab_item-1"><span class="resp-arrow"></span><span class="icon fa-gear"></span><span>Опции</span></div><div id="Tab_2" class="resp-tab-content" aria-labelledby="tab_item-1"><div class="range"><div class="cell-md-12"><div class="form-group checkbox-inline-wrapper"><label class="checkbox-inline"><input id="avia_warranty" type="checkbox" onclick="SaveUserSettings();" class="checkbox-custom"><span class="checkbox-custom-dummy"></span>Мгновенное подтверждение билетов (есть билеты)</label><label class="checkbox-inline"><input id="hotel_warranty" type="checkbox" onclick="SaveUserSettings();" class="checkbox-custom"><span class="checkbox-custom-dummy"></span>Мгновенное подтверждение мест в отеле (есть места)</label></div></div><div class="cell-md-12"><div class="form-group checkbox-inline-wrapper"><label class="radio-inline"><input checked="" id="real_currency" name="currency_group" type="radio" onclick="SaveUserSettings();" class="radio-custom"><span class="radio-custom-dummy"></span>Отображать цены в валюте тура + эквивалент в национальной валюте</label><label class="radio-inline"><input id="national_currency" name="currency_group" type="radio" onclick="SaveUserSettings();" class="radio-custom"><span class="radio-custom-dummy"></span>Отображать цены только в национальной валюте</label></div></div><div class="cell-md-12"><div class="form-group checkbox-inline-wrapper"><label class="radio-inline"><input checked="" id="national_currency_byn" name="national_currency_group" type="radio" onclick="SaveUserSettings();" class="radio-custom"><span class="radio-custom-dummy"></span>Белорусский рубль (BYN, Br)</label><label class="radio-inline"><input id="national_currency_kzt" name="national_currency_group" type="radio" onclick="SaveUserSettings();" class="radio-custom"><span class="radio-custom-dummy"></span>Казахстанский тенге (KZT, ₸)</label><label class="radio-inline"><input id="national_currency_rub" name="national_currency_group" type="radio" onclick="SaveUserSettings();" class="radio-custom"><span class="radio-custom-dummy"></span>Российский рубль (RUB, ₽)</label><label class="radio-inline"><input id="national_currency_uah" name="national_currency_group" type="radio" onclick="SaveUserSettings();" class="radio-custom"><span class="radio-custom-dummy"></span>Украинская гривна (UAH, ₴)</label></div></div></div></div><div class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span><span class="icon fa-info-circle"></span><span>Справка</span></div><div id="Tab_3" class="resp-tab-content" aria-labelledby="tab_item-2"><div class="range"><div class="cell-md-12"><div style="text-align:justify;">Как просто выбрать тур!!!
+Задаем нужные параметры поиска:
+Откуда летим(например: Минск/Киев/Москва/Вильнюс/Варшава).
+Куда летим (страна отдыха).
+Окно вылета (даты вылета, а не всего отпуска)
+Количество взрослых и детей (если есть дети, с указанием их возраста)
+Количество ночей на отдыхе
+Тип питания: AI(все включено)
+ВВ( только завтрак)
+HB( завтрак-ужин)
+FB( завтрак –обед-ужин)
+RO( без питания)
+Можно выбрать курорт и отель, если есть предпочтения, если нет, ничего не выбираем.
+Далее-нажимаем кнопку найти туры. Вам будут предложены туры, начиная от самых недорогих.
+Меняя параметры поиска, будет меняться цена.
+Хотите узнать детали перелета и прочие подробности – жмите подробнее. Разворачивается подробное описание тура Если пройти по ссылке отеля, вы попадете на сайт с отзывами и описанием отеля. Не знаете, на каком отеле остановиться?
+Есть определенные предпочтения по отелю?
+Запутались в поисковике?
+Мы всегда рады Вам помочь! </div></div></div></div></div></div></div>
+</div></div></header>
+<div class="progress"><div id="Control_search_progress" class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%"></div></div><div style="padding-left:7px; padding-right:7px; text-align:left;"><div id="search_results"><div id="search_title"></div><div id="search_status"></div><div id="search_info" style="display:none; font-size:12px; padding-bottom:2px;"></div><div id="dynamic_table">
+</div></div><div id="note"><div id="ChckedTours" style="display:none;"><div style="text-align:center;"><b>Сравнение туров</b></div><div style="text-align:right; padding-top:5px; padding-bottom:5px;"><label><input style="vertical-align:middle" type="checkbox" id="CheckHideTO" onclick="CB()" class="checkbox-custom"><span class="checkbox-custom-dummy"></span> Скрыть ТО</label> <label><input style="vertical-align:middle" type="checkbox" id="CheckAddHotelLink" onclick="CB()" class="checkbox-custom"><span class="checkbox-custom-dummy"></span> Добавить ссылку на отель:</label> <select onchange="CB()" id="SelectLinkDonor" style="height:22px; font-size: 12px; width:125px"><option value="HotelPhotos">Фото отеля</option><option value="TopHotels">TopHotels</option><option value="TripAdvisor">TripAdvisor</option></select> Коррекция цены: <select onchange="CB()" id="SelectDiscont" style="height:22px; font-size: 12px; width:80px"><option value="0.00">0%</option><option value="0.005">0.5%</option><option value="0.01">1%</option><option value="0.015">1.5%</option><option value="0.02">2%</option><option value="0.025">2.5%</option><option value="0.03">3%</option><option value="0.035">3.5%</option><option value="0.04">4%</option><option value="0.045">4.5%</option><option value="0.05">5 %</option><option value="0.06">6 %</option><option value="0.07">7 %</option></select> Обращение: <input type="text" id="EditTetxBefore" onchange="CB()" onkeyup="CB()" style="height:22px; font-size: 12px; width:150px"> Подпись: <input type="text" id="EditTetxAfter" onchange="CB()" onkeyup="CB()" style="height:22px; font-size: 12px; width:150px"></div><div style="text-align:justify;"><textarea id="ChckedToursContent" onchange="ChckedToursContentChanged()" onkeyup="ChckedToursContentChanged()" rows="20" style="width:100%;" class="boxsizingBorder"></textarea></div></div>
+
+
+
+</div></div></div>
+
+<!--Блокирующий JS: первичный рендеринг не нужен в принципе, так как контент сайта динамический, а полная загрузка занимает всего пол-секунды-->
+<script type="text/javascript" src="js/misc.js?v=1552557306"></script>
+<script type="text/javascript" src="js/main.js?v=1552557306"></script>
+<script type="text/javascript">var InlineModuleOperators = 'alatan,anextourua,abstour,airtravel,balkan,bg,vtour,joinup,kompastour,ltours,mouzenidis,pegas,podevus,rosting,smok,smolyanka,solvex,tusson,tez,toptour,tuiru,tuiua,otpusk';var InlineModuleCity = 'Минск';var InlineModuleCountry = 'Албания';var InlineModuleDatesRange = 'auto1';var InlineModuleNightsFrom = '7';var InlineModuleNightsTo = '11';var InlineModuleAdults = '2';var InlineModuleChilds = '0';var InlineModuleAgeChd1 = '4';var InlineModuleAgeChd2 = '7';var InlineModuleStarsFrom = '2*';var InlineModulePansionFrom = 'RO';var InlineModuleAviaWarranty = 'false';var InlineModuleHotelWarranty = 'false';var InlineModuleCurrencyMode = 'national_currency';var InlineModuleNationalCurrency = 'BYN';var InlineModuleNationalCurrencyCorrection = '2.50';var InlineModuleHideOperators = 'true';var InlineModuleAutoStart = 'false';var InlineModulePhone = '+375 (29) 132 18 00, +375 (29) 899 18 00';var InlineModuleMaxTableRowsForOnePage = '500';var InlineModuleMaxHotelsForOperatorInPreview = '3';var InlineModuleMaxSearchDeadLineTime = '45';var InlineModuleAlwaysHideLogoOnPoorSpace = 'true';var InlineModuleAlwaysGoToOperatorByPriceClickInTable = 'false';var InlineModuleAlwaysGroupPansionTypesInInTable = 'false';var InlineModuleTableStructureTemplate = '1';var InlineModuleAlwaysGoToOperatorResultsListByLogoClickInTable = 'false';var InlineModuleShowBasketCheckboxes = 'false';var InlineModuleSpoColumnVisible = 'true';var InlineModuleShowNationalCurrencyAsSymbol = 'true';var InlineModuleNationalPriceFixedDemension = '0';</script>
+<!--Курсы были успешно считаны во время генерации страницы: сэкономили 1 тяжелый реквест, к которому цепляются куки, не помещающиеся в 1 сетевой пакет... Подстраховка AJAX используется только при перегрузке сервера/наличии 500-х ошибок-->
+<script type="text/javascript">var InlineCrossQuotesArr = [
+    {
+        "CurrencyCharCode": "UAH",
+        "Rate": 0.079824
+    },
+    {
+        "CurrencyCharCode": "USD",
+        "Rate": 2.1349
+    },
+    {
+        "CurrencyCharCode": "EUR",
+        "Rate": 2.4108
+    },
+    {
+        "CurrencyCharCode": "RUB",
+        "Rate": 0.032578
+    },
+    {
+        "CurrencyCharCode": "KZT",
+        "Rate": 0.0056489
+    }
+]</script>
+
+
+<div style="clear: both; display: block;"></div><div class="daterangepicker dropdown-menu ltr show-calendar opensright"><div class="calendar left"><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_start" value=""><i class="fa fa-calendar glyphicon glyphicon-calendar"></i><div class="calendar-time" style="display: none;"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"></div></div><div class="calendar right"><div class="daterangepicker_input"><input class="input-mini form-control" type="text" name="daterangepicker_end" value=""><i class="fa fa-calendar glyphicon glyphicon-calendar"></i><div class="calendar-time" style="display: none;"><div></div><i class="fa fa-clock-o glyphicon glyphicon-time"></i></div></div><div class="calendar-table"></div></div><div class="ranges" style="display: none;"><div class="range_inputs"><button class="applyBtn btn btn-sm btn-success" disabled="disabled" type="button">Ок</button> <button class="cancelBtn btn btn-sm btn-default" type="button">Отмена</button></div></div></div></body></html>
