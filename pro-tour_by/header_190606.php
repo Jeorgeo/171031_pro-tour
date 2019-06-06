@@ -66,7 +66,8 @@
 			<div class="contacts clearfix">
 				<div class="slogan">
 					<p>
-						вместе с нами отдыхай!
+						It's time to travel<br>
+						Время путешествовать!
 					</p>
 				</div>
 				<div class="contats_title velcom">
@@ -78,10 +79,8 @@
 					<?php dynamic_sidebar( 'phone-m2' ); ?>
 				</div>
 				<div class="contats_title">
+					<?php dynamic_sidebar( 'mail' ); ?>
 					<?php dynamic_sidebar( 'skype' ); ?>
-				</div>
-        <div class="contats_btn">
-					<button class="btn btn-primary btn-sm btn-naira btn-naira-up cloud-link" type="button" name="button">заказать звонок <span class="cloud-mark">верхняя форма</span></button>
 				</div>
 			</div>
 		</div>

@@ -746,7 +746,33 @@ span.hide-text {
 --------------------------------------------------------------*/
 
 header {
-  margin-bottom: 65px;
+  margin-bottom: 55px;
+}
+
+header .contats_btn {
+  position: absolute;
+  top: 55px;
+}
+
+header .btn-sm {
+  padding: 7px 14px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+header .btn-primary {
+  color: #fff;
+  border-color: #ec7920;
+  background: linear-gradient(0deg, #d37225 0%, #d37225 100%);
+  transition: all 0.5s;
+}
+
+header .btn-primary:hover {
+  cursor: pointer;
+  background: rgba(61,89,116,0.70);
+  border-color: #3d5974;
+  transition: all 0.5s;
 }
 
 .float-header {
@@ -2504,6 +2530,10 @@ footer .wiget a {
 
   .float-header {
     min-height: 40px;
+  }
+
+  header .contats_btn {
+    position: static;
   }
 
   .slogan {
