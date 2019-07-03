@@ -44,7 +44,8 @@ if ( ! function_exists( 'pro_tour_by_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'pro-tour_by' ),
+			'main-menu' => esc_html__( 'Главное', 'pro-tour_by' ),
+			'second-menu' => esc_html__( 'Вспомогательное', 'pro-tour_by' ),
 		) );
 
 		/*
@@ -246,12 +247,6 @@ add_action( 'widgets_init', 'pro_tour_by_widgets_init' );
  */
 function pro_tour_by_scripts() {
 
-	wp_enqueue_style( 'pro-tour_by-diamonds-style', get_template_directory_uri() . '/css/diamonds.css');
-
-	wp_enqueue_style( 'pro-tour_by-gallery-style', get_template_directory_uri() . '/css/gallery.css');
-
-	wp_enqueue_style( 'pro-tour_by-wowstyle', get_template_directory_uri() . '/engine/style.css');
-
 	wp_enqueue_style( 'pro-tour_by-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'pro-tour_by-modernizr', get_template_directory_uri() . '/js/modernizr.custom.53451.js', array(), '20151215', true );
@@ -261,14 +256,6 @@ function pro_tour_by_scripts() {
 	wp_enqueue_script( 'pro-tour_by-jquery-m', get_template_directory_uri() . '/js/jquery-migrate-1.4.1.min.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'pro-tour_by-maskedinput', get_template_directory_uri() . '/js/maskedinput.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'pro-tour_by-diamonds', get_template_directory_uri() . '/js/jquery.diamonds.js', array(), '1', true );
-
-	wp_enqueue_script( 'pro-tour_by-gallery', get_template_directory_uri() . '/js/jquery.gallery.js', array(), '1', true );
-
-	wp_enqueue_script( 'pro-tour_by-wowslider', get_template_directory_uri() . '/engine/wowslider.js', array(), '1', true );
-
-	wp_enqueue_script( 'pro-tour_by-wowscript', get_template_directory_uri() . '/engine/script.js', array(), '1', true );
 
 	wp_enqueue_script( 'pro-tour_by-main', get_template_directory_uri() . '/js/main.js', array(), '1', true );
 
@@ -304,34 +291,14 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/tgm/tgm-files.php';
 
 /**
- * Require slider.
+ * Подключаем записи виза
  */
-require get_template_directory() . '/inc/tops.php';
+require get_template_directory() . '/inc/visa.php';
 
 /**
- * Require aviatours.
- */
-require get_template_directory() . '/inc/avia.php';
-
-/**
- * Require autotours.
- */
-require get_template_directory() . '/inc/auto.php';
-
-/**
- * Require news.
- */
-require get_template_directory() . '/inc/news.php';
-
-/**
- * Require operators.
+ * Подключаем записи Операторы
  */
 require get_template_directory() . '/inc/opers.php';
-
-/**
- * Require operators.
- */
-require get_template_directory() . '/inc/tabs.php';
 
 /**
  * Load Jetpack compatibility file.

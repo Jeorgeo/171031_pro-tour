@@ -15,7 +15,10 @@
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php pro_tour_by_posted_on(); ?>
+			<?php
+			pro_tour_by_posted_on();
+			pro_tour_by_posted_by();
+			?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
