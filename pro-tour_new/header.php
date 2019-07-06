@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 	<header class="header">
-		<div class="mobile-header header__top-box shadow-small">
+		<div class="mobile-header header__top-box">
 			<div class="container header__container">
 				<button class="mobile-header__hamburger hamburger hamburger-elastic" type="button">
 					<span class="hamburger-box">
@@ -37,13 +37,16 @@
 				</a>
 				<div class="header__slogan">
 					<p>
-						Мир открыт - <br>открой себя миру!
+						Мир открыт <br>
+						открой себя <br>
+						миру!
 					</p>
 				</div>
-				<div class="header__adress">
+				<div class="header__adress adress">
 					<p>
-						г.Лида Торгово-сервисный центр пав.312
-						<span>ул. Победы, 37</span>
+						г.Лида, ул. Победы, 37 <br>
+						Торгово-сервисный центр<br>
+						офис 312
 					</p>
 				</div>
 				<div class="mobile-header__phone-box">
@@ -53,7 +56,7 @@
 				<a href="#" class="btn header__btn">заказать звонок</a>
 			</div>
 		</div>
-		<div class="header__menu menu active shadow-small">
+		<div class="header__menu menu">
 			<div class="container menu__container">
 				<nav class="main-menu">
 					<div id="Вспомогательное" class="menu">

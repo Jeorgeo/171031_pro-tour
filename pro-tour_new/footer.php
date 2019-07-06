@@ -11,71 +11,107 @@
 
 ?>
 
-<footer>
-	<div class="footer-container">
-		<div class="column-1">
-			<a href="<?php echo get_home_url(); ?>">
-				<figure class="logo-box">
-					<img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="Туристическое агенство Pro-tour.by">
-					<h1>Туристическое агенство</h1>
-				</figure>
+<footer class="footer">
+	<div class="container footer__container">
+		<section class="column-1">
+			<h3 class="visuallyhidden">Туристическое агенство "ПРО-ТУР"</h3>
+			<a href="#" class="logo footer__logo">
+				<img src="<?bloginfo('template_url'); ?>/img/pro-tour_w.png" alt="">
 			</a>
-			<div class="copy">
-				<p>
-					Общество с ограниченной ответсвенностью "ПРО-ТУР"<br>
-					УНП 591361984<br>
-					Свидетельсто №591361984 о государственной регистрации.<br>
-					Выдано 28.11.2017 Лидским районным исполнительным комитетом.<br>
-					Юридический адрес:<br>
-					231300, г.Лида, ул.Победы, д.37, к.312<br>
-					Зарегистрирован в Реестре субъектов туристической деятельности Республики Беларусь 28 декабря 2017 года<br>
-					Все права защищены.<br>
-					Предложение не является публичной офертой.<br>
-					<!-- <a href="#">Политика конфидинциальности</a> -->
-				</p>
-			</div>
-		</div>
-		<div class="column-2">
-			<div class="social">
-				<?php dynamic_sidebar( 'social_vk' ); ?>
-				<?php dynamic_sidebar( 'social_ok' ); ?>
-				<?php dynamic_sidebar( 'social_f' ); ?>
-				<?php dynamic_sidebar( 'social_inst' ); ?>
-			</div>
 			<p>
-				Туристическое агенство "PRO-tour.by"<br>
-				Наш адрес:<br>
-				г. Лида, Торгово-сервисный центр, к.312<br>
-				(ул. Победы, д.37)<br>
-				Режим работы:<br>
-				пн-пт: 10:00 - 17:30<br>
-				сб: 10:00 - 16:00<br>
-				вс: выходной
+				ООО "ПРО-ТУР" УНП 591361984<br>
+				Свидетельсто №591361984<br>
+				о государственной регистрации.
+				Выдано 28.11.2017 Лидским районным исполнительным комитетом.<br>
+				Юридический адрес:<br>
+				231300, г.Лида, ул.Победы, д.37, к.312<br>
+				Зарегистрирован в Реестре субъектов туристической деятельности Республики Беларусь 28.12.2017<br>
 			</p>
-			<div class="social">
-				<div class="social-icons social_viber"><a href="tel:+375291321800"></a></div>
-				<div class="social-icons social_watsapp"><a href="tel:+375291321800"></a></div>
-				<div class="social-icons social_telegram"><a href="tel:+375291321800"></a></div>
-			</div>
-			<div class="contats_title velcom">
-				<?php dynamic_sidebar( 'phone-v1' ); ?>
-				<?php dynamic_sidebar( 'phone-v2' ); ?>
-			</div>
-			<div class="contats_title mts">
-				<?php dynamic_sidebar( 'phone-m1' ); ?>
-				<?php dynamic_sidebar( 'phone-m2' ); ?>
-			</div>
-			<div class="contats_title">
-				<?php dynamic_sidebar( 'mail' ); ?>
-				<?php dynamic_sidebar( 'skype' ); ?>
-			</div>
-
-
-		</div>
-		<div class="column-3">
-				<img src="<?php bloginfo('template_url'); ?>/img/map.jpg" alt="">
-		</div>
+		</section>
+		<section class="column-2">
+			<h3>
+				Информация
+			</h3>
+			<ul class="footer-menu">
+				<li><a href="#">О нас</a></li>
+				<li><a href="#">Новости</a></li>
+				<li><a href="#">Частые вопросы</a></li>
+				<li><a href="#">Сертификаты и дипломы</a></li>
+				<li><a href="#">Вакансии</a></li>
+				<li><a href="#">Акции</a></li>
+			</ul>
+		</section>
+		<section class="column-3">
+			<h3>
+				Услуги
+			</h3>
+			<ul class="footer-menu">
+				<li><a href="#">Авиатуры</a></li>
+				<li><a href="#">Автобусные туры</a></li>
+				<li><a href="#">Медицинское страхование за границей</a></li>
+				<li><a href="#">Визовая поддержка</a></li>
+				<li><a href="#">Корпоративный туризм</a></li>
+				<li><a href="#">Подарочные сертификаты</a></li>
+			</ul>
+		</section>
+		<section class="column-4">
+			<article class="box-41">
+				<h3>
+					Давайте дружить
+				</h3>
+				<ul class="social">
+					<li class="social__icon ins"><a href="#" target="_blank" rel="nofollow">Инстаграмм</a></li>
+					<li class="social__icon tel"><a href="#" target="_blank" rel="nofollow">Телеграм</a></li>
+					<li class="social__icon vk"><a href="#" target="_blank" rel="nofollow">Вконтакте</a></li>
+					<li class="social__icon fb"><a href="#" target="_blank" rel="nofollow">фейсбук</a></li>
+					<li class="social__icon ok"><a href="#" target="_blank" rel="nofollow">одноклассники</a></li>
+				</ul>
+				<div class="mobile-header__phone-box">
+					<a class="mobile-header__phone-button phone-button velcom" href="#">+375(29)132-18-00</a>
+					<a class="mobile-header__phone-button phone-button mts" href="#">+375(29)899-18-00</a>
+				</div>
+				<div class="header__adress adress">
+					<p>
+						<span class="color-w">Ждем вас в гости здесь:</span><br>
+						г.Лида, ул. Победы, 37 <br>
+						Торгово-сервисный центр<br>
+						офис 312
+					</p>
+				</div>
+				<div class="clock footer__clock">
+					<p>
+						<span class="color-w">Наши двери открыты:</span><br>
+						пн-пт: 10:00 - 19:00<br>
+						сб: 10:00 - 16:00<br>
+						вс: выходной
+					</p>
+				</div>
+			</article>
+			<article class="box-42">
+				<h3>
+					Наши партнеры
+				</h3>
+				<ul class="payment">
+					<li class="payment__icon erip">Ерип</li>
+					<li class="payment__icon e-pos">е-пос</li>
+					<li class="payment__icon visa">виза</li>
+					<li class="payment__icon mastercard">мастеркард</li>
+					<li class="payment__icon easy-pay">изи-пэй</li>
+				</ul>
+			</article>
+		</section>
 	</div>
+	<section class="dark">
+		<div class="container">
+			<p>
+	      Все права защищены. Перепечатка материалов разрешена только с указанием автора с активной ссылкой на сайт <a href="#">PRO-tour.by</a><br>
+				<a href="#">Политика конфиденциальности</a> Все предложения и цены на сайте носят информационный характер и не являются публичной афертой.
+	    </p>
+			<p>
+				© 2019 | Заряжено на результат <a href="#">RStudio</a>
+			</p>
+		</div>
+	</section>
 </footer>
 <div class="wrap"></div>
 <div id="window" class="popup-question">
@@ -122,11 +158,6 @@
 <script type="text/javascript">
  jQuery(function($){
  $("#phone").mask("+375(99) 999-99-99");
- $(".diamondswrap").diamonds({
-	size: 250, // Size of the squares
-	gap: 5 // Pixels between squares
-	});
- $('#dg-container').gallery();
  });
  </script>
 
