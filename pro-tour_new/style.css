@@ -706,7 +706,7 @@ img {
   border: 1px solid #ef7b00;
   outline: none;
   transition: all 0.5s;
-  box-shadow: 2px 2px 5px rgba(29, 34, 98, 0.5);
+  box-shadow: 2px 2px 5px rgba(29, 34, 98, 0.4);
   box-sizing: border-box;
 }
 
@@ -1026,8 +1026,10 @@ body {
   display: block;
   width: calc(100% - 22px);
   height: 78px;
+  background-color: #ffffff;
   border: 1px solid #ef7b00;
   border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(29, 34, 98, 0.3);
   content: '';
 }
 
@@ -1060,9 +1062,11 @@ body {
 }
 
 .offer p {
+  position: relative;
   display: block;
   width: calc(100% - 110px);
   margin: 0;
+  z-index: 99;
 }
 
 .offer p span {
@@ -1076,7 +1080,7 @@ body {
 }
 
 .offer:hover figure {
-  box-shadow: 2px 2px 5px #bbbcd0;
+  box-shadow: 2px 2px 5px rgba(29, 34, 98, 0.4);
   transition: all 0.5s ease;
 }
 
@@ -1215,11 +1219,21 @@ body {
 }
 
 .card-box .card-box__img {
+  position: relative;
   width: 100%;
   height: 200px;
   overflow: hidden;
   box-shadow: 2px 2px 15px #bbbcd0;
   transition: all 0.5s ease;
+}
+
+.card-box .card-box__img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-box__text {
@@ -1249,46 +1263,58 @@ body {
   z-index: 9999;
 }
 
-.descriprion-box {
+.descriprion-box,
+.main-opers,
+.main-news {
   position: relative;
+  padding: 1em 0;
+  background: #ffffff;
+  z-index: 999;
 }
 
 .descriprion-box.dark {
-  padding: 1em 0;
   color: #ffffff;
   background: #1d2262;
 }
 
 .descriprion-box::before,
-.descriprion-box::after {
+.descriprion-box::after,
+.main-opers::before,
+.main-news::before,
+.main-opers::after,
+.main-news::after {
   position: absolute;
   display: block;
   height: 16px;
   background: #ef7b00;
   border-radius: 8px;
   content: '';
-  z-index: 9999;
+  z-index: 991;
 }
 
-.descriprion-box.avia::before {
+.descriprion-box.avia::before,
+.main-opers::before {
   bottom: 0;
   left: -10px;
   width: 100px;
 }
 
-.descriprion-box.avia::after {
+.descriprion-box.avia::after,
+.main-opers::after {
   bottom: 0;
   left: 100px;
   width: 16px;
 }
 
-.descriprion-box.auto::before {
+.descriprion-box.auto::before,
+.main-news::before {
   top: 0;
   right: -10px;
   width: 50px;
 }
 
-.descriprion-box.auto::after {
+.descriprion-box.auto::after,
+.main-news::after {
   top: -16px;
   left: 125px;
   width: 16px;
@@ -1779,7 +1805,15 @@ form label.cloud-form__сonsent {
   }
 
   .main-about__advantages {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
     margin: 1.5em 0;
+  }
+
+  .main-about__advantages li {
+    width: 30%;
   }
 
   .card-box {
@@ -1828,42 +1862,67 @@ form label.cloud-form__сonsent {
     left: 8px;
   }
 
-
 }
 
-/*============== for tablets 720px ===========================*/
-@media screen and (min-width: 720px) {
+/*============== for tablets 768px ===========================*/
+@media screen and (min-width: 768px) {
 
   /*--------------------------------------------------------------
-  # Typography 720px
+  # Typography 768px
   --------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
-  # Header 720px
+  # Header 768px
   --------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
-  # Content 720px
+  # Content 768px
   --------------------------------------------------------------*/
 
   .main-slider {
-    background: url('img/bg_main.jpg') no-repeat 0 0;
-    background-size: 50%;
+    position: relative;
+    padding-bottom: 1em;
+    background: url('img/bg_main.jpg') no-repeat 0 60px;
+    background-size: 40%;
+    background-attachment: fixed;
   }
 
-  .main-about__advantages {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
+  .main-slider div {
+    position: relative;
+    z-index: 999;
   }
 
-  .main-about__advantages li {
-    width: 30%;
+
+  .offer figure {
+    box-shadow: -3px 2px 12px rgba(29, 34, 98, 0.4);
+    transition: all 0.5s ease;
   }
+
+  .offer:hover::before {
+    box-shadow: 1px 1px 3px rgba(29, 34, 98, 0.4);
+  }
+
+  .main-slider::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('img/bg_main_1.jpg') no-repeat 90% 10%;
+    background-size: 15%;
+    background-attachment: fixed;
+    content: '';
+    z-index: 9;
+  }
+
+  .main-about {
+    margin: 0;
+  }
+
 
   /*--------------------------------------------------------------
-  # Footer 720px
+  # Footer 768px
   --------------------------------------------------------------*/
 }
 
@@ -1887,6 +1946,46 @@ form label.cloud-form__сonsent {
   .card-box {
     width: 32%;
   }
+
+  .descriprion-box.auto::before, .main-news::before {
+    width: 150px;
+  }
+
+  .main-about {
+    display: flex;
+    padding: 0;
+    margin-bottom: 1em;
+  }
+
+  .main-about__advantages {
+    flex-direction: column;
+    align-items: stretch;
+    height: 80%;
+    padding: 30px;
+  }
+
+  .main-about__advantages li {
+    width: 100%;
+    text-align: left;
+  }
+
+  .advantages__icon span,
+  .advantages__icon p {
+    margin-left: 15px
+  }
+
+  .main-news {
+    margin-bottom: 2em;
+  }
+
+  .news-box.flex-box {
+    justify-content: space-between;
+  }
+
+  .news-box__offer {
+    width: 30%;
+  }
+
 
   /*--------------------------------------------------------------
   # Footer 920px
@@ -2210,6 +2309,56 @@ form label.cloud-form__сonsent {
   # Content 1280px
   --------------------------------------------------------------*/
 
+  .main-slider {
+    background: url('img/bg_main.jpg') no-repeat 0 33%;
+    background-size: 30%;
+    background-attachment: fixed;
+  }
+
+  .main-slider::after {
+    background: url('img/bg_main_1.jpg') no-repeat 90% 28%;
+    background-size: 11%;
+    background-attachment: fixed;
+  }
+
+  .main-slider__offers {
+    width: 60%;
+    margin: 3em auto 3em 30%;
+  }
+
+  .main-about {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .main-about__text {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 0 0 auto;
+  }
+
+  .main-about__top {
+    width: 60%;
+    box-sizing: border-box;
+  }
+
+  .main-about__icons {
+    width: 40%;
+    box-sizing: border-box;
+  }
+
+  .descriprion-box.auto {
+    padding-bottom: 2em;
+  }
+
+  .button-box {
+    width: 70%;
+  }
+
+  .card-box {
+    width: 24%;
+  }
+
 
   /*--------------------------------------------------------------
   # Footer 1280px
@@ -2241,6 +2390,10 @@ form label.cloud-form__сonsent {
   # Content 1366px
   --------------------------------------------------------------*/
 
+  .main-about__advantages li {
+    margin-bottom: 3em;
+  }
+
 
   /*--------------------------------------------------------------
   # Footer 1366px
@@ -2266,6 +2419,26 @@ form label.cloud-form__сonsent {
   /*--------------------------------------------------------------
   # Content 1600px
   --------------------------------------------------------------*/
+
+  .main-slider {
+    padding: 4em 0;
+  }
+
+  .main-slider h3 {
+    font-size: 1.5em;
+  }
+
+  .main-slider h3 span {
+    font-size: 2.5em;
+  }
+
+  .main-about__top {
+    width: 50%;
+  }
+
+  .main-about__icons {
+    width: 50%;
+  }
 
 
   /*--------------------------------------------------------------

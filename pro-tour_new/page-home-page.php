@@ -72,24 +72,26 @@ get_header();
       </article>
       </div>
     </div>
-    <div class="container main-container">
-      <ul class="main-about__advantages">
-        <li class="advantages__icon icon-like">
-          <i></i>
-          <span class="advantages__title">98% +</span>
-          <p>Довольных клиентов</p>
-        </li>
-        <li class="advantages__icon icon-clients">
-          <i></i>
-          <span class="advantages__title">2000 +</span>
-          <p>Туристов зарядились эмоциями</p>
-        </li>
-        <li class="advantages__icon icon-cream">
-          <i></i>
-          <span class="advantages__title">900 +</span>
-          <p>Тюбиков крема от загара израсходовано</p>
-        </li>
-      </ul>
+    <div class="main-about__icons">
+      <div class="container main-container">
+        <ul class="main-about__advantages">
+          <li class="advantages__icon icon-like">
+            <i></i>
+            <span class="advantages__title">98% +</span>
+            <p>Довольных клиентов</p>
+          </li>
+          <li class="advantages__icon icon-clients">
+            <i></i>
+            <span class="advantages__title">2000 +</span>
+            <p>Туристов зарядились эмоциями</p>
+          </li>
+          <li class="advantages__icon icon-cream">
+            <i></i>
+            <span class="advantages__title">900 +</span>
+            <p>Тюбиков крема от загара израсходовано</p>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
   <section class="main-avia">
@@ -228,7 +230,7 @@ get_header();
       <h3 class="section-title">Наши друзья и партнеры</h3>
     </div>
     <div class="container">
-      <div class="main-opers__slider main-slider">
+      <div class="main-opers__slider">
         <figure class="main-opers__slide">
           <img src="<?bloginfo('template_url'); ?>/pics/belavia_logo.gif" alt="">
           <div class="cloud-descript">
@@ -307,6 +309,9 @@ get_header();
           <span class="offer__more">Подробнее...</span>
         </p>
       </a>
+    </div>
+    <div class="container">
+      <a href="#2" class="btn card-box__btn">Все новости и статьи</a>
     </div>
   </section>
 </main>
