@@ -94,136 +94,220 @@ get_header();
   </section>
   <section class="main-avia">
     <div class="container">
-      <h3>Авиатуры</h3>
+      <h3 class="section-title">Авиатуры и авиабилеты</h3>
       <p>Несколько часов...и вы в другой точке мира, нежитесь на белоснежном пляже.</p>
-    </div>
-    <div class="container main-container">
-      <a href="#">
+      <div class="main-catalog flex-box">
         <article class="main-avia card-box">
-          <figure class="card-box__img">
-            <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-          </figure>
+          <a class="card-box__more" href="#1">
+            <figure class="card-box__img">
+              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
+            </figure>
+          </a>
           <div class="card-box__text">
-            <h4>Индия</h4>
+            <h4>Индия1</h4>
             <p>от 300 рублей</p>
-            <a href="#" class="btn card-box__btn">Полетели</a>
+            <a href="#2" class="btn card-box__btn">Полететь</a>
           </div>
         </article>
-      </a>
-      <article class="main-avia card-box">
-        <figure class="card-box__img">
-          <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-        </figure>
-        <div class="card-box__text">
-          <h4>Индия</h4>
-          <p>от 300 рублей</p>
-          <a href="#" class="btn card-box__btn">Полетели</a>
-        </div>
-      </article>
-      <article class="main-avia card-box">
-        <figure class="card-box__img">
-          <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-        </figure>
-        <div class="card-box__text">
-          <h4>Индия</h4>
-          <p>от 300 рублей</p>
-          <a href="#" class="btn card-box__btn">Полетели</a>
-        </div>
-      </article>
-      <article class="main-avia card-box">
-        <figure class="card-box__img">
-          <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-        </figure>
-        <div class="card-box__text">
-          <h4>Индия</h4>
-          <p>от 300 рублей</p>
-          <a href="#" class="btn card-box__btn">Полетели</a>
-        </div>
-      </article>
-      <article class="main-avia card-box">
-        <figure class="card-box__img">
-          <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-        </figure>
-        <div class="card-box__text">
-          <h4>Индия</h4>
-          <p>от 300 рублей</p>
-          <a href="#" class="btn card-box__btn">Полетели</a>
-        </div>
-      </article>
-      <div class="container main-container">
-        <p>
-          Не нашли что искали? Хотите найдти еще больше сказочных мест для отдыха? Тогда вам сюда!
-        </p>
-        <div class="button-box">
-          <a href="#" class="btn offers-box__btn avia-search">Каталог стран</a>
-          <a href="#" class="btn offers-box__btn avia-search">Поиск авиатура</a>
-        </div>
+        <article class="main-avia card-box">
+          <a class="card-box__more" href="#1">
+            <figure class="card-box__img">
+              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
+            </figure>
+          </a>
+          <div class="card-box__text">
+            <h4>Индия1</h4>
+            <p>от 300 рублей</p>
+            <a href="#2" class="btn card-box__btn">Полететь</a>
+          </div>
+        </article>
+        <article class="main-avia card-box">
+          <a class="card-box__more" href="#1">
+            <figure class="card-box__img">
+              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
+            </figure>
+          </a>
+          <div class="card-box__text">
+            <h4>Индия1</h4>
+            <p>от 300 рублей</p>
+            <a href="#2" class="btn card-box__btn">Полететь</a>
+          </div>
+        </article>
+        <article class="main-avia card-box">
+          <a class="card-box__more" href="#1">
+            <figure class="card-box__img">
+              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
+            </figure>
+          </a>
+          <div class="card-box__text">
+            <h4>Индия1</h4>
+            <p>от 300 рублей</p>
+            <a href="#2" class="btn card-box__btn">Полететь</a>
+          </div>
+        </article>
       </div>
-
+    </div>
+  </section>
+  <section class="descriprion-box dark avia">
+    <div class="container flex-box">
+      <p>
+        Не нашли что искали? Хотите найдти еще больше сказочных мест для отдыха? Тогда вам сюда!
+      </p>
+      <div class="button-box">
+        <a href="#" class="btn offers-box__btn avia-search">Каталог стран</a>
+        <a href="#" class="btn offers-box__btn avia-search">поиск авиатуров</a>
+      </div>
+    </div>
+  </section>
+  <section class="descriprion-box dark auto">
+    <div class="container">
+      <h3 class="section-title white">Автобусные и экскурсионные туры</h3>
+      <div class="title__text">
+        <p>Новые открытия, впечатления, знакомства, селфи...<br>
+           Прекрасная возможность увидить "матушку" Европу во всей красе.</p>
+        <a href="#" class="btn offers-box__btn avia-search">поиск экскурсий</a>
+      </div>
     </div>
   </section>
   <section class="main-auto">
-    <div class="container main-auto__title">
-      <h3>Автобусные и экскурсионные туры</h3>
-      <div class="title__text">
-        <p>Новые открытия, впечатления, знакомства, селфи... Прекрасная возможность увидить "матушку" Европу во всей красе.</p>
-        <a href="#" class="btn offers-box__btn avia-search">Поиск авиатура</a>
+    <div class="container">
+      <div class="main-catalog flex-box">
+        <article class="main-avia card-box">
+          <a class="card-box__more" href="#1">
+            <figure class="card-box__img">
+              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
+            </figure>
+          </a>
+          <div class="card-box__text">
+            <h4>Одесса</h4>
+            <p>от 300 рублей</p>
+            <a href="#2" class="btn card-box__btn">Поехать</a>
+          </div>
+        </article>
+        <article class="main-avia card-box">
+          <a class="card-box__more" href="#1">
+            <figure class="card-box__img">
+              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
+            </figure>
+          </a>
+          <div class="card-box__text">
+            <h4>Одесса</h4>
+            <p>от 300 рублей</p>
+            <a href="#2" class="btn card-box__btn">Поехать</a>
+          </div>
+        </article>
+        <article class="main-avia card-box">
+          <a class="card-box__more" href="#1">
+            <figure class="card-box__img">
+              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
+            </figure>
+          </a>
+          <div class="card-box__text">
+            <h4>Одесса</h4>
+            <p>от 300 рублей</p>
+            <a href="#2" class="btn card-box__btn">Поехать</a>
+          </div>
+        </article>
+        <article class="main-avia card-box">
+          <a class="card-box__more" href="#1">
+            <figure class="card-box__img">
+              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
+            </figure>
+          </a>
+          <div class="card-box__text">
+            <h4>Одесса</h4>
+            <p>от 300 рублей</p>
+            <a href="#2" class="btn card-box__btn">Поехать</a>
+          </div>
+        </article>
       </div>
     </div>
-    <a href="#">
-      <article class="main-avia card-box">
-        <figure class="card-box__img">
-          <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-        </figure>
-        <div class="card-box__text">
-          <h4>Затока</h4>
-          <p>от 300 рублей</p>
-          <a href="#" class="btn card-box__btn">Полетели</a>
-        </div>
-      </article>
-    </a>
-    <a href="#">
-      <article class="main-avia card-box">
-        <figure class="card-box__img">
-          <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-        </figure>
-        <div class="card-box__text">
-          <h4>Будапешт</h4>
-          <p>от 300 рублей</p>
-          <a href="#" class="btn card-box__btn">Полетели</a>
-        </div>
-      </article>
-    </a>
-    <a href="#">
-      <article class="main-avia card-box">
-        <figure class="card-box__img">
-          <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-        </figure>
-        <div class="card-box__text">
-          <h4>Санкт-Питербург</h4>
-          <p>от 300 рублей</p>
-          <a href="#" class="btn card-box__btn">Полетели</a>
-        </div>
-      </article>
-    </a>
   </section>
   <section class="main-opers">
-    <h3>Наши друзья и партнеры</h3>
-    <div class="main-opers__slider main-slider">
-      <figure class="main-opers__slide">
-        <img src="<?bloginfo('template_url'); ?>/pics/belavia_logo.gif" alt="">
-        <div class="cloud-descript">
-          <h5>Белавия</h5>
-          <p>
-            <span class="main-opers__type">Авиаперевозчик</span>
-            Год основания 2010
-          </p>
-        </div>        
-      </figure>
+    <div class="container">
+      <h3 class="section-title">Наши друзья и партнеры</h3>
+    </div>
+    <div class="container">
+      <div class="main-opers__slider main-slider">
+        <figure class="main-opers__slide">
+          <img src="<?bloginfo('template_url'); ?>/pics/belavia_logo.gif" alt="">
+          <div class="cloud-descript">
+            <h5>Белавия</h5>
+            <p>
+              <span class="main-opers__type">Авиаперевозчик</span>
+              Год основания 2010
+            </p>
+          </div>
+        </figure>
+        <figure class="main-opers__slide">
+          <img src="<?bloginfo('template_url'); ?>/pics/belavia_logo.gif" alt="">
+          <div class="cloud-descript">
+            <h5>Белавия</h5>
+            <p>
+              <span class="main-opers__type">Авиаперевозчик</span>
+              Год основания 2010
+            </p>
+          </div>
+        </figure>
+        <figure class="main-opers__slide">
+          <img src="<?bloginfo('template_url'); ?>/pics/belavia_logo.gif" alt="">
+          <div class="cloud-descript">
+            <h5>Белавия</h5>
+            <p>
+              <span class="main-opers__type">Авиаперевозчик</span>
+              Год основания 2010
+            </p>
+          </div>
+        </figure>
+        <figure class="main-opers__slide">
+          <img src="<?bloginfo('template_url'); ?>/pics/belavia_logo.gif" alt="">
+          <div class="cloud-descript">
+            <h5>Белавия</h5>
+            <p>
+              <span class="main-opers__type">Авиаперевозчик</span>
+              Год основания 2010
+            </p>
+          </div>
+        </figure>
+      </div>
     </div>
   </section>
   <section class="main-news">
-
+    <div class="container">
+      <h3 class="section-title">Наши новости</h3>
+    </div>
+    <div class="container flex-box news-box">
+      <a href="#" class="news-box__offer offer">
+        <figure>
+          <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
+        </figure>
+        <p>
+          <span class="offer__title">Одесса - жемчужина у моря</span>
+          <span class="offer__price">отдых в Одесской области</span>
+          <span class="offer__more">Подробнее...</span>
+        </p>
+      </a>
+      <a href="#" class="news-box__offer offer">
+        <figure>
+          <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
+        </figure>
+        <p>
+          <span class="offer__title">Одесса - жемчужина у моря</span>
+          <span class="offer__price">отдых в Одесской области</span>
+          <span class="offer__more">Подробнее...</span>
+        </p>
+      </a>
+      <a href="#" class="news-box__offer offer">
+        <figure>
+          <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
+        </figure>
+        <p>
+          <span class="offer__title">Одесса - жемчужина у моря</span>
+          <span class="offer__price">отдых в Одесской области</span>
+          <span class="offer__more">Подробнее...</span>
+        </p>
+      </a>
+    </div>
   </section>
 </main>
 
