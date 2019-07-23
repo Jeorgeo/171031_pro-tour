@@ -1758,6 +1758,11 @@ form label.cloud-form__сonsent {
   # Header 640px
   --------------------------------------------------------------*/
 
+  header {
+    position: relative;
+    z-index: 999;
+  }
+
   .mobile-header__phone-box {
     width: auto;
   }
@@ -2392,6 +2397,40 @@ form label.cloud-form__сonsent {
 
   .main-about__advantages li {
     margin-bottom: 3em;
+  }
+
+  .main-about__advantages p {
+    margin-top: 1em;
+  }
+
+  .descriprion-box.avia::before, .main-opers::before {
+    bottom: 0;
+    left: -10px;
+    width: 25%;
+  }
+
+  .descriprion-box.avia::after,
+  .main-opers::after {
+    left: 25%;
+}
+
+  .descriprion-box.auto::after,
+  .main-news::after {
+    left: calc(25% + 25px);
+  }
+
+  .descriprion-box.auto::before, .main-news::before {
+    width: 40%;
+}
+
+  .descriprion-box p,
+  .button-box {
+    display: blok;
+    width: 50%;
+  }
+
+  .descriprion-box.auto .title__text {
+    display: flex;
   }
 
 
