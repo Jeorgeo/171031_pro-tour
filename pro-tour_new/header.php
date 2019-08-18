@@ -59,6 +59,14 @@
 		<div class="header__menu menu">
 			<div class="container menu__container">
 				<nav class="main-menu">
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'main-menu',
+							'menu_id'        => 'header_1',
+						) );
+					?>
+				</nav>
+				<?/*<nav class="main-menu">
 					<div id="Вспомогательное" class="menu">
 						<ul>
 							<li class="page_item current_page_item"><a href="#" aria-current="page">Главная</a></li>
@@ -76,7 +84,7 @@
 							<li class="page_item "><a href="#">Контакты</a></li>
 						</ul>
 					</div>
-				</nav>
+				</nav>*/?>
 				<nav class="icon-menu">
 					<ul>
 						<li>
@@ -101,6 +109,4 @@
 				</nav>
 			</div>
 		</div>
-
-
 	</header>

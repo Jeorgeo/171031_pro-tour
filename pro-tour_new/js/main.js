@@ -2,24 +2,18 @@ $(document).ready(function() {
 
 // mobile menu
 
-var menuNav = document.querySelector('.left-panel');
-var toggleBtn = menuNav.querySelector('#js-toggle');
-var toggleArrow = toggleBtn.querySelector('.header-menu-toggle');
-var float_header = document.querySelector('.float-header');
+var menuNav = document.querySelector('.header__menu');
+var toggleBtn = document.querySelector('.mobile-header__hamburger');
 
 toggleBtn.addEventListener('click', moveMenu);
 
 function moveMenu(){
-  if(menuNav.classList.contains('nav-show')) {
-      toggleArrow.classList.remove('btn-arrow-top');
-      toggleArrow.classList.remove('btn-arrow-bottom');
-      menuNav.classList.remove('nav-show');
-      float_header.classList.remove('nav-show');
+  if(toggleBtn.classList.contains('is-active')) {
+      toggleBtn.classList.remove('is-active');
+      menuNav.classList.remove('active');
      } else {
-      toggleArrow.classList.add('btn-arrow-top');
-      toggleArrow.classList.add('btn-arrow-bottom');
-      menuNav.classList.add('nav-show');
-      float_header.classList.add('nav-show');
+       toggleBtn.classList.add('is-active');
+       menuNav.classList.add('active');
       }
 };
 

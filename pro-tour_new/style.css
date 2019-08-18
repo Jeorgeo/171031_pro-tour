@@ -33,6 +33,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Header
   ## Mobile-menu
 # Content
+  ## Aside
 # Footer
 
 --------------------------------------------------------------*/
@@ -732,6 +733,22 @@ body {
   margin-top: 60px;
 }
 
+/*-------------------breadcrumbs------------------------------*/
+
+.breadcrumbs {
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.breadcrumbs__link {
+  color: #1d2262;
+}
+
+.breadcrumbs__current,
+.breadcrumbs__link:hover {
+  color: #ef7b00;
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -978,10 +995,6 @@ body {
 }
 
 /*--------------------------------------------------------------
-# Aside
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 
@@ -1061,15 +1074,20 @@ body {
   transition: all 0.5s ease;
 }
 
-.offer p {
+.offer .offer-content {
   position: relative;
+  top: 10px;
   display: block;
   width: calc(100% - 110px);
   margin: 0;
   z-index: 99;
 }
 
-.offer p span {
+.offer__price p {
+  margin: 5px 0;
+}
+
+.offer span {
   display: block;
 }
 
@@ -1354,16 +1372,8 @@ body {
   font-size: 0.9em;
 }
 
-.news-box__offer p {
-  margin-top: 20px;
-}
-
 .news-box__offer .offer__title {
   font-size: 1em;
-}
-
-.news-box__offer figure {
-  margin-top: -10px;
 }
 
 .offer.news-box__offer::before {
@@ -1376,6 +1386,115 @@ body {
 
 .offer.news-box__offer:hover .offer__more {
   color: #ef7b00;
+}
+
+/*------------category-news-----------------------------------*/
+
+.category-news main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 2em;
+}
+
+.category-news h1,
+.single-news h1 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+
+.category-news article.post {
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.category-news .news-box__offer {
+  align-items: flex-start;
+  padding-bottom: 1em;
+  box-sizing: border-box;
+}
+
+.category-news .news-box__offer::before {
+  top: 20px;
+  left: 20px;
+}
+
+.category-news .posted-on {
+  position: absolute;
+  top: 15px;
+  left: 110px;
+  display: block;
+  font-size: 0.8em;
+  color: #82a3b1;
+}
+
+.category-news .offer-content {
+  top: 30px;
+}
+
+/*----------------------country-------------------------------*/
+
+body.single-country {
+  margin-top: 50px;
+}
+
+.single-country .content-area {
+  padding-top: 0;
+}
+
+.country-slider {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.country-slider > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flag-box__title {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  width: 320px;
+  margin: 0.2em auto;
+  padding: 6px 12px;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.flag-box__title .flag_img {
+  display: block;
+  width: 55px;
+}
+
+.flag-box h1 {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 5px;
+  padding-left: 1em;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+
+/*--------------------------------------------------------------
+## Aside
+--------------------------------------------------------------*/
+
+.left-panel {
+  display: none;
 }
 
 
@@ -1758,9 +1877,9 @@ form label.cloud-form__сonsent {
   # Header 640px
   --------------------------------------------------------------*/
 
-  header {
+  .header {
     position: relative;
-    z-index: 999;
+    z-index: 99999;
   }
 
   .mobile-header__phone-box {
@@ -1780,6 +1899,10 @@ form label.cloud-form__сonsent {
   /*--------------------------------------------------------------
   # Content 640px
   --------------------------------------------------------------*/
+
+  .content-area {
+    padding: 1em 0;
+  }
 
   .main-slider__offers {
     display: flex;
@@ -1925,6 +2048,11 @@ form label.cloud-form__сonsent {
     margin: 0;
   }
 
+  .flag-box__title {
+    left: 30px;
+    right: 100%;
+  }
+
 
   /*--------------------------------------------------------------
   # Footer 768px
@@ -1989,6 +2117,23 @@ form label.cloud-form__сonsent {
 
   .news-box__offer {
     width: 30%;
+  }
+
+  /*------------category-news-----------------------------------*/
+
+  .category-news main {
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .category-news article.post {
+    position: relative;
+    width: 48%;
+  }
+
+  .category-news .news-box__offer {
+    width: 100%;
+    height: calc(100% - 25px);
   }
 
 
@@ -2109,7 +2254,7 @@ form label.cloud-form__сonsent {
   .header__menu {
     position: relative;
     top: 0;
-    padding: 10px 0;
+    padding: 0;
     background: #ffffff;
     color: #070918;
     border-top: 1px solid rgba(29, 34, 98, 0.2);
@@ -2120,7 +2265,7 @@ form label.cloud-form__сonsent {
     width: 100%;
   }
 
-  .main-menu .menu > ul {
+  .main-menu .menu {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -2130,20 +2275,21 @@ form label.cloud-form__сonsent {
   .main-menu li {
     position: relative;
     margin: 0;
+    padding: 10px;
   }
 
-  .main-menu li a {
+  .main-menu li.menu-item > a {
     position: relative;
     margin: 0;
-    padding: 10px 0;
-    z-index: 999;
+    padding: 10px;
+    z-index: 9999;
   }
 
   .main-menu li.current_page_item a {
     border-bottom: none;
   }
 
-  .main-menu li.page_item > a::after {
+  .main-menu li.menu-item > a::after {
     position: absolute;
     bottom: -3px;
     left: -5px;
@@ -2155,34 +2301,49 @@ form label.cloud-form__сonsent {
     transition: all 0.5s;
   }
 
-  .main-menu li.page_item:hover > a::after,
-  .main-menu li.current_page_item a::after {
+  .main-menu li.menu-item .sub-menu li:hover a::after {
+    display: none;
+  }
+
+  .main-menu li.menu-item:hover > a::after,
+  .main-menu .menu > li.current-menu-parent > a::after {
     width: calc(100% + 10px);
     transition: all 0.5s;
   }
 
-  .main-menu li.page_item:hover,
-  .main-menu li.current_page_item {
+  .main-menu li.menu-item:hover,
+  .main-menu .menu > li.current-menu-parent {
     color: #ef7b00;
     transition: all 0.6s;
   }
 
-  .main-menu .page_item .sub-menu {
+  .main-menu li.menu-item .sub-menu > li:hover {
+    color: #ffffff;
+    transition: all 0.6s;
+  }
+
+  .main-menu .menu-item .sub-menu {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
     display: block;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
     background: #ffffff;
     box-shadow: 1px 1px 3px rgba(29, 34, 98, 0.5);
-    opacity: 0;
     transition: all 0.5s ease;
   }
 
-  .main-menu .page_item:hover .sub-menu {
-    top: calc(100% + 11px);
-    background: #ffffff;
+  .main-menu .menu-item:hover .sub-menu {
     opacity: 1;
     transition: all 0.5s ease;
+  }
+
+  .main-menu .menu-item:hover .sub-menu {
+    top: calc(100% + 2px);
+    height: auto;
+    transition: all 0.7s ease;
   }
 
   .sub-menu li {
@@ -2238,6 +2399,75 @@ form label.cloud-form__сonsent {
   .card-box__more:hover .card-box__img {
     filter: blur(0);
     box-shadow: 2px 2px 15px #bbbcd0;
+  }
+
+  /*------------category-news-----------------------------------*/
+
+  .category-news article.post {
+    margin-bottom: 2em;
+  }
+
+  .category-news .news-box__offer {
+    height: calc(100% - 15px);
+  }
+
+  .category-news .news-box__offer figure {
+    width: 150px;
+    height: 150px;
+  }
+
+  .category-news .posted-on {
+    left: 170px;
+  }
+
+  .category-news .offer-content {
+    top: 40px;
+    width: calc(100% - 170px);
+  }
+
+  /*--------------------------------------------------------------
+  ## Aside 1024px
+  --------------------------------------------------------------*/
+
+  .flex-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .left-panel {
+    display: block;
+    width: 180px;
+    margin: 1em 20px 1em 0;
+    padding-right: 20px;
+    border-right: 1px solid rgba(29, 34, 98, 0.2);
+    box-sizing: border-box;
+  }
+
+  .left-panel li {
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+    text-transform: uppercase;
+  }
+
+  .left-panel li::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ef7b00;
+    content: '';
+    transition: all 0.5s;
+  }
+
+  .left-panel li:hover::after {
+    width: 100%;
+    transition: all 0.5s;
+  }
+
+  .flex-sidebar .site-main {
+    width: calc(100% - 201px);
   }
 
 

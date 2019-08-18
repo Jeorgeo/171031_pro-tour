@@ -24,22 +24,22 @@ get_header();
           <figure>
             <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
           </figure>
-          <p>
+          <div class="offer-content">
             <span class="offer__title">Турция</span>
             <span class="offer__price">от 500 рублей</span>
             <span class="offer__more">Подробнее...</span>
-          </p>
+          </div>
         </a>
         <a href="#" class="btn offers-box__btn avia-search">Поиск авиатура</a>
         <a href="#" class="offers-box__offer offer">
           <figure>
             <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
           </figure>
-          <p>
+          <div class="offer-content">
             <span class="offer__title">Затока</span>
             <span class="offer__price">от 300 рублей</span>
             Подробнее...
-          </p>
+          </div>
         </a>
         <a href="#" class="btn auto-search offers-box__btn">Поиск экскурсионных туров</a>
       </div>
@@ -283,31 +283,31 @@ get_header();
         <figure>
           <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
         </figure>
-        <p>
+        <div class="offer-content">
           <span class="offer__title">Одесса - жемчужина у моря</span>
           <span class="offer__price">отдых в Одесской области</span>
           <span class="offer__more">Подробнее...</span>
-        </p>
+        </div>
       </a>
       <a href="#" class="news-box__offer offer">
         <figure>
           <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
         </figure>
-        <p>
+        <div class="offer-content">
           <span class="offer__title">Одесса - жемчужина у моря</span>
           <span class="offer__price">отдых в Одесской области</span>
           <span class="offer__more">Подробнее...</span>
-        </p>
+        </div>
       </a>
       <a href="#" class="news-box__offer offer">
         <figure>
           <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
         </figure>
-        <p>
+        <div class="offer-content">
           <span class="offer__title">Одесса - жемчужина у моря</span>
           <span class="offer__price">отдых в Одесской области</span>
           <span class="offer__more">Подробнее...</span>
-        </p>
+        </div>
       </a>
     </div>
     <div class="container">

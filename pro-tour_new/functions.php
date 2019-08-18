@@ -44,8 +44,13 @@ if ( ! function_exists( 'pro_tour_by_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'main-menu' => esc_html__( 'Главное', 'pro-tour_by' ),
-			'second-menu' => esc_html__( 'Вспомогательное', 'pro-tour_by' ),
+			'main-menu' => esc_html__( 'header_1', 'pro-tour_by' ),
+			'second-menu' => esc_html__( 'sidebar_1', 'pro-tour_by' ),
+			'news-menu' => esc_html__( 'sidebar_news', 'pro-tour_by' ),
+			'type-menu' => esc_html__( 'sidebar_type', 'pro-tour_by' ),
+			'country-menu' => esc_html__( 'sidebar_country', 'pro-tour_by' ),
+			'pay-menu' => esc_html__( 'sidebar_pay', 'pro-tour_by' ),
+			'info-menu' => esc_html__( 'sidebar_info', 'pro-tour_by' ),
 		) );
 
 		/*
@@ -96,6 +101,260 @@ function pro_tour_by_content_width() {
 }
 add_action( 'after_setup_theme', 'pro_tour_by_content_width', 0 );
 
+/*
+ * Подключаем шаблоны постов определенной категории
+*/
+
+add_filter('single_template', create_function(
+  '$the_template',
+  'foreach( (array) get_the_category() as $cat ) {
+    if ( file_exists(TEMPLATEPATH . "/single-{$cat->slug}.php") )
+    return TEMPLATEPATH . "/single-{$cat->slug}.php"; }
+  return $the_template;' )
+);
+
+/*
+ * "Хлебные крошки" для WordPress
+*/
+function dimox_breadcrumbs() {
+
+	/* === ОПЦИИ === */
+	$text['home']     = 'Главная'; // текст ссылки "Главная"
+	$text['category'] = '%s'; // текст для страницы рубрики
+	$text['search']   = 'Результаты поиска по запросу "%s"'; // текст для страницы с результатами поиска
+	$text['tag']      = 'Записи с тегом "%s"'; // текст для страницы тега
+	$text['author']   = 'Статьи автора %s'; // текст для страницы автора
+	$text['404']      = 'Ошибка 404'; // текст для страницы 404
+	$text['page']     = 'Страница %s'; // текст 'Страница N'
+	$text['cpage']    = 'Страница комментариев %s'; // текст 'Страница комментариев N'
+
+	$wrap_before    = '<div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">'; // открывающий тег обертки
+	$wrap_after     = '</div><!-- .breadcrumbs -->'; // закрывающий тег обертки
+	$sep            = '<span class="breadcrumbs__separator"> › </span>'; // разделитель между "крошками"
+	$before         = '<span class="breadcrumbs__current">'; // тег перед текущей "крошкой"
+	$after          = '</span>'; // тег после текущей "крошки"
+
+	$show_on_home   = 0; // 1 - показывать "хлебные крошки" на главной странице, 0 - не показывать
+	$show_home_link = 1; // 1 - показывать ссылку "Главная", 0 - не показывать
+	$show_current   = 1; // 1 - показывать название текущей страницы, 0 - не показывать
+	$show_last_sep  = 1; // 1 - показывать последний разделитель, когда название текущей страницы не отображается, 0 - не показывать
+	/* === КОНЕЦ ОПЦИЙ === */
+
+	global $post;
+	$home_url       = home_url('/');
+	$link           = '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">';
+	$link          .= '<a class="breadcrumbs__link" href="%1$s" itemprop="item"><span itemprop="name">%2$s</span></a>';
+	$link          .= '<meta itemprop="position" content="%3$s" />';
+	$link          .= '</span>';
+	$parent_id      = ( $post ) ? $post->post_parent : '';
+	$home_link      = sprintf( $link, $home_url, $text['home'], 1 );
+
+	if ( is_home() || is_front_page() ) {
+
+		if ( $show_on_home ) echo $wrap_before . $home_link . $wrap_after;
+
+	} else {
+
+		$position = 0;
+
+		echo $wrap_before;
+
+		if ( $show_home_link ) {
+			$position += 1;
+			echo $home_link;
+		}
+
+		if ( is_category() ) {
+			$parents = get_ancestors( get_query_var('cat'), 'category' );
+			foreach ( array_reverse( $parents ) as $cat ) {
+				$position += 1;
+				if ( $position > 1 ) echo $sep;
+				echo sprintf( $link, get_category_link( $cat ), get_cat_name( $cat ), $position );
+			}
+			if ( get_query_var( 'paged' ) ) {
+				$position += 1;
+				$cat = get_query_var('cat');
+				echo $sep . sprintf( $link, get_category_link( $cat ), get_cat_name( $cat ), $position );
+				echo $sep . $before . sprintf( $text['page'], get_query_var( 'paged' ) ) . $after;
+			} else {
+				if ( $show_current ) {
+					if ( $position >= 1 ) echo $sep;
+					echo $before . sprintf( $text['category'], single_cat_title( '', false ) ) . $after;
+				} elseif ( $show_last_sep ) echo $sep;
+			}
+
+		} elseif ( is_search() ) {
+			if ( get_query_var( 'paged' ) ) {
+				$position += 1;
+				if ( $show_home_link ) echo $sep;
+				echo sprintf( $link, $home_url . '?s=' . get_search_query(), sprintf( $text['search'], get_search_query() ), $position );
+				echo $sep . $before . sprintf( $text['page'], get_query_var( 'paged' ) ) . $after;
+			} else {
+				if ( $show_current ) {
+					if ( $position >= 1 ) echo $sep;
+					echo $before . sprintf( $text['search'], get_search_query() ) . $after;
+				} elseif ( $show_last_sep ) echo $sep;
+			}
+
+		} elseif ( is_year() ) {
+			if ( $show_home_link && $show_current ) echo $sep;
+			if ( $show_current ) echo $before . get_the_time('Y') . $after;
+			elseif ( $show_home_link && $show_last_sep ) echo $sep;
+
+		} elseif ( is_month() ) {
+			if ( $show_home_link ) echo $sep;
+			$position += 1;
+			echo sprintf( $link, get_year_link( get_the_time('Y') ), get_the_time('Y'), $position );
+			if ( $show_current ) echo $sep . $before . get_the_time('F') . $after;
+			elseif ( $show_last_sep ) echo $sep;
+
+		} elseif ( is_day() ) {
+			if ( $show_home_link ) echo $sep;
+			$position += 1;
+			echo sprintf( $link, get_year_link( get_the_time('Y') ), get_the_time('Y'), $position ) . $sep;
+			$position += 1;
+			echo sprintf( $link, get_month_link( get_the_time('Y'), get_the_time('m') ), get_the_time('F'), $position );
+			if ( $show_current ) echo $sep . $before . get_the_time('d') . $after;
+			elseif ( $show_last_sep ) echo $sep;
+
+		} elseif ( is_single() && ! is_attachment() ) {
+			if ( get_post_type() != 'post' ) {
+				$position += 1;
+				$post_type = get_post_type_object( get_post_type() );
+				if ( $position > 1 ) echo $sep;
+				echo sprintf( $link, get_post_type_archive_link( $post_type->name ), $post_type->labels->name, $position );
+				if ( $show_current ) echo $sep . $before . get_the_title() . $after;
+				elseif ( $show_last_sep ) echo $sep;
+			} else {
+				$cat = get_the_category(); $catID = $cat[0]->cat_ID;
+				$parents = get_ancestors( $catID, 'category' );
+				$parents = array_reverse( $parents );
+				$parents[] = $catID;
+				foreach ( $parents as $cat ) {
+					$position += 1;
+					if ( $position > 1 ) echo $sep;
+					echo sprintf( $link, get_category_link( $cat ), get_cat_name( $cat ), $position );
+				}
+				if ( get_query_var( 'cpage' ) ) {
+					$position += 1;
+					echo $sep . sprintf( $link, get_permalink(), get_the_title(), $position );
+					echo $sep . $before . sprintf( $text['cpage'], get_query_var( 'cpage' ) ) . $after;
+				} else {
+					if ( $show_current ) echo $sep . $before . get_the_title() . $after;
+					elseif ( $show_last_sep ) echo $sep;
+				}
+			}
+
+		} elseif ( is_post_type_archive() ) {
+			$post_type = get_post_type_object( get_post_type() );
+			if ( get_query_var( 'paged' ) ) {
+				$position += 1;
+				if ( $position > 1 ) echo $sep;
+				echo sprintf( $link, get_post_type_archive_link( $post_type->name ), $post_type->label, $position );
+				echo $sep . $before . sprintf( $text['page'], get_query_var( 'paged' ) ) . $after;
+			} else {
+				if ( $show_home_link && $show_current ) echo $sep;
+				if ( $show_current ) echo $before . $post_type->label . $after;
+				elseif ( $show_home_link && $show_last_sep ) echo $sep;
+			}
+
+		} elseif ( is_attachment() ) {
+			$parent = get_post( $parent_id );
+			$cat = get_the_category( $parent->ID ); $catID = $cat[0]->cat_ID;
+			$parents = get_ancestors( $catID, 'category' );
+			$parents = array_reverse( $parents );
+			$parents[] = $catID;
+			foreach ( $parents as $cat ) {
+				$position += 1;
+				if ( $position > 1 ) echo $sep;
+				echo sprintf( $link, get_category_link( $cat ), get_cat_name( $cat ), $position );
+			}
+			$position += 1;
+			echo $sep . sprintf( $link, get_permalink( $parent ), $parent->post_title, $position );
+			if ( $show_current ) echo $sep . $before . get_the_title() . $after;
+			elseif ( $show_last_sep ) echo $sep;
+
+		} elseif ( is_page() && ! $parent_id ) {
+			if ( $show_home_link && $show_current ) echo $sep;
+			if ( $show_current ) echo $before . get_the_title() . $after;
+			elseif ( $show_home_link && $show_last_sep ) echo $sep;
+
+		} elseif ( is_page() && $parent_id ) {
+			$parents = get_post_ancestors( get_the_ID() );
+			foreach ( array_reverse( $parents ) as $pageID ) {
+				$position += 1;
+				if ( $position > 1 ) echo $sep;
+				echo sprintf( $link, get_page_link( $pageID ), get_the_title( $pageID ), $position );
+			}
+			if ( $show_current ) echo $sep . $before . get_the_title() . $after;
+			elseif ( $show_last_sep ) echo $sep;
+
+		} elseif ( is_tag() ) {
+			if ( get_query_var( 'paged' ) ) {
+				$position += 1;
+				$tagID = get_query_var( 'tag_id' );
+				echo $sep . sprintf( $link, get_tag_link( $tagID ), single_tag_title( '', false ), $position );
+				echo $sep . $before . sprintf( $text['page'], get_query_var( 'paged' ) ) . $after;
+			} else {
+				if ( $show_home_link && $show_current ) echo $sep;
+				if ( $show_current ) echo $before . sprintf( $text['tag'], single_tag_title( '', false ) ) . $after;
+				elseif ( $show_home_link && $show_last_sep ) echo $sep;
+			}
+
+		} elseif ( is_author() ) {
+			$author = get_userdata( get_query_var( 'author' ) );
+			if ( get_query_var( 'paged' ) ) {
+				$position += 1;
+				echo $sep . sprintf( $link, get_author_posts_url( $author->ID ), sprintf( $text['author'], $author->display_name ), $position );
+				echo $sep . $before . sprintf( $text['page'], get_query_var( 'paged' ) ) . $after;
+			} else {
+				if ( $show_home_link && $show_current ) echo $sep;
+				if ( $show_current ) echo $before . sprintf( $text['author'], $author->display_name ) . $after;
+				elseif ( $show_home_link && $show_last_sep ) echo $sep;
+			}
+
+		} elseif ( is_404() ) {
+			if ( $show_home_link && $show_current ) echo $sep;
+			if ( $show_current ) echo $before . $text['404'] . $after;
+			elseif ( $show_last_sep ) echo $sep;
+
+		} elseif ( has_post_format() && ! is_singular() ) {
+			if ( $show_home_link && $show_current ) echo $sep;
+			echo get_post_format_string( get_post_format() );
+		}
+
+		echo $wrap_after;
+
+	}
+}
+
+
+/**
+ * Пагинация страниц
+ *
+*/
+
+function wp_corenavi() {
+	global $wp_query;
+	$pages = '';
+	$max = $wp_query->max_num_pages;
+	if (!$current = get_query_var('paged')) $current = 1;
+	$a['base'] = str_replace(999999999, '%#%', get_pagenum_link(999999999));
+	$a['total'] = $max;
+	$a['current'] = $current;
+
+	$total = 1; //1 - выводить текст "Страница N из N", 0 - не выводить
+	$a['mid_size'] = 3; //сколько ссылок показывать слева и справа от текущей
+	$a['end_size'] = 1; //сколько ссылок показывать в начале и в конце
+	$a['prev_text'] = '&laquo;'; //текст ссылки "Предыдущая страница"
+	$a['next_text'] = '&raquo;'; //текст ссылки "Следующая страница"
+
+	if ($max > 1) echo '<div class="navigation">';
+	if ($total == 1 && $max > 1) $pages = '<span class="pages">Страница ' . $current . ' из ' . $max . '</span>'."\r\n";
+	echo $pages . paginate_links($a);
+	if ($max > 1) echo '</div>';
+}
+
 /**
  * Register widget area.
  *
@@ -107,114 +366,6 @@ function pro_tour_by_widgets_init() {
 		'id'            => 'admin_mail',
 		'description'   => esc_html__( 'Add admin_mail here.', 'pro-tour_by' ),
 		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Велком-1', 'pro-tour_by' ),
-		'id'            => 'phone-v1',
-		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="wiget-phone">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Велком-2', 'pro-tour_by' ),
-		'id'            => 'phone-v2',
-		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="wiget-phone">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'МТС-1', 'pro-tour_by' ),
-		'id'            => 'phone-m1',
-		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="wiget-phone">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'МТС-2', 'pro-tour_by' ),
-		'id'            => 'phone-m2',
-		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="wiget-phone">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'МТС-2', 'pro-tour_by' ),
-		'id'            => 'phone-m2',
-		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="wiget-phone">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'почта для шапки', 'pro-tour_by' ),
-		'id'            => 'mail',
-		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="wiget-mail">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'почта дублирующая', 'pro-tour_by' ),
-		'id'            => 'mail-2',
-		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="wiget-mail">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'skype', 'pro-tour_by' ),
-		'id'            => 'skype',
-		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="wiget-skype">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Социальные сети ВК', 'pro-tour_by' ),
-		'id'            => 'social_vk',
-		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="social-icons social_vk">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Социальные сети ОК', 'pro-tour_by' ),
-		'id'            => 'social_ok',
-		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="social-icons social_ok">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Социальные сети Фейсбук', 'pro-tour_by' ),
-		'id'            => 'social_f',
-		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="social-icons social_f">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Социальные сети Инстаграмм', 'pro-tour_by' ),
-		'id'            => 'social_inst',
-		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
-		'before_widget' => '<div class="social-icons social_inst">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -296,9 +447,14 @@ require get_template_directory() . '/tgm/tgm-files.php';
 require get_template_directory() . '/inc/visa.php';
 
 /**
+ * Подключаем записи Страны
+ */
+require get_template_directory() . '/inc/country.php';
+
+/**
  * Подключаем записи Операторы
  */
-require get_template_directory() . '/inc/opers.php';
+require get_template_directory() . '/inc/partners.php';
 
 /**
  * Load Jetpack compatibility file.
