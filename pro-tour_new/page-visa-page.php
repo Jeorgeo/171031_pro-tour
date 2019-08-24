@@ -13,7 +13,6 @@
  */
 
 get_header();
-get_sidebar();
 
 $tabs = get_posts(
 		array(
@@ -26,29 +25,48 @@ $tabs = get_posts(
 				'exclude' => '',
 				'meta_key' => '',
 				'meta_value' => '',
-				'post_type' => 'tabs',
+				'post_type' => 'visa',
 				'post_parent' => '',
 				'post_status' => 'publish'
 		)
 );
  ?>
 
-<main>
+ <div id="primary" class="content-area container">
+ 	<?php if ( function_exists( 'dimox_breadcrumbs' ) ) dimox_breadcrumbs(); ?>
+  <div class="flex-sidebar">
+ 	 <aside class="main-header left-panel">
+ 		 <div class="left-panel__box">
+ 			 <nav class="news-sidebar__menu">
+ 				 <?php
+ 					 wp_nav_menu( array(
+ 						 'theme_location' => 'type-menu',
+ 						 'menu_id'        => 'sidebar_type',
+ 					 ) );
+ 				 ?>
+ 			 </nav>
+ 			 <?php dynamic_sidebar( 'wiget_aside' ); ?>
+ 		 </div>
+ 	 </aside>
+ 	 <main class="site-main visa">
 	<section class="visa">
-		<h1 class="content-title"><?php echo get_field( 'page-title' ); ?></h1>
-		<div class="content-box">
-			<div class="page-image">
-				<img src="<?php echo get_field( 'page-image' ); ?>">
+		<h1 class="section-title section-title_dark-theme">Визовая <span class="color-orange">поддержка</span></h1>
+		<article class="content-box">
+			<figure class="content-box__img">
+				<img src="<?php echo get_field('visa_img'); ?>" />
+			</figure>
+			<div class="content-box__txt">
+				<?php
+					the_post();
+					the_content();
+				?>
 			</div>
-			<div class="page-content">
-				<?php echo get_field( 'page-content' ); ?>
-			</div>
-		</div>
+		</article>
 	</section>
-	<section class="visa_tabs">
-		<h3 class="content-title">Визы и <span class="text_pro">страны</span></h3>
+	<section class="visa-box">
+		<h2 class="section-title section-title_dark-theme">Визы<span class="color-orange"> и </span>страны</h2>
 		<span id="table"></span>
-		<div class="table-box">
+		<div class="visa-box__table">
 			<table>
 				<tbody>
 					<tr>
@@ -84,7 +102,6 @@ $tabs = get_posts(
 						 </td>
 						 <td>
 							 <a href="<?php echo get_field('visa_link',$obj->ID); ?>" target="_blank"><?php echo get_field('visa_link',$obj->ID); ?></a>
-
 						 </td>
 					 </tr>
 						 <?php
@@ -95,33 +112,37 @@ $tabs = get_posts(
 			</table>
 		</div>
 	</section>
-	<section class="about-form">
-		<h3 class="content-title">Остались <span class="text_pro">вопросы?</span> Хотите заказать <span class="text_pro">консультацию?<span></h3>
-		<div class="form-box">
-			<p>заполните поля и мы свяжемся с Вами в ближайшее время</p>
-			<form id="about_form" method="post" class="order-form">
-				<!-- Hidden Required Fields -->
-				<input type="hidden" name="project_name" value="pro-tour.by">
-				<!--input type="hidden" name="admin_email" value=""!-->
-				<?php dynamic_sidebar( 'admin_mail' ); ?>
-				<input type="hidden" name="form_subject" value="Заявка со страницы о визах">
-				<!-- END Hidden Required Fields -->
-				<textarea id="message" class="form__message" name="message" placeholder="Задайте вопрос"></textarea>
-				<input id="name" class="form__name" type="text" name="name"
-				value="" placeholder="Ваше имя" required>
-				<input id="phone" class="cloud-form__phone" type="text" name="phone"
-				value="" placeholder="Ваш телефон" required>
-				<button id="submit" class="cloud-form__submit" type="submit" name="submit">
+	<section class="form-box">
+		<h3 class="section-title section-title_dark-theme">Остались <span class="color-orange">вопросы?</span> Хотите заказать <span class="color-orange">консультацию?</span></h3>
+		<p>заполните поля и мы свяжемся с Вами в ближайшее время</p>
+		<form id="about_form" method="post" class="order-form">
+			<!-- Hidden Required Fields -->
+			<input type="hidden" name="project_name" value="pro-tour.by">
+			<!--input type="hidden" name="admin_email" value=""!-->
+			<?php dynamic_sidebar( 'admin_mail' ); ?>
+			<input type="hidden" name="form_subject" value="Заявка со страницы о нас">
+			<!-- END Hidden Required Fields -->
+			<input id="name" class="order-form__input name" type="text" name="name"
+			value="" placeholder="Ваше имя" pattern="^([A-Za-zА-Яа-яЁё\.\-]{2,20})" required>
+			<input id="phone" class="order-form__input phone" type="text" name="phone"
+			value="" placeholder="Ваш телефон" required>
+			<textarea id="message" class="order-form__input message" name="message" placeholder="Задайте вопрос"></textarea>
+			<div class="order-form__сonsent">
+				<button id="submit" class="btn order-form__btn" type="submit" name="submit">
 					Отправить
 				</button>
-				<input id="сonsent-p" class="cloud-form__сonsent" type="checkbox" name="сonsent" value="" required checked>
-				<label class="cloud-form__сonsent" for="сonsent-p">
-					Согласие на обработку персональных данных
-				</label>
-			</form>
-		</div>
+				<div class="сonsent-box">
+					<input id="сonsent-p" type="checkbox" name="сonsent" value="" required checked>
+					<label for="сonsent-p">
+						Согласие на обработку персональных данных
+					</label>
+				</div>
+			</div>
+		</form>
 	</section>
-</main>
+</main><!-- #main about-->
+</div>
+</div><!-- #primary -->
 
 <?php
 

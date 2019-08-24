@@ -697,7 +697,7 @@ img {
   display: block;
   max-width: 260px;
   height: min-content;
-  padding: 10px;
+  padding: 10px 16px;
   text-transform: uppercase;
   text-align: center;
   font-family: 'GothaProBold', 'Arial', serif;
@@ -705,6 +705,7 @@ img {
   background: #ef7b00;
   color: #ffffff;
   border: 1px solid #ef7b00;
+  border-radius: 50px;
   outline: none;
   transition: all 0.5s;
   box-shadow: 2px 2px 5px rgba(29, 34, 98, 0.4);
@@ -1339,13 +1340,21 @@ body {
 }
 
 .section-title {
+  width: 100%;
   text-align: center;
   text-transform: uppercase;
   font-size: 1.3em;
+  box-sizing: border-box;
 }
 
 .section-title.white {
   color: #ffffff;
+}
+
+.section-title_dark-theme {
+  padding: 1em 0;
+  color: #ffffff;
+  background: #1d2262;
 }
 
 .main-avia,
@@ -1387,6 +1396,10 @@ body {
 .offer.news-box__offer:hover .offer__more {
   color: #ef7b00;
 }
+
+/*--------------------------------------------------------------
+## Pages & Posts
+--------------------------------------------------------------*/
 
 /*------------category-news-----------------------------------*/
 
@@ -1439,8 +1452,8 @@ body {
 
 /*----------------------country-------------------------------*/
 
-body.single-country {
-  margin-top: 50px;
+.site-main.country {
+  padding-bottom: 2em;
 }
 
 .single-country .content-area {
@@ -1462,8 +1475,7 @@ body.single-country {
 .flag-box__title {
   position: absolute;
   top: 15px;
-  left: 0;
-  right: 0;
+  left: 15px;
   display: flex;
   align-items: center;
   width: 320px;
@@ -1489,6 +1501,153 @@ body.single-country {
   font-size: 1.3em;
 }
 
+.country-description {
+  padding-left: 10px;
+  border-left: 2px solid #ef7b00;
+}
+
+.country-informers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.country__info-box,
+.country__meteo-box {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+  padding: 10px;
+  border-radius: 5px;
+  background: #d2e8ff;
+  box-sizing: border-box;
+}
+
+.country__info-box li {
+  margin: 0.5em 0;
+  color: #070918;
+}
+
+.country__info-box li span {
+  color: #1d2262;
+  font-weight: bolder;
+}
+
+.country__meteo-box .gsInformer {
+  margin: 0 auto;
+}
+
+/*-------------------------about------------------------------*/
+
+.content-box,
+.content-box__img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.content-box__img li{
+  display: block;
+  width: 30%;
+  margin: 1em auto;
+}
+
+.content-box__img li.current {
+  width: 100%;
+}
+
+.content-box__img.current
+
+.about-partners__logos,
+.about-partners__principes {
+  text-align: left;
+}
+
+.about-partners__logos li {
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px;
+}
+
+.about-partners__principes li {
+  position: relative;
+  display: block;
+  margin: 0.7em 0;
+  padding-left: 10px;
+}
+
+.about-partners__principes li::after {
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 0;
+  width: 4px;
+  height: auto;
+  border-radius: 2px;
+  background: #ef7b00;
+  content: '';
+}
+
+.about-contacts__map iframe {
+  max-width: 100%;
+}
+
+.about .form-box {
+  margin-bottom: 1em;
+}
+
+/*---------------------------visa-----------------------------*/
+
+.visa-box__table {
+  overflow-x: scroll;
+}
+
+.visa-box__table table {
+  margin: 1.5em auto;
+  border-collapse: collapse;
+}
+
+.visa-box__table th,
+.visa-box__table td {
+  padding: 0.5em;
+  border: 2px solid #ef7b00;
+}
+
+.visa-box__table a {
+  color: #ef7b00;
+  border-bottom: 1px dotted #ef7b00;
+}
+
+.visa-box__table a:hover {
+  border-bottom: 1px solid #1d2262;
+}
+
+/*-------------------------forms------------------------------*/
+
+.order-form__input {
+  width: 100%;
+  margin: 1em 0;
+  padding: 0.5em;
+  border: 1px solid #1d2262;
+  box-sizing: border-box;
+}
+
+.order-form__btn {
+  width: 100%;
+  max-width: 260px;
+  margin: 1em auto;
+}
+
+.order-form__btn:hover {
+  cursor: pointer;
+}
+
+.order-form__сonsent input {
+  width: 10px;
+}
+
+
 /*--------------------------------------------------------------
 ## Aside
 --------------------------------------------------------------*/
@@ -1496,15 +1655,6 @@ body.single-country {
 .left-panel {
   display: none;
 }
-
-
-/*--------------------------------------------------------------
-## Pages
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-## Posts
---------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Popup form
@@ -1755,13 +1905,16 @@ form label.cloud-form__сonsent {
   background-size: 100%;
 }
 
-.footer .mobile-header__phone-box {
+.footer .mobile-header__phone-box,
+.about .mobile-header__phone-box {
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
 }
 
-.footer .phone-button {
+.footer .phone-button,
+.about .phone-button {
   width: 260px;
   margin: 5px auto;
   text-align: center;
@@ -1769,8 +1922,18 @@ form label.cloud-form__сonsent {
   font-size: 1em;
   color: #ffffff;
   border: 1px solid transparent;
-  box-sizing: border-box;
+  box-sizing: content-box;
   transition: all 0.5s ease;
+}
+
+.about .phone-button {
+  color: #070918;
+  margin-left: 0;
+  box-sizing: border-box;
+}
+
+.about .phone-button::after {
+  display: none;
 }
 
 .footer .phone-button::after {
@@ -1966,6 +2129,54 @@ form label.cloud-form__сonsent {
     padding: 2em 0;
   }
 
+  /*--------------------------------------------------------------
+  ## Pages & Posts 640px
+  --------------------------------------------------------------*/
+
+  /*----------------------country 640px-------------------------*/
+
+  .country__info-box {
+    width: 40%;
+  }
+
+  .country__meteo-box {
+    width: 58%;
+    max-width: 330px;
+  }
+
+  /*-------------------------forms 640px-------------------------*/
+
+  .form-box form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .order-form__input {
+    width: 48%;
+  }
+
+  .order-form__input.message {
+    width: 100%;
+  }
+
+  .order-form__сonsent {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .order-form__btn {
+    width: 50%;
+  }
+
+  .сonsent-box {
+    width: 48%;
+  }
+
 
   /*--------------------------------------------------------------
   # Footer 640px
@@ -1983,6 +2194,10 @@ form label.cloud-form__сonsent {
 
   .footer section.dark {
     width: 100%;
+  }
+
+  .footer .phone-button {
+    width: 190px;
   }
 
   .footer .header__adress::after,
@@ -2071,6 +2286,8 @@ form label.cloud-form__сonsent {
   --------------------------------------------------------------*/
   .header__btn {
     display: block;
+    font-size: 16px;
+    padding: 9px 18px;
   }
 
   /*--------------------------------------------------------------
@@ -2119,7 +2336,11 @@ form label.cloud-form__сonsent {
     width: 30%;
   }
 
-  /*------------category-news-----------------------------------*/
+  /*--------------------------------------------------------------
+  ## Pages & Posts  920px
+  --------------------------------------------------------------*/
+
+  /*------------category-news 920px-----------------------------------*/
 
   .category-news main {
     justify-content: space-between;
@@ -2134,6 +2355,71 @@ form label.cloud-form__сonsent {
   .category-news .news-box__offer {
     width: 100%;
     height: calc(100% - 25px);
+  }
+
+  /*----------------country 920px-----------------------------*/
+
+  .site-main.country {
+    margin-top: 1em;
+  }
+
+  .country__news-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1em 0;
+  }
+
+  .site-main.country .main-catalog {
+    margin: 1em 0;
+  }
+
+  .country__news-box .category-news .news-box__offer figure {
+    width: 100px;
+    height: 100px;
+  }
+
+  .country__news-box .category-news .offer-content {
+    top: 30px;
+    width: calc(100% - 115px);
+  }
+
+  .site-main.country .button-box {
+    width: 100%;
+  }
+
+  /*------------------------about 920px------------------------*/
+
+  .site-main.about .section-title {
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .about-contacts,
+  .about-partners {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .content-box {
+    flex-direction: row-reverse;
+  }
+
+  .about-partners__logos,
+  .content-box__txt,
+  .about-partners__principes,
+  .content-box__img {
+    width: 48%;
+  }
+
+  .about-contacts__contacts {
+    width: 40%;
+  }
+  .about-contacts__map {
+    width: 58%;
   }
 
 
@@ -2401,7 +2687,7 @@ form label.cloud-form__сonsent {
     box-shadow: 2px 2px 15px #bbbcd0;
   }
 
-  /*------------category-news-----------------------------------*/
+  /*------------category-news 1024px-----------------------------*/
 
   .category-news article.post {
     margin-bottom: 2em;
@@ -2423,6 +2709,12 @@ form label.cloud-form__сonsent {
   .category-news .offer-content {
     top: 40px;
     width: calc(100% - 170px);
+  }
+
+  /*---------------------------visa 1024px----------------------*/
+
+  .visa-box__table {
+    overflow-x: auto;
   }
 
   /*--------------------------------------------------------------
@@ -2592,6 +2884,13 @@ form label.cloud-form__сonsent {
 
   .card-box {
     width: 24%;
+  }
+
+  /*----------------country 1280px-----------------------------*/
+
+  .country__info-box,
+  .country__news-box {
+    width: 30%;
   }
 
 

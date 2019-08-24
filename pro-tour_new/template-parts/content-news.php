@@ -7,12 +7,15 @@
  * @package pro-tour_by
  */
 
- $thumb = get_the_post_thumbnail();
+
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <?php pro_tour_by_posted_on(); ?>
+  <?php
+  pro_tour_by_posted_on();
+  $thumb = get_the_post_thumbnail();
+  ?>
 	<a href="<?php the_permalink(); ?>" class="news-box__offer offer">
 		<figure>
 			<?php echo $thumb;?>

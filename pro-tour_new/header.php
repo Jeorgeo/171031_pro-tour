@@ -50,8 +50,8 @@
 					</p>
 				</div>
 				<div class="mobile-header__phone-box">
-					<a class="mobile-header__phone-button phone-button velcom" href="#">+375(29)132-18-00</a>
-					<a class="mobile-header__phone-button phone-button mts" href="#">+375(29)899-18-00</a>
+					<a class="mobile-header__phone-button phone-button velcom" href="tel:<?php echo get_field('vel_1', 47); ?>"><?php echo get_field('vel_12', 47); ?></a>
+					<a class="mobile-header__phone-button phone-button mts" href="tel:<?php echo get_field('mts_1', 47); ?>"><?php echo get_field('mts_12', 47); ?></a>
 				</div>
 				<a href="#" class="btn header__btn">заказать звонок</a>
 			</div>

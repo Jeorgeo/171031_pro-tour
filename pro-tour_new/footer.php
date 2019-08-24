@@ -67,8 +67,8 @@
 					<li class="social__icon ok"><a href="#" target="_blank" rel="nofollow">одноклассники</a></li>
 				</ul>
 				<div class="mobile-header__phone-box">
-					<a class="mobile-header__phone-button phone-button velcom" href="#">+375(29)132-18-00</a>
-					<a class="mobile-header__phone-button phone-button mts" href="#">+375(29)899-18-00</a>
+					<a class="mobile-header__phone-button phone-button velcom" href="tel:<?php echo get_field('vel_1', 47); ?>"><?php echo get_field('vel_12', 47); ?></a>
+					<a class="mobile-header__phone-button phone-button mts" href="tel:<?php echo get_field('mts_1', 47); ?>"><?php echo get_field('mts_12', 47); ?></a>
 				</div>
 				<div class="header__adress adress">
 					<p>
@@ -89,7 +89,7 @@
 			</article>
 			<article class="box-42">
 				<h3>
-					Наши партнеры
+					Можно оплатить
 				</h3>
 				<ul class="payment">
 					<li class="payment__icon erip">Ерип</li>
