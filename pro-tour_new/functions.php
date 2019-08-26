@@ -386,15 +386,6 @@ function wp_corenavi() {
  */
 function pro_tour_by_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Почта для формы', 'pro-tour_by' ),
-		'id'            => 'admin_mail',
-		'description'   => esc_html__( 'Add admin_mail here.', 'pro-tour_by' ),
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
 		'name'          => esc_html__( 'Виджет в сайдбар', 'pro-tour_by' ),
 		'id'            => 'wiget_aside',
 		'description'   => esc_html__( 'Add widgets here.', 'pro-tour_by' ),
@@ -479,6 +470,11 @@ require get_template_directory() . '/inc/country.php';
  * Подключаем записи Операторы
  */
 require get_template_directory() . '/inc/partners.php';
+
+/**
+ * Подключаем записи Отзывы
+ */
+require get_template_directory() . '/inc/reviews.php';
 
 /**
  * Load Jetpack compatibility file.

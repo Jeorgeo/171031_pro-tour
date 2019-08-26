@@ -13,6 +13,46 @@
  */
 
 get_header();
+
+$id_avia = get_field('id_avia');
+$id_auto = get_field('id_auto');
+$thumb_avia = get_the_post_thumbnail($id_avia);
+$thumb_auto = get_the_post_thumbnail($id_auto);
+
+$avia = get_posts(
+		array(
+				'numberposts' => 4,
+				'offset' => 0,
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+				'category' => '32',
+				'include' => '',
+				'exclude' => '',
+				'meta_key' => '',
+				'meta_value' => '',
+				'post_type' => 'post',
+				'post_parent' => '',
+				'post_status' => 'publish'
+		)
+);
+
+$auto = get_posts(
+		array(
+				'numberposts' => 4,
+				'offset' => 0,
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+				'category' => '33',
+				'include' => '',
+				'exclude' => '',
+				'meta_key' => '',
+				'meta_value' => '',
+				'post_type' => 'post',
+				'post_parent' => '',
+				'post_status' => 'publish'
+		)
+);
+
 ?>
 
 <main>
@@ -20,28 +60,28 @@ get_header();
     <div class="container main-container">
       <h3>Идеи на ваш <span class="main-slider__title">отдых</span> в июле</h3>
       <div class="main-slider__offers offers-box">
-        <a href="#" class="offers-box__offer offer">
+        <a href="<?php the_permalink($id_avia); ?>" class="offers-box__offer offer">
           <figure>
-            <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
+            <img src="<? echo $thumb_avia; ?>" alt="Турагентсво ПРО-ТУР <?the_title($id_avia);?> из Лиды">
           </figure>
-          <div class="offer-content">
-            <span class="offer__title">Турция</span>
-            <span class="offer__price">от 500 рублей</span>
+          <div class="offer-content offer-content_main">
+            <span class="offer__title"><?the_title($id_avia);?></span>
+            <span class="offer__price"><?php echo get_field('offer_price', $id_avia); ?></span>
             <span class="offer__more">Подробнее...</span>
           </div>
         </a>
-        <a href="#" class="btn offers-box__btn avia-search">Поиск авиатура</a>
-        <a href="#" class="offers-box__offer offer">
+        <a href="<?php echo get_permalink(53); ?>" class="btn offers-box__btn avia-search">Поиск авиатура</a>
+        <a href="<? echo $thumb_auto; ?>" class="offers-box__offer offer">
           <figure>
-            <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
+            <img src="<? echo $thumb_auto; ?>" alt="Турагентсво ПРО-ТУР <?the_title($id_avia);?> из Лиды ">
           </figure>
           <div class="offer-content">
-            <span class="offer__title">Затока</span>
-            <span class="offer__price">от 300 рублей</span>
+            <span class="offer__title"><?the_title($id_avia);?></span>
+            <span class="offer__price"><?php echo get_field('offer_price', $id_auto); ?></span>
             Подробнее...
           </div>
         </a>
-        <a href="#" class="btn auto-search offers-box__btn">Поиск экскурсионных туров</a>
+        <a href="<?php echo get_permalink(55); ?>" class="btn auto-search offers-box__btn">Поиск экскурсионных туров</a>
       </div>
       <div class="bg-box">
       </div>
@@ -99,8 +139,14 @@ get_header();
       <h3 class="section-title">Авиатуры и авиабилеты</h3>
       <p>Несколько часов...и вы в другой точке мира, нежитесь на белоснежном пляже.</p>
       <div class="main-catalog flex-box">
+        <?php
+          foreach ($avia as $obj) {
+            if($obj->post_name == 'archive') {
+              continue;
+          }
+        ?>
         <article class="main-avia card-box">
-          <a class="card-box__more" href="#1">
+          <a class="card-box__more" href="<?php the_permalink(); ?>">
             <figure class="card-box__img">
               <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
             </figure>
@@ -111,42 +157,9 @@ get_header();
             <a href="#2" class="btn card-box__btn">Полететь</a>
           </div>
         </article>
-        <article class="main-avia card-box">
-          <a class="card-box__more" href="#1">
-            <figure class="card-box__img">
-              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-            </figure>
-          </a>
-          <div class="card-box__text">
-            <h4>Индия1</h4>
-            <p>от 300 рублей</p>
-            <a href="#2" class="btn card-box__btn">Полететь</a>
-          </div>
-        </article>
-        <article class="main-avia card-box">
-          <a class="card-box__more" href="#1">
-            <figure class="card-box__img">
-              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-            </figure>
-          </a>
-          <div class="card-box__text">
-            <h4>Индия1</h4>
-            <p>от 300 рублей</p>
-            <a href="#2" class="btn card-box__btn">Полететь</a>
-          </div>
-        </article>
-        <article class="main-avia card-box">
-          <a class="card-box__more" href="#1">
-            <figure class="card-box__img">
-              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-            </figure>
-          </a>
-          <div class="card-box__text">
-            <h4>Индия1</h4>
-            <p>от 300 рублей</p>
-            <a href="#2" class="btn card-box__btn">Полететь</a>
-          </div>
-        </article>
+        <?php
+        }
+        ?>
       </div>
     </div>
   </section>

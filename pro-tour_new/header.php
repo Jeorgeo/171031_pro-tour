@@ -29,11 +29,11 @@
 						<span class="hamburger-inner"></span>
 					</span>
 				</button>
-				<a href="#" class="logo header__logo">
-					<img src="<?bloginfo('template_url'); ?>/img/pro-tour_full.png" alt="">
+				<a href="<? echo home_url(); ?>" class="logo header__logo">
+					<img src="<?bloginfo('template_url'); ?>/img/pro-tour_full.png" alt="Турагентство ПРО-ТУР">
 				</a>
-				<a href="#" class="logo mobile-header__logo">
-					<img src="<?bloginfo('template_url'); ?>/img/pro-tour_w.png" alt="">
+				<a href="<? echo home_url(); ?>" class="logo mobile-header__logo">
+					<img src="<?bloginfo('template_url'); ?>/img/pro-tour_w.png" alt="Турагентство ПРО-ТУР">
 				</a>
 				<div class="header__slogan">
 					<p>
@@ -66,32 +66,13 @@
 						) );
 					?>
 				</nav>
-				<?/*<nav class="main-menu">
-					<div id="Вспомогательное" class="menu">
-						<ul>
-							<li class="page_item current_page_item"><a href="#" aria-current="page">Главная</a></li>
-							<li class="page_item "><a href="#">Страны</a>
-								<ul class="sub-menu">
-									<li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="#">египет</a></li>
-									<li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="#">китай</a></li>
-									<li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="#">турция</a></li>
-								</ul>
-							</li>
-							<li class="page_item "><a href="#">Услуги</a></li>
-							<li class="page_item "><a href="#">Информация</a></li>
-							<li class="page_item "><a href="#">Оплата</a></li>
-							<li class="page_item "><a href="#">Отзывы</a></li>
-							<li class="page_item "><a href="#">Контакты</a></li>
-						</ul>
-					</div>
-				</nav>*/?>
 				<nav class="icon-menu">
 					<ul>
 						<li>
-							<a href="#"><span class="icon-menu__icon avia"></span>авиатуры</a>
+							<a href="<?php echo get_permalink(53); ?>"><span class="icon-menu__icon avia"></span>авиатуры</a>
 						</li>
 						<li>
-							<a href="#"><span class="icon-menu__icon auto"></span>автобусные туры</a>
+							<a href="<?php echo get_permalink(55); ?>"><span class="icon-menu__icon auto"></span>автобусные туры</a>
 						</li>
 						<li>
 							<a href="#"><span class="icon-menu__icon ins"></span>инстаграмм</a>

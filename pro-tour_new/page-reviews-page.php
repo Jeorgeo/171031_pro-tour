@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * Template Name: Отзывы
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -27,10 +27,20 @@ get_header();
 					<?php dynamic_sidebar( 'wiget_aside' ); ?>
 				</div>
 			</aside>
-			<main id="main" class="site-main">
-				<h1 class="section-title section-title_dark-theme">Новости <span class="color-orange">и</span> статьи</h1>
+			<main id="main" class="site-main reviews">
+				<h1 class="section-title section-title_dark-theme">Отзывы <span class="color-orange">наших</span> туристов</h1>
 
-			<?php if ( have_posts() ) : ?>
+			<?php
+
+			$args = array(
+                   'post_type' => 'reviews',
+                   'publish' => true,
+                   'paged' => get_query_var('paged'),
+               );
+
+            query_posts($args);
+
+			if ( have_posts() ) : ?>
 
 				<?php
 				/* Start the Loop */
@@ -42,7 +52,7 @@ get_header();
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 					 */
-					get_template_part( 'template-parts/content-news', get_post_type() );
+					get_template_part( 'template-parts/content-reviews', get_post_type() );
 
 				endwhile;
 
