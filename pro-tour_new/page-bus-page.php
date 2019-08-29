@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Визовая поддержка
+ * Template Name: Поиск автобусных туров
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -13,23 +13,6 @@
  */
 
 get_header();
-
-$tabs = get_posts(
-		array(
-				'numberposts' => -1,
-				'offset' => 0,
-				'orderby'     => 'date',
-				'order'       => 'DESC',
-				'category' => '',
-				'include' => '',
-				'exclude' => '',
-				'meta_key' => '',
-				'meta_value' => '',
-				'post_type' => 'visa',
-				'post_parent' => '',
-				'post_status' => 'publish'
-		)
-);
  ?>
 
  <div id="primary" class="content-area container">
@@ -48,69 +31,14 @@ $tabs = get_posts(
  			 <?php dynamic_sidebar( 'wiget_aside' ); ?>
  		 </div>
  	 </aside>
- 	 <main class="site-main visa">
-	<section class="visa">
-		<h1 class="section-title section-title_dark-theme">Визовая <span class="color-orange">поддержка</span></h1>
-		<article class="content-box">
-			<figure class="content-box__img">
-				<img src="<?php echo get_field('visa_img'); ?>" />
-			</figure>
-			<div class="content-box__txt">
-				<?php
-					the_post();
-					the_content();
-				?>
-			</div>
-		</article>
-	</section>
-	<section class="visa-box">
-		<h2 class="section-title section-title_dark-theme">Визы<span class="color-orange"> и </span>страны</h2>
-		<span id="table"></span>
-		<div class="visa-box__table">
-			<table>
-				<tbody>
-					<tr>
-						<th>
-							Страна посещения
-						</th>
-						<th>
-							Условия посещения
-						</th>
-						<th>
-							Стоимость визы
-						</th>
-						<th>
-							Сайт представительства (визового центра)
-						</th>
-					</tr>
-
-					<?php
-						foreach ($tabs as $obj) {
-							if($obj->post_name == 'archive') {
-									continue;
-							}
-					 ?>
-					 <tr>
-						 <td>
-						 	<?php echo get_field('country',$obj->ID); ?>
-						 </td>
-						 <td>
-						 	<?php echo get_field('visa_discr',$obj->ID); ?>
-						 </td>
-						 <td>
-						 	<?php echo get_field('visa_price',$obj->ID); ?>
-						 </td>
-						 <td>
-							 <a href="<?php echo get_field('visa_link',$obj->ID); ?>" target="_blank"><?php echo get_field('visa_link',$obj->ID); ?></a>
-						 </td>
-					 </tr>
-						 <?php
-	 		 				}
-	 		 			 ?>
-
-				</tbody>
-			</table>
-		</div>
+ 	 <main class="site-main bus">
+	<section class="bus-search">
+		<h1 class="section-title section-title_dark-theme">Подбор <span class="color-orange">Автобусных</span> туров</h1>
+		<!-- BigTrip widget -->
+		<iframe id="bigtrip_frame" style="border: 0px none; padding: 0px; display: block; width: 100%; height: 1422px;" src="https://bigtrip.by/widget/default/index/5311" name="bigtrip_frame"> </iframe>
+		<iframe id="bigtrip_popup" style="position: fixed; border: none; left: 0; top: 0; right: 0; bottom: 0; visibility: visible; z-index: 99999; display: none; width: 100%; height: 100%; padding: 0;" src="about:black" name="bigtrip_popup"></iframe>
+		<script src="https://bigtrip.by/scripts/external/bigtrip-external-2.js?id=5311"></script>
+		<!-- /BigTrip widget -->
 	</section>
 	<section class="form-box">
 		<h3 class="section-title section-title_dark-theme">Остались <span class="color-orange">вопросы?</span> Хотите заказать <span class="color-orange">консультацию?</span></h3>

@@ -13,6 +13,7 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+	<meta name="theme-color" content="#1d2262"> <!-- Chrome -->
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -50,10 +51,10 @@
 					</p>
 				</div>
 				<div class="mobile-header__phone-box">
-					<a class="mobile-header__phone-button phone-button velcom" href="tel:<?php echo get_field('vel_1', 47); ?>"><?php echo get_field('vel_12', 47); ?></a>
-					<a class="mobile-header__phone-button phone-button mts" href="tel:<?php echo get_field('mts_1', 47); ?>"><?php echo get_field('mts_12', 47); ?></a>
+					<a class="mobile-header__phone-button phone-button velcom" href="tel:<?php echo get_field('vel_1', 711); ?>"><?php echo get_field('vel_12', 711); ?></a>
+					<a class="mobile-header__phone-button phone-button mts" href="tel:<?php echo get_field('mts_1', 711); ?>"><?php echo get_field('mts_12', 711); ?></a>
 				</div>
-				<a href="#" class="btn header__btn">заказать звонок</a>
+				<a href="#" class="btn cloud-link header__btn">заказать звонок <span class="hidden">самая верхняя кнопка</span> </a>
 			</div>
 		</div>
 		<div class="header__menu menu">
@@ -69,22 +70,22 @@
 				<nav class="icon-menu">
 					<ul>
 						<li>
-							<a href="<?php echo get_permalink(53); ?>"><span class="icon-menu__icon avia"></span>авиатуры</a>
+							<a href="<?php echo get_permalink(719); ?>"><span class="icon-menu__icon avia"></span>авиатуры</a>
 						</li>
 						<li>
-							<a href="<?php echo get_permalink(55); ?>"><span class="icon-menu__icon auto"></span>автобусные туры</a>
+							<a href="<?php echo get_permalink(721); ?>"><span class="icon-menu__icon auto"></span>автобусные туры</a>
 						</li>
 						<li>
-							<a href="#"><span class="icon-menu__icon ins"></span>инстаграмм</a>
+							<a rel="nofollow" href="<?php echo get_field('link_inst', 711); ?>"><span class="icon-menu__icon ins"></span>инстаграмм</a>
 						</li>
 						<li>
-							<a href="#"><span class="icon-menu__icon vk"></span>вконтакте</a>
+							<a rel="nofollow" href="<?php echo get_field('link_vk', 711); ?>"><span class="icon-menu__icon vk"></span>вконтакте</a>
 						</li>
 						<li>
-							<a href="#"><span class="icon-menu__icon ok"></span>одноклассники</a>
+							<a rel="nofollow" href="<?php echo get_field('link_ok', 711); ?>"><span class="icon-menu__icon ok"></span>одноклассники</a>
 						</li>
 						<li>
-							<a href="#"><span class="icon-menu__icon fb"></span>фейсбук</a>
+							<a rel="nofollow" href="<?php echo get_field('link_f', 711); ?>"><span class="icon-menu__icon fb"></span>фейсбук</a>
 						</li>
 					</ul>
 				</nav>

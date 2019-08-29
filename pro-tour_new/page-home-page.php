@@ -16,6 +16,9 @@ get_header();
 
 $id_avia = get_field('id_avia');
 $id_auto = get_field('id_auto');
+$id_news = get_field('id_news');
+$id_av_poisk = 719;
+$id_au_poisk = 721;
 $thumb_avia = get_the_post_thumbnail($id_avia);
 $thumb_auto = get_the_post_thumbnail($id_auto);
 
@@ -25,7 +28,7 @@ $avia = get_posts(
 				'offset' => 0,
 				'orderby'     => 'date',
 				'order'       => 'DESC',
-				'category' => '32',
+				'category' => '8',
 				'include' => '',
 				'exclude' => '',
 				'meta_key' => '',
@@ -42,7 +45,7 @@ $auto = get_posts(
 				'offset' => 0,
 				'orderby'     => 'date',
 				'order'       => 'DESC',
-				'category' => '33',
+				'category' => '9',
 				'include' => '',
 				'exclude' => '',
 				'meta_key' => '',
@@ -53,35 +56,69 @@ $auto = get_posts(
 		)
 );
 
+$news = get_posts(
+		array(
+				'numberposts' => 3,
+				'offset' => 0,
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+				'category' => '6',
+				'include' => '',
+				'exclude' => '',
+				'meta_key' => '',
+				'meta_value' => '',
+				'post_type' => 'post',
+				'post_parent' => '',
+				'post_status' => 'publish'
+		)
+);
+
+$partners = get_posts(
+		array(
+				'numberposts' => -1,
+				'offset' => 0,
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+				'category' => '',
+				'include' => '',
+				'exclude' => '',
+				'meta_key' => '',
+				'meta_value' => '',
+				'post_type' => 'partners',
+				'post_parent' => '',
+				'post_status' => 'publish'
+		)
+);
+
 ?>
 
 <main>
   <section class="main-slider">
     <div class="container main-container">
-      <h3>Идеи на ваш <span class="main-slider__title">отдых</span> в июле</h3>
+      <h3>Идеи на ваш <span class="main-slider__title">отдых</span> в сентябре</h3>
       <div class="main-slider__offers offers-box">
         <a href="<?php the_permalink($id_avia); ?>" class="offers-box__offer offer">
           <figure>
-            <img src="<? echo $thumb_avia; ?>" alt="Турагентсво ПРО-ТУР <?the_title($id_avia);?> из Лиды">
+            <img src="<? echo $thumb_avia; ?>" alt="Турагентсво ПРО-ТУР <?echo get_the_title($id_avia);?> из Лиды">
           </figure>
           <div class="offer-content offer-content_main">
-            <span class="offer__title"><?the_title($id_avia);?></span>
+            <span class="offer__title"><?echo get_the_title($id_avia);?></span>
             <span class="offer__price"><?php echo get_field('offer_price', $id_avia); ?></span>
             <span class="offer__more">Подробнее...</span>
           </div>
         </a>
-        <a href="<?php echo get_permalink(53); ?>" class="btn offers-box__btn avia-search">Поиск авиатура</a>
-        <a href="<? echo $thumb_auto; ?>" class="offers-box__offer offer">
+        <a href="<?php the_permalink( $id_av_poisk ); ?>" class="btn offers-box__btn avia-search">Поиск авиатура</a>
+        <a href="<?php the_permalink( $id_auto ); ?>" class="offers-box__offer offer">
           <figure>
-            <img src="<? echo $thumb_auto; ?>" alt="Турагентсво ПРО-ТУР <?the_title($id_avia);?> из Лиды ">
+            <img src="<? echo $thumb_auto; ?>" alt="Турагентсво ПРО-ТУР <?echo get_the_title($id_avia);?> из Лиды ">
           </figure>
           <div class="offer-content">
-            <span class="offer__title"><?the_title($id_avia);?></span>
+            <span class="offer__title"><?echo get_the_title($id_auto);?></span>
             <span class="offer__price"><?php echo get_field('offer_price', $id_auto); ?></span>
             Подробнее...
           </div>
         </a>
-        <a href="<?php echo get_permalink(55); ?>" class="btn auto-search offers-box__btn">Поиск экскурсионных туров</a>
+        <a href="<?php the_permalink( $id_au_poisk ); ?>" class="btn auto-search offers-box__btn">Поиск автобусных туров</a>
       </div>
       <div class="bg-box">
       </div>
@@ -108,7 +145,7 @@ $auto = get_posts(
           Все это и многое другое наша команда с радостью предлагает вам!<br>
           Оставляйте заявку и мы подберем отдых для вас!
         </p>
-          <a href="#" class="btn main-about__btn">Оставить заявку</a>
+          <a href="#" class="btn cloud-link main-about__btn"><span class="hidden">блок приемуществ</span>Оставить заявку</a>
       </article>
       </div>
     </div>
@@ -117,12 +154,12 @@ $auto = get_posts(
         <ul class="main-about__advantages">
           <li class="advantages__icon icon-like">
             <i></i>
-            <span class="advantages__title">98% +</span>
+            <span class="advantages__title">99,9% +</span>
             <p>Довольных клиентов</p>
           </li>
           <li class="advantages__icon icon-clients">
             <i></i>
-            <span class="advantages__title">2000 +</span>
+            <span class="advantages__title">2500 +</span>
             <p>Туристов зарядились эмоциями</p>
           </li>
           <li class="advantages__icon icon-cream">
@@ -144,21 +181,22 @@ $auto = get_posts(
             if($obj->post_name == 'archive') {
               continue;
           }
+					$img_avia = get_the_post_thumbnail($obj->ID);
         ?>
         <article class="main-avia card-box">
-          <a class="card-box__more" href="<?php the_permalink(); ?>">
+          <a class="card-box__more" href="<?php the_permalink($obj->ID); ?>">
             <figure class="card-box__img">
-              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
+              <img src="<?echo $img_avia;?>" alt="<?echo get_the_title( $obj->ID );?> от ПРО-ТУР">
             </figure>
           </a>
           <div class="card-box__text">
-            <h4>Индия1</h4>
-            <p>от 300 рублей</p>
-            <a href="#2" class="btn card-box__btn">Полететь</a>
+            <h4><?echo get_the_title( $obj->ID );?></h4>
+            <p><?php echo get_field('offer_price', $obj->ID); ?></p>
+            <a href="#" class="btn cloud-link card-box__btn"><span class="hidden"><?echo get_the_title( $obj->ID );?></span>Полететь</a>
           </div>
         </article>
         <?php
-        }
+			}
         ?>
       </div>
     </div>
@@ -170,7 +208,7 @@ $auto = get_posts(
       </p>
       <div class="button-box">
         <a href="#" class="btn offers-box__btn avia-search">Каталог стран</a>
-        <a href="#" class="btn offers-box__btn avia-search">поиск авиатуров</a>
+        <a href="<?php echo get_permalink($id_av_poisk); ?>" class="btn offers-box__btn avia-search">поиск авиатуров</a>
       </div>
     </div>
   </section>
@@ -180,110 +218,35 @@ $auto = get_posts(
       <div class="title__text">
         <p>Новые открытия, впечатления, знакомства, селфи...<br>
            Прекрасная возможность увидить "матушку" Европу во всей красе.</p>
-        <a href="#" class="btn offers-box__btn avia-search">поиск экскурсий</a>
+        <a href="<?php echo get_permalink($id_au_poisk); ?>" class="btn offers-box__btn avia-search">поиск экскурсий</a>
       </div>
     </div>
   </section>
   <section class="main-auto">
     <div class="container">
       <div class="main-catalog flex-box">
+				<?php
+          foreach ($auto as $obj) {
+            if($obj->post_name == 'archive') {
+              continue;
+          }
+					$img_auto = get_the_post_thumbnail($obj->ID);
+        ?>
         <article class="main-avia card-box">
-          <a class="card-box__more" href="#1">
+          <a class="card-box__more" href="<?php the_permalink($obj->ID); ?>">
             <figure class="card-box__img">
-              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
+              <img src="<?echo $img_auto;?>" alt="">
             </figure>
           </a>
           <div class="card-box__text">
-            <h4>Одесса</h4>
-            <p>от 300 рублей</p>
-            <a href="#2" class="btn card-box__btn">Поехать</a>
+            <h4><?echo get_the_title( $obj->ID );?></h4>
+            <p><?php echo get_field('offer_price', $obj->ID); ?></p>
+            <a href="#2" class="btn cloud-link card-box__btn"><span class="hidden"><?echo get_the_title( $obj->ID );?></span>Поехать</a>
           </div>
         </article>
-        <article class="main-avia card-box">
-          <a class="card-box__more" href="#1">
-            <figure class="card-box__img">
-              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-            </figure>
-          </a>
-          <div class="card-box__text">
-            <h4>Одесса</h4>
-            <p>от 300 рублей</p>
-            <a href="#2" class="btn card-box__btn">Поехать</a>
-          </div>
-        </article>
-        <article class="main-avia card-box">
-          <a class="card-box__more" href="#1">
-            <figure class="card-box__img">
-              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-            </figure>
-          </a>
-          <div class="card-box__text">
-            <h4>Одесса</h4>
-            <p>от 300 рублей</p>
-            <a href="#2" class="btn card-box__btn">Поехать</a>
-          </div>
-        </article>
-        <article class="main-avia card-box">
-          <a class="card-box__more" href="#1">
-            <figure class="card-box__img">
-              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-            </figure>
-          </a>
-          <div class="card-box__text">
-            <h4>Одесса</h4>
-            <p>от 300 рублей</p>
-            <a href="#2" class="btn card-box__btn">Поехать</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section class="main-opers">
-    <div class="container">
-      <h3 class="section-title">Наши друзья и партнеры</h3>
-    </div>
-    <div class="container">
-      <div class="main-opers__slider">
-        <figure class="main-opers__slide">
-          <img src="<?bloginfo('template_url'); ?>/pics/belavia_logo.gif" alt="">
-          <div class="cloud-descript">
-            <h5>Белавия</h5>
-            <p>
-              <span class="main-opers__type">Авиаперевозчик</span>
-              Год основания 2010
-            </p>
-          </div>
-        </figure>
-        <figure class="main-opers__slide">
-          <img src="<?bloginfo('template_url'); ?>/pics/belavia_logo.gif" alt="">
-          <div class="cloud-descript">
-            <h5>Белавия</h5>
-            <p>
-              <span class="main-opers__type">Авиаперевозчик</span>
-              Год основания 2010
-            </p>
-          </div>
-        </figure>
-        <figure class="main-opers__slide">
-          <img src="<?bloginfo('template_url'); ?>/pics/belavia_logo.gif" alt="">
-          <div class="cloud-descript">
-            <h5>Белавия</h5>
-            <p>
-              <span class="main-opers__type">Авиаперевозчик</span>
-              Год основания 2010
-            </p>
-          </div>
-        </figure>
-        <figure class="main-opers__slide">
-          <img src="<?bloginfo('template_url'); ?>/pics/belavia_logo.gif" alt="">
-          <div class="cloud-descript">
-            <h5>Белавия</h5>
-            <p>
-              <span class="main-opers__type">Авиаперевозчик</span>
-              Год основания 2010
-            </p>
-          </div>
-        </figure>
+				<?php
+			}
+        ?>
       </div>
     </div>
   </section>
@@ -292,39 +255,57 @@ $auto = get_posts(
       <h3 class="section-title">Наши новости</h3>
     </div>
     <div class="container flex-box news-box">
-      <a href="#" class="news-box__offer offer">
+			<?php
+				foreach ($news as $obj) {
+					if($obj->post_name == 'archive') {
+						continue;
+				}
+				$img_news = get_the_post_thumbnail($obj->ID);
+			?>
+      <a href="<?php the_permalink($obj->ID); ?>" class="news-box__offer offer">
         <figure>
-          <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
+          <img src="<?echo $img_news; ?>" alt="<?echo get_the_title( $obj->ID );?>">
         </figure>
         <div class="offer-content">
-          <span class="offer__title">Одесса - жемчужина у моря</span>
-          <span class="offer__price">отдых в Одесской области</span>
+          <span class="offer__title"><?echo get_the_title( $obj->ID );?></span>
+          <span class="offer__price"><?echo get_the_excerpt( $obj->ID );?></span>
           <span class="offer__more">Подробнее...</span>
         </div>
       </a>
-      <a href="#" class="news-box__offer offer">
-        <figure>
-          <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
-        </figure>
-        <div class="offer-content">
-          <span class="offer__title">Одесса - жемчужина у моря</span>
-          <span class="offer__price">отдых в Одесской области</span>
-          <span class="offer__more">Подробнее...</span>
-        </div>
-      </a>
-      <a href="#" class="news-box__offer offer">
-        <figure>
-          <img src="<?bloginfo('template_url'); ?>/pics/offer.jpg" alt="">
-        </figure>
-        <div class="offer-content">
-          <span class="offer__title">Одесса - жемчужина у моря</span>
-          <span class="offer__price">отдых в Одесской области</span>
-          <span class="offer__more">Подробнее...</span>
-        </div>
-      </a>
+			<?php
+		}
+			?>
     </div>
     <div class="container">
-      <a href="#2" class="btn card-box__btn">Все новости и статьи</a>
+      <a href="<?php the_permalink( $id_news ) ?>" class="btn card-box__btn">Все новости и статьи</a>
+    </div>
+  </section>
+	<section class="main-opers">
+    <div class="container">
+      <h3 class="section-title">Наши друзья и партнеры</h3>
+    </div>
+    <div class="container">
+      <div class="main-opers__slider">
+				<?php
+          foreach ($partners as $obj) {
+            if($obj->post_name == 'archive') {
+              continue;
+          }
+        ?>
+        <figure class="main-opers__slide">
+          <img src="<?php echo get_field('p_logo', $obj->ID); ?>" alt="<?echo get_the_title( $obj->ID );?>">
+					<div class="cloud-descript">
+            <h5><?echo get_the_title( $obj->ID );?></h5>
+            <p>
+              <span class="main-opers__type"><?php echo get_field('p_type', $obj->ID); ?></span><br>
+              Год основания <?php echo get_field('p_year', $obj->ID); ?>
+            </p>
+          </div>
+        </figure>
+				<?php
+			}
+        ?>
+      </div>
     </div>
   </section>
 </main>

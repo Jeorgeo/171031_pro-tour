@@ -27,127 +27,114 @@ get_header();
 			</aside>
   		<main id="main" class="site-main country">
 			  <figure class="country-slider">
-				<img src="http://pro-tour.by/wp-content/uploads/2018/03/pro-tourby_Albaniya-1.jpg" alt="  Албания">
+				<img src="<?php echo get_field('сountry_slide'); ?>" alt="<?echo get_the_title();?> от ПРО-ТУР">
 				<div class="flag-box">
-          <a rel="nofollow" href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B1%D0%B0%D0%BD%D0%B8%D1%8F" class="flag-box__title" target="_blank">
+          <a rel="nofollow" href="<?php echo get_field('сountry_info'); ?>" class="flag-box__title" target="_blank">
             <span class="flag_img">
-              <img src="http://pro-tour.by/wp-content/uploads/2018/03/pro-tourby_Albaniya-flag.jpg" alt="Албания">
+              <img src="<?php echo get_field('сountry_flag'); ?>" alt="<?echo get_the_title();?> флаг">
             </span>
-            <h1>Албания</h1>
+            <h1><?echo get_the_title();?></h1>
           </a>
         </div>
 			  </figure>
 				<section class="country-description">
-					<p>
-						Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur", и занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной Цицероном в 45 году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem Ipsum, "Lorem ipsum dolor sit amet..", происходит от одной из строк в разделе 1.10.32
-					</p>
+					<?
+						the_post();
+						the_content();
+						$id_news = get_field('id_news');
+						$id_offer_1 = get_field('id_offer_1');
+						$id_offer_2 = get_field('id_offer_2');
+						$id_offer_3 = get_field('id_offer_3');
+					?>
 				</section>
 			  <section class="country-informers">
 					<ul class="country__info-box">
             <li>
-              <span>Язык:</span> Албанский
+              <span>Язык:</span> <?php echo get_field('сountry_lang'); ?>
 					  </li>
             <li>
-              <span>Валюта:</span> Лек
+              <span>Валюта:</span> <?php echo get_field('сountry_money'); ?>
 					  </li>
             <li>
-              <span>Виза:</span> с 15 мая до ноября виза для белорусов не нужна
+              <span>Виза:</span> <?php echo get_field('сountry_visa'); ?>
 				  	</li>
 					  <li>
-						  <span>Время полёта из Минска:</span> ~ 2часа
+						  <span>Время полёта из Минска:</span> ~ <?php echo get_field('сountry_fly'); ?>
 					  </li>
           </ul>
 					<ul class="country__meteo-box">
-						<!-- Gismeteo informer START -->
-							<link rel="stylesheet" type="text/css" href="https://nst1.gismeteo.by/assets/flat-ui/legacy/css/informer.min.css">
-								<div id="gsInformerID-4iAn5InySocouA" class="gsInformer" style="width:300px;height:227px">
-	       					<div class="gsIContent">
-	        					<div id="cityLink">
-	            				<a href="https://www.gismeteo.by/weather-tirana-3257/" target="_blank" title="Погода в Тиране"><img src="https://nst1.gismeteo.by/assets/flat-ui/img/gisloader.svg" width="24" height="24" alt="Погода в Тиране"></a>
-	        					</div>
-	        					<div class="gsLinks">
-	            			<table>
-	                		<tr>
-	                    	<td>
-	                        <div class="leftCol">
-	                            <a href="https://www.gismeteo.by/" target="_blank" title="Погода в Тиране">
-	                                <img alt="Погода в Тиране" src="https://nst1.gismeteo.by/assets/flat-ui/img/logo-mini2.png" align="middle" border="0" width="11" height="16" />
-	                                <img src="https://nst1.gismeteo.by/assets/flat-ui/img/informer/gismeteo.svg" border="0" align="middle" style="left: 5px; top:1px">
-	                            </a>
-	                            </div>
-	                            <div class="rightCol">
-	                                <a href="https://www.gismeteo.by/weather-tirana-3257/2-weeks/" target="_blank" title="Погода в Тиране на 2 недели">
-	                                    <img src="https://nst1.gismeteo.by/assets/flat-ui/img/informer/forecast-2weeks.ru.svg" border="0" align="middle" style="top:auto" alt="Погода в Тиране на 2 недели">
-	                                </a>
-	                            </div>
-	                         </td>
-	                			 </tr>
-	            		 		</table>
-	        					</div>
-	    					 </div>
-            	</div>
-							<script async src="https://www.gismeteo.by/api/informer/getinformer/?hash=4iAn5InySocouA"></script>
-						<!-- Gismeteo informer END -->
+						<li>
+							<?php echo get_field('сountry_meteo'); ?>
+						</li>
 					</ul>
-					<ul class="country__news-box">
-						<article id="post-88" <?php post_class('',88); ?>>
-						  <?php
-						  $thumb = get_the_post_thumbnail( 88 );
-						  ?>
-							<a href="<?php echo get_post_permalink( 88 ); ?>" class="news-box__offer offer">
+					<div class="country__news-box">
+						<article id="post-<?$id_news?>" <?php post_class('',	$id_news); ?>>
+							<?php
+							$thumb = get_the_post_thumbnail( $id_news );
+							?>
+							<a href="<?php echo get_post_permalink( $id_news ); ?>" class="news-box__offer offer">
 								<figure>
 									<?php echo $thumb;?>
 								</figure>
 								<div class="offer-content">
-									<span class="offer__title"><?echo get_the_title( 88 );?></span>
-									<span class="offer__price"><?echo get_the_excerpt( 88 );?></span>
+									<span class="offer__title"><?echo get_the_title( $id_news );?></span>
+									<span class="offer__price"><?echo get_the_excerpt( $id_news );?></span>
 									<span class="offer__more">Подробнее...</span>
 								</div>
 							</a>
-						</article><!-- #post-88 -->
-					</ul>
+						</article><!-- #post-<?$id_news?> -->
+					</div>
 			  </section>
-			  <section class="main-catalog flex-box">
-					<article class="main-avia card-box">
-	          <a class="card-box__more" href="#1">
-	            <figure class="card-box__img">
-	              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-	            </figure>
-	          </a>
-	          <div class="card-box__text">
-	            <h4>Индия1</h4>
-	            <p>от 300 рублей</p>
-	            <a href="#2" class="btn card-box__btn">Полететь</a>
-	          </div>
-	        </article>
-					<article class="main-avia card-box">
-	          <a class="card-box__more" href="#1">
-	            <figure class="card-box__img">
-	              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-	            </figure>
-	          </a>
-	          <div class="card-box__text">
-	            <h4>Индия1</h4>
-	            <p>от 300 рублей</p>
-	            <a href="#2" class="btn card-box__btn">Полететь</a>
-	          </div>
-	        </article>
-					<article class="main-avia card-box">
-	          <a class="card-box__more" href="#1">
-	            <figure class="card-box__img">
-	              <img src="<?bloginfo('template_url'); ?>/pics/card.jpg" alt="">
-	            </figure>
-	          </a>
-	          <div class="card-box__text">
-	            <h4>Индия1</h4>
-	            <p>от 300 рублей</p>
-	            <a href="#2" class="btn card-box__btn">Полететь</a>
-	          </div>
-	        </article>
+			  <section class="main-catalog main-catalog_country flex-box">
+					<?php if ($id_offer_1):
+						$img_offer_1 = get_the_post_thumbnail($id_offer_1); ?>
+						<article class="main-avia card-box">
+							<a class="card-box__more" href="<?php echo get_permalink($id_offer_1); ?>">
+								<figure class="card-box__img">
+									<img src="<? echo $img_offer_1; ?>" alt="<?echo get_the_title( $id_offer_1 );?> от ПРО-ТУР">
+								</figure>
+							</a>
+							<div class="card-box__text">
+								<h4><?echo get_the_title( $id_offer_1 );?></h4>
+								<p><?php echo get_field('offer_price', $id_offer_1); ?></p>
+								<a href="#" class="btn cloud-link card-box__btn"><?php echo get_field('offer_btn', $id_offer_1); ?></a>
+							</div>
+						</article>
+					<?php endif; ?>
+					<?php if ($id_offer_2):
+						$img_offer_2 = get_the_post_thumbnail($id_offer_2); ?>
+						<article class="main-avia card-box">
+							<a class="card-box__more" href="<?php echo get_permalink($id_offer_2); ?>">
+								<figure class="card-box__img">
+									<img src="<? echo $img_offer_2; ?>" alt="<?echo get_the_title( $id_offer_2 );?> от ПРО-ТУР">
+								</figure>
+							</a>
+							<div class="card-box__text">
+								<h4><?echo get_the_title( $id_offer_2 );?></h4>
+								<p><?php echo get_field('offer_price', $id_offer_2); ?></p>
+								<a href="#" class="btn cloud-link card-box__btn"><?php echo get_field('offer_btn', $id_offer_2); ?></a>
+							</div>
+						</article>
+					<?php endif; ?>
+					<?php if ($id_offer_3):
+						$img_offer_3 = get_the_post_thumbnail( $id_offer_3 ); ?>
+						<article class="main-avia card-box">
+							<a class="card-box__more" href="<?php echo get_permalink( $id_offer_3 ); ?>">
+								<figure class="card-box__img">
+									<img src="<? echo $img_offer_3; ?>" alt="<?echo get_the_title( $id_offer_3 );?> от ПРО-ТУР">
+								</figure>
+							</a>
+							<div class="card-box__text">
+								<h4><?echo get_the_title( $id_offer_3 );?></h4>
+								<p><?php echo get_field('offer_price', $id_offer_3); ?></p>
+								<a href="#" class="btn cloud-link card-box__btn"><?php echo get_field('offer_btn', $id_offer_3); ?></a>
+							</div>
+						</article>
+					<?php endif; ?>
 			  </section>
 				<div class="button-box">
-        	<a href="#" class="btn offers-box__btn avia-search">оставить заявку</a>
-        	<a href="#" class="btn offers-box__btn avia-search">начать поиск</a>
+        	<a href="#" class="btn cloud-link offers-box__btn avia-search">оставить заявку</a>
+        	<!--<a href="<?php echo get_permalink( 719 ); ?>" class="btn offers-box__btn avia-search">начать поиск</a>-->
         </div>
   		</main><!-- #main -->
 		</div>

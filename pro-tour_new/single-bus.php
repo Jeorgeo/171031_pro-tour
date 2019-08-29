@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for news post single
+ * The template for displaying single bus post
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -10,8 +10,8 @@
 get_header();
 ?>
 
-<div id="primary" class="content-area container ">
-	<?php if ( function_exists( 'dimox_breadcrumbs' ) ) dimox_breadcrumbs(); ?>
+<div id="primary" class="content-area container">
+ <?/*php if ( function_exists( 'dimox_breadcrumbs' ) ) dimox_breadcrumbs(); */?>
 	<div class="flex-sidebar">
 		<aside class="main-header left-panel">
 			<div class="left-panel__box">
@@ -26,28 +26,17 @@ get_header();
 				<?php dynamic_sidebar( 'wiget_aside' ); ?>
 			</div>
 		</aside>
-		<main id="main" class="site-main single-news">
-
-		<?php if ( have_posts() ) : ?>
-
-			<h1><? the_title(); ?></h1>
+		<main id="main" class="site-main single-avia">
+			<?php
+				the_post();
+				the_content();
+			?>
+			<a href="#" class="btn cloud-link card-box__btn">Оставить заявку</a>
 			<?
-
-			the_post();
-			the_content();
-			the_posts_navigation();
-			//if (function_exists('wp_corenavi')) wp_corenavi();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div>
-
+				the_post_navigation();
+			?>
+	</main><!-- #main single-avia-->
+</div>
 </div><!-- #primary -->
 
 <?php

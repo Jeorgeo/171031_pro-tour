@@ -47,11 +47,6 @@ $opers = get_posts(
 				<h2 class="section-title section-title_dark-theme"><span class="color-orange">о</span> нас</h2>
 				<article class="content-box">
 					<ul class="content-box__img">
-						<li class="current">
-							<a href="<?php echo get_field('about_img-1'); ?>">
-								<img src="<?php echo get_field('about_img-1'); ?>" />
-							</a>
-						</li>
 						<li>
 							<a href="<?php echo get_field('about_img-2'); ?>">
 								<img src="<?php echo get_field('about_img-2'); ?>" />
@@ -65,6 +60,11 @@ $opers = get_posts(
 						<li>
 							<a href="<?php echo get_field('about_img-4'); ?>">
 								<img src="<?php echo get_field('about_img-4'); ?>" />
+							</a>
+						</li>
+						<li class="current">
+							<a href="<?php echo get_field('about_img-1'); ?>">
+								<img src="<?php echo get_field('about_img-1'); ?>" />
 							</a>
 						</li>
 					</ul>
@@ -120,11 +120,9 @@ $opers = get_posts(
 							(Торгово-сервисный центр)
 						</p>
 						<div class="mobile-header__phone-box">
-							<a class="mobile-header__phone-button phone-button velcom" href="tel:<?php echo get_field('vel_1', 47); ?>"><?php echo get_field('vel_12', 47); ?></a>
-							<a class="mobile-header__phone-button phone-button mts" href="tel:<?php echo get_field('mts_1', 47); ?>"><?php echo get_field('mts_12', 47); ?></a>
-						</div>
-						<div class="contats-email">
-							<a class="mobile-header__phone-button phone-button email" href="mailto:<?php echo get_field('email_1', 47); ?>"><?php echo get_field('email_1', 47); ?></a>
+							<a class="mobile-header__phone-button phone-button velcom" href="tel:<?php echo get_field('vel_1', 711); ?>"><?php echo get_field('vel_12', 711); ?></a>
+							<a class="mobile-header__phone-button phone-button mts" href="tel:<?php echo get_field('mts_1', 711); ?>"><?php echo get_field('mts_12', 711); ?></a>
+							<a class="mobile-header__phone-button phone-button email" href="mailto:<?php echo get_field('email_1', 711); ?>"><?php echo get_field('email_1', 711); ?></a>
 						</div>
 					</article>
 					<div class="about-contacts__map">
@@ -136,10 +134,9 @@ $opers = get_posts(
 					<p>заполните поля и мы свяжемся с Вами в ближайшее время</p>
 					<form id="about_form" method="post" class="order-form">
 						<!-- Hidden Required Fields -->
-						<input type="hidden" name="project_name" value="pro-tour.by">
-						<!--input type="hidden" name="admin_email" value=""!-->
-						<?php dynamic_sidebar( 'admin_mail' ); ?>
-						<input type="hidden" name="form_subject" value="Заявка со страницы о нас">
+						<input type="hidden" name="project_name" value="заявка с pro-tour.by">
+						<input type="hidden" name="admin_email" value="<?php echo get_field('email_form', 47); ?>">
+						<input type="hidden" name="form_subject" value="Заявка со страницы <?echo the_title();?>">
 						<!-- END Hidden Required Fields -->
 						<input id="name" class="order-form__input name" type="text" name="name"
 						value="" placeholder="Ваше имя" pattern="^([A-Za-zА-Яа-яЁё\.\-]{2,20})" required>
@@ -147,7 +144,7 @@ $opers = get_posts(
 						value="" placeholder="Ваш телефон" required>
 						<textarea id="message" class="order-form__input message" name="message" placeholder="Задайте вопрос"></textarea>
 						<div class="order-form__сonsent">
-							<button id="submit" class="btn order-form__btn" type="submit" name="submit">
+							<button id="submit" class="btn cloud-link order-form__btn" type="submit" name="submit">
 								Отправить
 							</button>
 							<div class="сonsent-box">

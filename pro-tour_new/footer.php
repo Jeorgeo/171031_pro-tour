@@ -33,8 +33,8 @@
 				Информация
 			</h3>
 			<ul class="footer-menu">
-				<li><a href="#">О нас</a></li>
-				<li><a href="#">Новости</a></li>
+				<li><a href="<?php the_permalink( 713 ); ?>">О нас</a></li>
+				<li><a href="<?php echo get_field('id_news', 711); ?>">Новости</a></li>
 				<li><a href="#">Частые вопросы</a></li>
 				<li><a href="#">Сертификаты и дипломы</a></li>
 				<li><a href="#">Вакансии</a></li>
@@ -46,10 +46,10 @@
 				Услуги
 			</h3>
 			<ul class="footer-menu">
-				<li><a href="#">Авиатуры</a></li>
-				<li><a href="#">Автобусные туры</a></li>
-				<li><a href="#">Медицинское страхование за границей</a></li>
-				<li><a href="#">Визовая поддержка</a></li>
+				<li><a href="<?php the_permalink( 719 ); ?>">Авиатуры</a></li>
+				<li><a href="<?php the_permalink( 721 ); ?>">Автобусные туры</a></li>
+				<li><a href="<?php the_permalink( 723 ); ?>">Cтрахование</a></li>
+				<li><a href="<?php the_permalink( 708 ); ?>">Визовая поддержка</a></li>
 				<li><a href="#">Корпоративный туризм</a></li>
 				<li><a href="#">Подарочные сертификаты</a></li>
 			</ul>
@@ -60,15 +60,15 @@
 					Давайте дружить
 				</h3>
 				<ul class="social">
-					<li class="social__icon ins"><a href="#" target="_blank" rel="nofollow">Инстаграмм</a></li>
-					<li class="social__icon tel"><a href="#" target="_blank" rel="nofollow">Телеграм</a></li>
-					<li class="social__icon vk"><a href="#" target="_blank" rel="nofollow">Вконтакте</a></li>
-					<li class="social__icon fb"><a href="#" target="_blank" rel="nofollow">фейсбук</a></li>
-					<li class="social__icon ok"><a href="#" target="_blank" rel="nofollow">одноклассники</a></li>
+					<li class="social__icon ins"><a href="<?php echo get_field('link_inst', 711); ?>" target="_blank" rel="nofollow">Инстаграмм</a></li>
+					<li class="social__icon tel"><a href="<?php echo get_field('link_tel', 711); ?>" target="_blank" rel="nofollow">Телеграм</a></li>
+					<li class="social__icon vk"><a href="<?php echo get_field('link_vk', 711); ?>" target="_blank" rel="nofollow">Вконтакте</a></li>
+					<li class="social__icon fb"><a href="<?php echo get_field('link_f', 711); ?>" target="_blank" rel="nofollow">фейсбук</a></li>
+					<li class="social__icon ok"><a href="<?php echo get_field('link_ok', 711); ?>" target="_blank" rel="nofollow">одноклассники</a></li>
 				</ul>
 				<div class="mobile-header__phone-box">
-					<a class="mobile-header__phone-button phone-button velcom" href="tel:<?php echo get_field('vel_1', 47); ?>"><?php echo get_field('vel_12', 47); ?></a>
-					<a class="mobile-header__phone-button phone-button mts" href="tel:<?php echo get_field('mts_1', 47); ?>"><?php echo get_field('mts_12', 47); ?></a>
+					<a class="mobile-header__phone-button phone-button velcom" href="tel:<?php echo get_field('vel_1', 711); ?>"><?php echo get_field('vel_12', 711); ?></a>
+					<a class="mobile-header__phone-button phone-button mts" href="tel:<?php echo get_field('mts_1', 411); ?>"><?php echo get_field('mts_12', 711); ?></a>
 				</div>
 				<div class="header__adress adress">
 					<p>
@@ -104,11 +104,11 @@
 	<section class="dark">
 		<div class="container">
 			<p>
-	      Все права защищены. Перепечатка материалов разрешена только с указанием автора с активной ссылкой на сайт <a href="#">PRO-tour.by</a><br>
-				<a href="#">Политика конфиденциальности</a> Все предложения и цены на сайте носят информационный характер и не являются публичной афертой.
+	      Все права защищены. Перепечатка материалов разрешена только с указанием автора с активной ссылкой на сайт <a href="<?php echo get_permalink(47); ?>">PRO-tour.by</a><br>
+				<a href="<?php echo get_permalink( 725 ); ?>">Политика конфиденциальности</a> Все предложения и цены на сайте носят информационный характер и не являются публичной афертой.
 	    </p>
 			<p>
-				© 2019 | Заряжено на результат <a href="#">RStudio</a>
+				© 2019 | Заряжено <a href="http://rstudio.by/">RStudio</a>
 			</p>
 		</div>
 	</section>
@@ -122,7 +122,7 @@
 		<form id="js_form" method="post" class="cloud-form order-form">
 			<!-- Hidden Required Fields -->
 			<input type="hidden" name="project_name" value="pro-tour.by">
-			<?php dynamic_sidebar( 'admin_mail' ); ?>
+			<input type="hidden" name="admin_email" value="<?php echo get_field('email_form', 47); ?>">
 			<input class="cloud-title" type="hidden" name="form_subject" value="Заявка с сайта.Консультация">
 			<!-- END Hidden Required Fields -->
 			<label class="cloud-form__phone" for="phone">Ваш Телефон</label>
