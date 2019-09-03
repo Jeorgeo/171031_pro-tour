@@ -52,15 +52,10 @@ $tabs = get_posts(
 	<section class="visa">
 		<h1 class="section-title section-title_dark-theme">Визовая <span class="color-orange">поддержка</span></h1>
 		<article class="content-box">
-			<figure class="content-box__img">
-				<img src="<?php echo get_field('visa_img'); ?>" />
-			</figure>
-			<div class="content-box__txt">
-				<?php
-					the_post();
-					the_content();
-				?>
-			</div>
+			<?php
+				the_post();
+				the_content();
+			?>
 		</article>
 	</section>
 	<section class="visa-box">

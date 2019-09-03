@@ -650,6 +650,17 @@ a {
   color: inherit;
 }
 
+.site-main a {
+  color: #1d2262;
+  border-bottom: 1px dotted #ef7b00;
+}
+
+.site-main a:hover,
+.site-main a:active {
+  color: #ef7b00;
+  border-bottom: 1px solid #ef7b00;
+}
+
 figure {
   margin: 0;
 }

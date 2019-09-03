@@ -22,4 +22,4 @@ Allow: /wp-*.gif
 
 Host: www.pro-tour.by
 
-Sitemap: http://pro-tour.by/sitemap.xml
+Sitemap: https://pro-tour.by/sitemap.xml

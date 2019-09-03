@@ -14,13 +14,9 @@
 
 get_header();
 
-$id_avia = get_field('id_avia');
-$id_auto = get_field('id_auto');
 $id_news = get_field('id_news');
 $id_av_poisk = 719;
 $id_au_poisk = 721;
-$thumb_avia = get_the_post_thumbnail($id_avia);
-$thumb_auto = get_the_post_thumbnail($id_auto);
 
 $avia = get_posts(
 		array(
@@ -39,9 +35,43 @@ $avia = get_posts(
 		)
 );
 
+$avia_m = get_posts(
+		array(
+				'numberposts' => 1,
+				'offset' => 0,
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+				'category' => '8',
+				'include' => '',
+				'exclude' => '',
+				'meta_key' => '',
+				'meta_value' => '',
+				'post_type' => 'post',
+				'post_parent' => '',
+				'post_status' => 'publish'
+		)
+);
+
 $auto = get_posts(
 		array(
 				'numberposts' => 4,
+				'offset' => 0,
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+				'category' => '9',
+				'include' => '',
+				'exclude' => '',
+				'meta_key' => '',
+				'meta_value' => '',
+				'post_type' => 'post',
+				'post_parent' => '',
+				'post_status' => 'publish'
+		)
+);
+
+$auto_m = get_posts(
+		array(
+				'numberposts' => 1,
 				'offset' => 0,
 				'orderby'     => 'date',
 				'order'       => 'DESC',
@@ -97,27 +127,43 @@ $partners = get_posts(
     <div class="container main-container">
       <h3>Идеи на ваш <span class="main-slider__title">отдых</span> в сентябре</h3>
       <div class="main-slider__offers offers-box">
-        <a href="<?php the_permalink($id_avia); ?>" class="offers-box__offer offer">
+				<?php
+          foreach ($avia_m as $obj) {
+            if($obj->post_name == 'archive') {
+              continue;
+          }
+					$thumb_avia = get_the_post_thumbnail($obj->ID);
+        ?>
+        <a href="<?php the_permalink($obj->ID); ?>" class="offers-box__offer offer">
           <figure>
-            <img src="<? echo $thumb_avia; ?>" alt="Турагентсво ПРО-ТУР <?echo get_the_title($id_avia);?> из Лиды">
+            <img src="<? echo $thumb_avia; ?>" alt="Турагентсво ПРО-ТУР <?echo get_the_title($obj->ID);?> из Лиды">
           </figure>
           <div class="offer-content offer-content_main">
-            <span class="offer__title"><?echo get_the_title($id_avia);?></span>
-            <span class="offer__price"><?php echo get_field('offer_price', $id_avia); ?></span>
+            <span class="offer__title"><?echo get_the_title($obj->ID);?></span>
+            <span class="offer__price"><?php echo get_field('offer_price', $obj->ID); ?></span>
             <span class="offer__more">Подробнее...</span>
           </div>
         </a>
+			  <?}?>
         <a href="<?php the_permalink( $id_av_poisk ); ?>" class="btn offers-box__btn avia-search">Поиск авиатура</a>
-        <a href="<?php the_permalink( $id_auto ); ?>" class="offers-box__offer offer">
+				<?php
+          foreach ($auto_m as $obj) {
+            if($obj->post_name == 'archive') {
+              continue;
+          }
+					$thumb_auto = get_the_post_thumbnail($obj->ID);
+        ?>
+        <a href="<?php the_permalink( $obj->ID ); ?>" class="offers-box__offer offer">
           <figure>
-            <img src="<? echo $thumb_auto; ?>" alt="Турагентсво ПРО-ТУР <?echo get_the_title($id_avia);?> из Лиды ">
+            <img src="<? echo $thumb_auto; ?>" alt="Турагентсво ПРО-ТУР <?echo get_the_title($obj->ID);?> из Лиды ">
           </figure>
           <div class="offer-content">
-            <span class="offer__title"><?echo get_the_title($id_auto);?></span>
-            <span class="offer__price"><?php echo get_field('offer_price', $id_auto); ?></span>
+            <span class="offer__title"><?echo get_the_title($obj->ID);?></span>
+            <span class="offer__price"><?php echo get_field('offer_price', $obj->ID); ?></span>
             Подробнее...
           </div>
         </a>
+				<?}?>
         <a href="<?php the_permalink( $id_au_poisk ); ?>" class="btn auto-search offers-box__btn">Поиск автобусных туров</a>
       </div>
       <div class="bg-box">

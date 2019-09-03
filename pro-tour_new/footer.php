@@ -81,9 +81,9 @@
 				<div class="clock footer__clock">
 					<p>
 						<span class="color-w">Наши двери открыты:</span><br>
-						пн-пт: 10:00 - 19:00<br>
+						пн-пт: 10:00 - 18:00<br>
 						сб: 10:00 - 16:00<br>
-						вс: выходной
+						вс: 10:00 - 16:00
 					</p>
 				</div>
 			</article>
