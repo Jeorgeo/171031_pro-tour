@@ -14,7 +14,6 @@
 
 get_header();
 
-$id_news = get_field('id_news');
 $id_av_poisk = 719;
 $id_au_poisk = 721;
 
@@ -323,7 +322,7 @@ $partners = get_posts(
 			?>
     </div>
     <div class="container">
-      <a href="<?php the_permalink( $id_news ) ?>" class="btn card-box__btn">Все новости и статьи</a>
+      <a href="https://pro-tour.by/category/news/" class="btn card-box__btn">Все новости и статьи</a>
     </div>
   </section>
 	<section class="main-opers">

@@ -59,6 +59,9 @@ get_header();
               <span>Виза:</span> <?php echo get_field('сountry_visa'); ?>
 				  	</li>
 					  <li>
+						  <span>Сезон:</span> <?php echo get_field('сountry_season'); ?>
+					  </li>
+						<li>
 						  <span>Время полёта из Минска:</span> ~ <?php echo get_field('сountry_fly'); ?>
 					  </li>
           </ul>
@@ -68,21 +71,23 @@ get_header();
 						</li>
 					</ul>
 					<div class="country__news-box">
-						<article id="post-<?$id_news?>" <?php post_class('',	$id_news); ?>>
-							<?php
-							$thumb = get_the_post_thumbnail( $id_news );
-							?>
-							<a href="<?php echo get_post_permalink( $id_news ); ?>" class="news-box__offer offer">
-								<figure>
-									<?php echo $thumb;?>
-								</figure>
-								<div class="offer-content">
-									<span class="offer__title"><?echo get_the_title( $id_news );?></span>
-									<span class="offer__price"><?echo get_the_excerpt( $id_news );?></span>
-									<span class="offer__more">Подробнее...</span>
-								</div>
-							</a>
-						</article><!-- #post-<?$id_news?> -->
+						<?php if ($id_news): ?>
+							<article id="post-<?$id_news?>" <?php post_class('',	$id_news); ?>>
+								<?php
+								$thumb = get_the_post_thumbnail( $id_news );
+								?>
+								<a href="<?php echo get_post_permalink( $id_news ); ?>" class="news-box__offer offer">
+									<figure>
+										<?php echo $thumb;?>
+									</figure>
+									<div class="offer-content">
+										<span class="offer__title"><?echo get_the_title( $id_news );?></span>
+										<span class="offer__price"><?echo get_the_excerpt( $id_news );?></span>
+										<span class="offer__more">Подробнее...</span>
+									</div>
+								</a>
+							</article><!-- #post-<?$id_news?> -->
+						<?php endif; ?>						
 					</div>
 			  </section>
 			  <section class="main-catalog main-catalog_country flex-box">
@@ -136,6 +141,10 @@ get_header();
         	<a href="#" class="btn cloud-link offers-box__btn avia-search">оставить заявку</a>
         	<!--<a href="<?php echo get_permalink( 719 ); ?>" class="btn offers-box__btn avia-search">начать поиск</a>-->
         </div>
+				<section class="avia-search">
+					<h1 class="section-title section-title_dark-theme">Подбор <span class="color-orange">Авиа</span> туров</h1>
+			    <?php echo get_field('country_search'); ?>
+				</section>
   		</main><!-- #main -->
 		</div>
 	</div><!-- #primary -->

@@ -650,13 +650,13 @@ a {
   color: inherit;
 }
 
-.site-main a {
+.single-post .site-main a {
   color: #1d2262;
   border-bottom: 1px dotted #ef7b00;
 }
 
-.site-main a:hover,
-.site-main a:active {
+.single-post .site-main a:hover,
+.single-post .site-main a:active {
   color: #ef7b00;
   border-bottom: 1px solid #ef7b00;
 }
@@ -2846,13 +2846,15 @@ form label.cloud-form__сonsent {
   }
 
   .main-menu li.menu-item:hover > a::after,
-  .main-menu .menu > li.current-menu-parent > a::after {
+  .main-menu .menu > li.current-menu-parent > a::after,
+  .home .main-menu .menu > li.current_page_item:first-child > a::after {
     width: calc(100% + 10px);
     transition: all 0.5s;
   }
 
   .main-menu li.menu-item:hover,
-  .main-menu .menu > li.current-menu-parent {
+  .main-menu .menu > li.current-menu-parent,
+  .home .main-menu .menu > li.current_page_item:first-child {
     color: #ef7b00;
     transition: all 0.6s;
   }

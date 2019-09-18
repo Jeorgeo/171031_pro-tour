@@ -223,7 +223,7 @@ winPopup.addEventListener("click", function(event) {
 		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "http://rstudio.ru.com//mail.php", //Change
+			url: "https://pro-tour.by/mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
 			showThank();

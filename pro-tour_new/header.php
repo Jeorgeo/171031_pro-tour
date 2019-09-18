@@ -43,6 +43,7 @@
 
   gtag('config', 'UA-113820744-1');
 </script>
+<meta name="yandex-verification" content="f9a2e042c11549ee" />
 </head>
 
 <body <?php body_class(); ?>>
@@ -62,7 +63,7 @@
 				</a>
 				<div class="header__slogan">
 					<p>
-						Мир открыт <br>
+						Мир открыт, <br>
 						открой себя <br>
 						миру!
 					</p>

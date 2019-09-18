@@ -9,7 +9,7 @@
 
 get_header();
 
-$opers = get_posts(
+$partners = get_posts(
 		array(
 				'numberposts' => -1,
 				'offset' => 0,
@@ -80,14 +80,14 @@ $opers = get_posts(
 				<h2 class="section-title section-title_dark-theme">Наши <span class="color-orange">партнеры</span></h2>
 					<ul class="about-partners__logos">
 						<?php
-							foreach ($opers as $obj) {
+							foreach ($partners as $obj) {
 								if($obj->post_name == 'archive') {
 									continue;
 							}
 						?>
 						<li>
 							<a href="<?php echo get_field('p_link',$obj->ID); ?>">
-								<img src="<?php echo get_field('p_img',$obj->ID); ?>" />
+								<img src="<?php echo get_field('p_logo', $obj->ID); ?>" />
 							</a>
 						</li>
 						<?php

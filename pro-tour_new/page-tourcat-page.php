@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Поиск авиа туров
+ * Template Name: Тур по типу
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -13,6 +13,26 @@
  */
 
 get_header();
+
+$tourcat = get_field('tourcat_num');
+
+$tours = get_posts(
+		array(
+				'numberposts' => 4,
+				'offset' => 0,
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+				'category' => $tourcat,
+				'include' => '',
+				'exclude' => '',
+				'meta_key' => '',
+				'meta_value' => '',
+				'post_type' => 'post',
+				'post_parent' => '',
+				'post_status' => 'publish'
+		)
+);
+
  ?>
 
  <div id="primary" class="content-area container">
@@ -31,15 +51,37 @@ get_header();
  			 <?php dynamic_sidebar( 'wiget_aside' ); ?>
  		 </div>
  	 </aside>
- 	 <main class="site-main avia">
-	<section class="avia-search">
-		<h1 class="section-title section-title_dark-theme">Подбор <span class="color-orange">Авиа</span> туров</h1>
-    <!--Поисковик туров 2345-->
-    <iframe scrolling="no" width="100%" frameborder="0" src="https://freeware-wtfpl-v1-2345-tour-search-service.online/cache/sites/2880/">
-    </iframe>
-    <script type="text/javascript" src="https://freeware-wtfpl-v1-2345-tour-search-service.online/js/frame_resizer_js/iframeResizer.min.js"></script>
-    <script type="text/javascript">iFrameResize({widthCalculationMethod:"scroll"});</script>
-    <!--Конец кода 2345-->
+ 	 <main class="site-main bus">
+	<section class="bus-search">
+		<h1 class="section-title section-title_dark-theme"><?echo the_title();?></h1>
+    <?
+      the_post();
+      the_content();
+    ?>
+    <div class="main-catalog flex-box">
+      <?php
+        foreach ($tours as $obj) {
+          if($obj->post_name == 'archive') {
+            continue;
+        }
+        $img_avia = get_the_post_thumbnail($obj->ID);
+      ?>
+      <article class="main-avia card-box">
+        <a class="card-box__more" href="<?php the_permalink($obj->ID); ?>">
+          <figure class="card-box__img">
+            <img src="<?echo $img_avia;?>" alt="<?echo get_the_title( $obj->ID );?> от ПРО-ТУР">
+          </figure>
+        </a>
+        <div class="card-box__text">
+          <h4><?echo get_the_title( $obj->ID );?></h4>
+          <p><?php echo get_field('offer_price', $obj->ID); ?></p>
+          <a href="#" class="btn cloud-link card-box__btn"><span class="hidden"><?echo get_the_title( $obj->ID );?></span>Полететь</a>
+        </div>
+      </article>
+      <?php
+    }
+      ?>
+    </div>
 	</section>
 	<section class="form-box">
 		<h3 class="section-title section-title_dark-theme">Остались <span class="color-orange">вопросы?</span> Хотите заказать <span class="color-orange">консультацию?</span></h3>

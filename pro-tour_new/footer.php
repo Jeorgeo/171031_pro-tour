@@ -34,7 +34,7 @@
 			</h3>
 			<ul class="footer-menu">
 				<li><a href="<?php the_permalink( 713 ); ?>">О нас</a></li>
-				<li><a href="<?php echo get_field('id_news', 711); ?>">Новости</a></li>
+				<li><a href="https://pro-tour.by/category/news/">Новости</a></li>
 				<li><a href="#">Частые вопросы</a></li>
 				<li><a href="#">Сертификаты и дипломы</a></li>
 				<li><a href="#">Вакансии</a></li>
@@ -108,7 +108,7 @@
 				<a href="<?php echo get_permalink( 725 ); ?>">Политика конфиденциальности</a> Все предложения и цены на сайте носят информационный характер и не являются публичной афертой.
 	    </p>
 			<p>
-				© 2019 | Заряжено <a href="http://rstudio.by/">RStudio</a>
+				© 2019 | Заряжено <a href="http://rstudio.by/" target="_blank">RStudio</a>
 			</p>
 		</div>
 	</section>
@@ -122,7 +122,7 @@
 		<form id="js_form" method="post" class="cloud-form order-form">
 			<!-- Hidden Required Fields -->
 			<input type="hidden" name="project_name" value="pro-tour.by">
-			<input type="hidden" name="admin_email" value="<?php echo get_field('email_form', 47); ?>">
+			<input type="hidden" name="admin_email" value="<?php echo get_field('email_form', 711); ?>">
 			<input class="cloud-title" type="hidden" name="form_subject" value="Заявка с сайта.Консультация">
 			<!-- END Hidden Required Fields -->
 			<label class="cloud-form__phone" for="phone">Ваш Телефон</label>
