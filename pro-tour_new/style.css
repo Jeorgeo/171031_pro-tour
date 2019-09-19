@@ -1054,12 +1054,12 @@ li.menu-item-has-children {
 }
 
 .icon-menu__icon.avia {
-  background: url('img/icon_avia_o.jpg') no-repeat center center;
+  background: url('img/icon_avia_o.png') no-repeat center center;
   background-size: 85%;
 }
 
 .icon-menu__icon.auto {
-  background: url('img/icon_auto_o.jpg') no-repeat center center;
+  background: url('img/icon_auto_o.png') no-repeat center center;
   background-size: 85%;
 }
 
@@ -1163,7 +1163,6 @@ li.menu-item-has-children {
   transition: all 0.5s ease;
 }
 
-
 .main-slider .offer figure > img {
   width: 100%;
   height: 100%;
@@ -1177,6 +1176,31 @@ li.menu-item-has-children {
   width: calc(100% - 110px);
   margin: 0;
   z-index: 99;
+}
+
+.tour-type__box {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1em 15px;
+  box-sizing: border-box;
+}
+
+.tt-btn {
+  width: 64px;
+  height: 64px;
+  margin: 0.5em auto;
+  padding: 12px;
+  background-color: #ef7b00;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 3px rgba(29, 34, 98, 0.5);
+}
+
+.tour-type__box h5 {
+  text-transform: uppercase;
+  margin: 0.7em 0;
 }
 
 .main-news .offer__price {
@@ -1248,7 +1272,7 @@ li.menu-item-has-children {
   display: inline-block;
   vertical-align: top;
   width: 100px;
-  margin: 0.5em 0;
+  margin: 20px 0;
   padding: 0;
   font-size: 25px;
   color: #ef7b00;
@@ -1263,8 +1287,8 @@ li.menu-item-has-children {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  width: 35px;
-  height: 35px;
+  width: 48px;
+  height: 48px;
   margin: 0.5em 0 0.5em 10px;
   background: #ef7b00;
   border: 1px solid #ffffff;
@@ -1276,13 +1300,13 @@ li.menu-item-has-children {
   top: 0;
   left: 0;
   display: block;
-  width: 35px;
-  height: 35px;
+  width: 48px;
+  height: 48px;
   content: '';
 }
 
 .icon-like i::after {
-  background: url('img/icon_like_w.png') no-repeat center center;
+  background: url('img/icon_swim_w.png') no-repeat center center;
   background-size: 60%;
 }
 
@@ -2244,6 +2268,10 @@ form label.cloud-form__сonsent {
     width: 48%;
   }
 
+  .tour-type__box {
+    width: 50%;
+  }
+
   .main-about {
     margin: 1em 0;
     padding-top: 0;
@@ -2251,7 +2279,7 @@ form label.cloud-form__сonsent {
 
   .main-about__top {
     padding: 2em 15px;
-    background: url('img/bg_about_l.jpg') no-repeat top left;
+    background: url('img/bg_about_b.jpg') no-repeat top left;
     background-size: cover;
   }
 
@@ -2921,6 +2949,26 @@ form label.cloud-form__сonsent {
     background: #ffffff;
     box-shadow: 1px 1px 2px #bbbcd0;
     padding: 10px;
+  }
+
+  .tour-type {
+    position: relative;
+    box-shadow: 1px -1px 3px rgba(29, 34, 98, 0.5);
+    z-index: 9999;
+  }
+
+  .tour-type__box {
+    width: 25%;
+  }
+
+  .tt-btn {
+    box-shadow: 1px 1px 5px rgba(29, 34, 98, 0.5);
+    transition: all 0.5s ease;
+  }
+
+  .tour-type__box:hover .tt-btn {
+    box-shadow: 0 0 2px rgba(29, 34, 98, 0.5);
+    transition: all 0.5s ease;
   }
 
   /*.main-about {

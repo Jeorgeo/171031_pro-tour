@@ -169,6 +169,34 @@ $partners = get_posts(
       </div>
     </div>
   </section>
+	<section class="tour-type">
+		<div class="container flex-box">
+			<a class="tour-type__box" href="https://pro-tour.by/novogodnie-tury/">
+				<figure class="tt-btn">
+					<img src="<?bloginfo('template_url'); ?>/img/icon_newyear_w.png" alt="Новогодние и рождественские туры от ПРО-ТУР">
+				</figure>
+				<h5>Новогодние и рождественские туры</h5>
+			</a>
+			<a class="tour-type__box" href="https://pro-tour.by/tury-na-osennie-kanikuly/">
+				<figure class="tt-btn">
+					<img src="<?bloginfo('template_url'); ?>/img/icon_school_w.png" alt="Туры на осенние каникулы от ПРО-ТУР">
+				</figure>
+				<h5>Туры на осенние каникулы</h5>
+			</a>
+			<a class="tour-type__box" href="https://pro-tour.by/bus-search/">
+				<figure class="tt-btn">
+					<img src="<?bloginfo('template_url'); ?>/img/icon_auto_o.png" alt="Автобусные и экскурсионные туры от ПРО-ТУР">
+				</figure>
+				<h5>Автобусные и экскурсионные туры</h5>
+			</a>
+			<a class="tour-type__box" href="https://pro-tour.by/avia-search/">
+				<figure class="tt-btn">
+					<img src="<?bloginfo('template_url'); ?>/img/icon_avia_o.png" alt="Авиатуры от ПРО-ТУР">
+				</figure>
+				<h5>Авиатуры</h5>
+			</a>
+		</div>
+	</section>
   <section class="main-about">
     <div class="main-about__top">
       <div class="container main-container">
@@ -199,17 +227,17 @@ $partners = get_posts(
         <ul class="main-about__advantages">
           <li class="advantages__icon icon-like">
             <i></i>
-            <span class="advantages__title">99,9% +</span>
-            <p>Довольных клиентов</p>
+            <span class="advantages__title">856 +</span>
+            <p>купальников выгуляли наши путешественницы</p>
           </li>
           <li class="advantages__icon icon-clients">
             <i></i>
-            <span class="advantages__title">2500 +</span>
+            <span class="advantages__title">2980 +</span>
             <p>Туристов зарядились эмоциями</p>
           </li>
           <li class="advantages__icon icon-cream">
             <i></i>
-            <span class="advantages__title">900 +</span>
+            <span class="advantages__title">985 +</span>
             <p>Тюбиков крема от загара израсходовано</p>
           </li>
         </ul>
