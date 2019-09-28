@@ -75,7 +75,7 @@ $tours = get_posts(
         <div class="card-box__text">
           <h4><?echo get_the_title( $obj->ID );?></h4>
           <p><?php echo get_field('offer_price', $obj->ID); ?></p>
-          <a href="#" class="btn cloud-link card-box__btn"><span class="hidden"><?echo get_the_title( $obj->ID );?></span>Полететь</a>
+          <a href="#" class="btn cloud-link card-box__btn"><span class="hidden"><?echo get_the_title( $obj->ID );?></span><?php echo get_field('offer_btn', $obj->ID); ?></a>
         </div>
       </article>
       <?php

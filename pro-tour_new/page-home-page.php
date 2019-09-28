@@ -359,7 +359,7 @@ $partners = get_posts(
     </div>
     <div class="container">
       <div class="main-opers__slider">
-				<?php
+				<?php/*
           foreach ($partners as $obj) {
             if($obj->post_name == 'archive') {
               continue;
@@ -377,7 +377,7 @@ $partners = get_posts(
         </figure>
 				<?php
 			}
-        ?>
+      */  ?>
       </div>
     </div>
   </section>
