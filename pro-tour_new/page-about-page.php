@@ -86,7 +86,7 @@ $partners = get_posts(
 							}
 						?>
 						<li>
-							<a href="<?php echo get_field('p_link',$obj->ID); ?>">
+							<a href="<?php echo get_field('p_link',$obj->ID); ?>" target="_blank" rel="nofollow">
 								<img src="<?php echo get_field('p_logo', $obj->ID); ?>" />
 							</a>
 						</li>

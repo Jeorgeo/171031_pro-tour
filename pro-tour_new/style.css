@@ -1710,6 +1710,11 @@ li.menu-item-has-children {
   margin: 5px;
 }
 
+.about-partners__logos img {
+  max-height: 30px;
+  width: auto;
+}
+
 .about-partners__principes li {
   position: relative;
   display: block;

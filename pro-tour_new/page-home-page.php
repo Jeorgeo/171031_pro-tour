@@ -124,7 +124,7 @@ $partners = get_posts(
 <main>
   <section class="main-slider">
     <div class="container main-container">
-      <h3>Идеи на ваш <span class="main-slider__title">отдых</span> в сентябре</h3>
+      <h3>Идеи на ваш <span class="main-slider__title">отдых</span> в октябре</h3>
       <div class="main-slider__offers offers-box">
 				<?php
           foreach ($avia_m as $obj) {
