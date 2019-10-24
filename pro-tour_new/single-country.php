@@ -41,7 +41,8 @@ get_header();
 					<?
 						the_post();
 						the_content();
-						$id_news = get_field('id_news');
+						$id_news_1 = get_field('id_news_1');
+						$id_news_2 = get_field('id_news_2');
 						$id_offer_1 = get_field('id_offer_1');
 						$id_offer_2 = get_field('id_offer_2');
 						$id_offer_3 = get_field('id_offer_3');
@@ -71,23 +72,40 @@ get_header();
 						</li>
 					</ul>
 					<div class="country__news-box">
-						<?php if ($id_news): ?>
-							<article id="post-<?$id_news?>" <?php post_class('',	$id_news); ?>>
+						<?php if ( $id_news_1 ): ?>
+							<article id="post-<? echo $id_news_1; ?>" <?php post_class('',	$id_news_1); ?>>
 								<?php
-								$thumb = get_the_post_thumbnail( $id_news );
+								$thumb = get_the_post_thumbnail( $id_news_1 );
 								?>
-								<a href="<?php echo get_post_permalink( $id_news ); ?>" class="news-box__offer offer">
+								<a href="<?php echo get_post_permalink( $id_news_1 ); ?>" class="news-box__offer offer">
 									<figure>
 										<?php echo $thumb;?>
 									</figure>
 									<div class="offer-content">
-										<span class="offer__title"><?echo get_the_title( $id_news );?></span>
-										<span class="offer__price"><?echo get_the_excerpt( $id_news );?></span>
+										<span class="offer__title"><?echo get_the_title( $id_news_1 );?></span>
+										<span class="offer__price"><?echo get_the_excerpt( $id_news_1 );?></span>
 										<span class="offer__more">Подробнее...</span>
 									</div>
 								</a>
-							</article><!-- #post-<?$id_news?> -->
-						<?php endif; ?>						
+							</article><!-- #post-<?echo $id_news_1;?> -->
+						<?php endif; ?>
+						<?php if ( $id_news_2 ): ?>
+							<article id="post-<? echo $id_news_2; ?>" <?php post_class('',	$id_news_2); ?>>
+								<?php
+								$thumb = get_the_post_thumbnail( $id_news_2 );
+								?>
+								<a href="<?php echo get_post_permalink( $id_news_2 ); ?>" class="news-box__offer offer">
+									<figure>
+										<?php echo $thumb;?>
+									</figure>
+									<div class="offer-content">
+										<span class="offer__title"><?echo get_the_title( $id_news_2 );?></span>
+										<span class="offer__price"><?echo get_the_excerpt( $id_news_2 );?></span>
+										<span class="offer__more">Подробнее...</span>
+									</div>
+								</a>
+							</article><!-- #post-<? echo $id_news_2; ?> -->
+						<?php endif; ?>
 					</div>
 			  </section>
 			  <section class="main-catalog main-catalog_country flex-box">

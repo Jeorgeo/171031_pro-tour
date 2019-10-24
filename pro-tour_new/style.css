@@ -1594,8 +1594,6 @@ li.menu-item-has-children {
 
 /*----------------------country-------------------------------*/
 
-
-
 .single-country .content-area {
   padding-top: 0;
 }
@@ -1675,6 +1673,10 @@ li.menu-item-has-children {
 
 .country__meteo-box .gsInformer {
   margin: 0 auto;
+}
+
+.country .avia-search {
+  margin-top: 1em;
 }
 
 /*-------------------------about------------------------------*/
@@ -3003,6 +3005,10 @@ form label.cloud-form__сonsent {
   .card-box__more:hover .card-box__img {
     filter: blur(1px);
     box-shadow: 2px 2px 15px #bbbcd0;
+  }
+
+  .country .avia-search {
+    margin-top: 2em;
   }
 
   /*------------category-news 1024px-----------------------------*/
