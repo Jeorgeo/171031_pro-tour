@@ -124,7 +124,7 @@ $partners = get_posts(
 <main>
   <section class="main-slider">
     <div class="container main-container">
-      <h3>Идеи на ваш <span class="main-slider__title">отдых</span> в октябре</h3>
+      <h3>Идеи на ваш <span class="main-slider__title">отдых</span> в ноябре</h3>
       <div class="main-slider__offers offers-box">
 				<?php
           foreach ($avia_m as $obj) {
@@ -228,17 +228,17 @@ $partners = get_posts(
         <ul class="main-about__advantages">
           <li class="advantages__icon icon-like">
             <i></i>
-            <span class="advantages__title">856 +</span>
+            <span class="advantages__title">987 +</span>
             <p>купальников выгуляли наши путешественницы</p>
           </li>
           <li class="advantages__icon icon-clients">
             <i></i>
-            <span class="advantages__title">2980 +</span>
+            <span class="advantages__title">3280 +</span>
             <p>Туристов зарядились эмоциями</p>
           </li>
           <li class="advantages__icon icon-cream">
             <i></i>
-            <span class="advantages__title">985 +</span>
+            <span class="advantages__title">999 +</span>
             <p>Тюбиков крема от загара израсходовано</p>
           </li>
         </ul>
