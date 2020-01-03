@@ -8,6 +8,15 @@
  */
 
 get_header();
+
+$id_news_1 = get_field('id_news_1');
+$id_news_2 = get_field('id_news_2');
+$id_offer_1 = get_field('id_offer_1');
+$id_offer_2 = get_field('id_offer_2');
+$id_offer_3 = get_field('id_offer_3');
+$type_avia = get_field('type_avia');
+//print_r($type_avia);
+
 ?>
 
 	<div id="primary" class="content-area container">
@@ -37,18 +46,7 @@ get_header();
           </a>
         </div>
 			  </figure>
-				<section class="country-description">
-					<?
-						the_post();
-						the_content();
-						$id_news_1 = get_field('id_news_1');
-						$id_news_2 = get_field('id_news_2');
-						$id_offer_1 = get_field('id_offer_1');
-						$id_offer_2 = get_field('id_offer_2');
-						$id_offer_3 = get_field('id_offer_3');
-					?>
-				</section>
-			  <section class="country-informers">
+				<section class="country-informers">
 					<ul class="country__info-box">
             <li>
               <span>Язык:</span> <?php echo get_field('сountry_lang'); ?>
@@ -63,7 +61,7 @@ get_header();
 						  <span>Сезон:</span> <?php echo get_field('сountry_season'); ?>
 					  </li>
 						<li>
-						  <span>Время полёта из Минска:</span> ~ <?php echo get_field('сountry_fly'); ?>
+						  <span>Время полёта из Минска:</span> ~ <?php echo get_field('сountry_fly');?> ч
 					  </li>
           </ul>
 					<ul class="country__meteo-box">
@@ -108,6 +106,13 @@ get_header();
 						<?php endif; ?>
 					</div>
 			  </section>
+				<section class="country-description">
+					<?
+						the_post();
+						the_content();
+
+					?>
+				</section>
 			  <section class="main-catalog main-catalog_country flex-box">
 					<?php if ($id_offer_1):
 						$img_offer_1 = get_the_post_thumbnail($id_offer_1); ?>
