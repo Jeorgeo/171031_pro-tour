@@ -124,7 +124,7 @@ $partners = get_posts(
 <main>
   <section class="main-slider">
     <div class="container main-container">
-      <h3>Идеи на ваш <span class="main-slider__title">отдых</span> в ноябре</h3>
+      <h3>Идеи для вашего <span class="main-slider__title">отдыха</span></h3>
       <div class="main-slider__offers offers-box">
 				<?php
           foreach ($avia_m as $obj) {
@@ -177,12 +177,14 @@ $partners = get_posts(
 				</figure>
 				<h5>Новогодние и рождественские туры</h5>
 			</a>
+			<!-- Будет блок для автивного отдыха
 			<a class="tour-type__box" href="https://pro-tour.by/tury-na-osennie-kanikuly/">
 				<figure class="tt-btn">
 					<img src="<?bloginfo('template_url'); ?>/img/icon_school_w.png" alt="Туры на осенние каникулы от ПРО-ТУР">
 				</figure>
-				<h5>Туры на осенние каникулы</h5>
-			</a>
+				<h5>Активный отдых</h5>
+			</a>!
+			-->
 			<a class="tour-type__box" href="https://pro-tour.by/bus-search/">
 				<figure class="tt-btn">
 					<img src="<?bloginfo('template_url'); ?>/img/icon_auto_o.png" alt="Автобусные и экскурсионные туры от ПРО-ТУР">
@@ -228,12 +230,12 @@ $partners = get_posts(
         <ul class="main-about__advantages">
           <li class="advantages__icon icon-like">
             <i></i>
-            <span class="advantages__title">987 +</span>
+            <span class="advantages__title">985 +</span>
             <p>купальников выгуляли наши путешественницы</p>
           </li>
           <li class="advantages__icon icon-clients">
             <i></i>
-            <span class="advantages__title">3280 +</span>
+            <span class="advantages__title">3310 +</span>
             <p>Туристов зарядились эмоциями</p>
           </li>
           <li class="advantages__icon icon-cream">
