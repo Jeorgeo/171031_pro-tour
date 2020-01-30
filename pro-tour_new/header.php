@@ -47,6 +47,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div class="wrap">
 	<header class="header">
 		<div class="mobile-header header__top-box">
 			<div class="container header__container">
