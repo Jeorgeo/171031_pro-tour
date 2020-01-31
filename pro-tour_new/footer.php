@@ -124,44 +124,52 @@ screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
 		</div>
 	</section>
 </footer>
-<div class="wrap"></div>
-<div id="window" class="popup-question">
-	<div class="popup-question-close">
-		close
-	</div>
-	<div class="details-form">
+</div>
+<div class="details-form">
+	<div id="window" class="popup-question">
 		<form id="js_form" method="post" class="cloud-form order-form">
+		    <button class="popup-question-close" type="button">&times</button>
 			<!-- Hidden Required Fields -->
 			<input type="hidden" name="project_name" value="pro-tour.by">
-			<input type="hidden" name="admin_email" value="<?php echo get_field('email_form', 711); ?>">
+			<input type="hidden" name="admin_email" value="<?php echo get_field('email_form', 47); ?>">
 			<input class="cloud-title" type="hidden" name="form_subject" value="Заявка с сайта.Консультация">
 			<!-- END Hidden Required Fields -->
-			<label class="cloud-form__phone" for="phone">Ваш Телефон</label>
-			<input id="phone" class="cloud-form__phone" type="text" name="phone"
-			value="" placeholder="+375(___) ___-__-__" required>
-			<label  class="cloud-form__message" for="message">Ваши пожелания</label>
-			<textarea id="message" class="cloud-form__message" name="message"
-			rows="4" cols="80" placeholder=""></textarea>
-			<button id="submit" class="cloud-form__submit" type="submit" name="submit">
-				Заказать звонок
-			</button>
-			<input id="сonsent-p" class="cloud-form__сonsent" type="checkbox" name="сonsent" value="" required checked>
-			<label class="cloud-form__сonsent" for="сonsent-p">
-				Согласие на обработку персональных данных
-			</label>
+			<fieldset class="cloud-form__head">
+                <h3 class="cloud-form__title">обратный звонок</h3>
+                <p class="cloud-form__text">Оставьте ваши данные, и мы вам перезвоним</p>
+            </fieldset>
+            <fieldset class="cloud-form__client-info">
+                 <label class="cloud-form__text">
+                     Ваше имя
+                     <input id="client-name" class="cloud-form__input" type="text" name="name" placeholder="Введите имя">
+                 </label>
+                    <label class="cloud-form__text">
+                     Ваш телефон
+                     <input id="phone" class="cloud-form__input" type="tel" name="phone" value="" placeholder="+375(___) ___-__-__" required>
+                 </label>
+                 <label class="cloud-form__text">
+                     Комментарий
+                     <textarea id="client-comment" class="cloud-form__comment" name="comment" placeholder="Введиет текст"></textarea>
+                 </label>
+            </fieldset>
+
+            <fieldset class="cloud-form__client-action">
+                 <label class="cloud-form__text">
+                     <input class="cloud-form__сonsent" type="checkbox" name="agree" checked>
+                     <span></span>
+                     Согласие на обработку персональных данных
+                 </label>
+                 <a class="cloud-form__link" href="#">Политика конфиденциальности</a>
+                 <button id="submit" class="btn cloud-form__submit disabled" type="submit" name="submit">Заказать звонок</button>
+            </fieldset>
 		</form>
 	</div>
 </div>
 <div class="popup-question-thanks">
-	<div class="popup-question-close">
-		close
-	</div>
-	<div class="box-content">
-		<p class="thanks">
-			УРА! Спасибо!
-		</p>
-		<p>Сейчас наши специалисты закончат танцевать от счастья<span class="smile"></span><br> и мы сразу же вам перезвоним!</p>
-	</div>
+	<button class="popup-question-close" type="button">&times</button>
+	 <h3 class="popup-question-thanks__title">Спасибо<span id="thanks__name"></span></h3>
+     <p class="popup-question-thanks__text">Мы скоро с вами свяжемся</p>
+     <button class="btn btn--excellent">отлично</button>
 </div>
 
 <?php wp_footer(); ?>
