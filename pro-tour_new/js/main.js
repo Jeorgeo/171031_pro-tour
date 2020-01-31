@@ -223,7 +223,7 @@ $(document).ready(function() {
 
     window.addEventListener('click', windowOnClick);
     window.addEventListener("keydown", windowOnClick)
-    
+
     //E-mail Ajax Send
     $(".order-form").submit(function() { //Change
         var th = $(this);
