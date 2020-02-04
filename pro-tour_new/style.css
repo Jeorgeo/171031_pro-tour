@@ -1862,12 +1862,6 @@ li.menu-item-has-children {
 --------------------------------------------------------------*/
 
 .wrap {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 9999;
   min-width: 100%;
   min-height: 100%;
   padding: 0;
@@ -1919,6 +1913,7 @@ li.menu-item-has-children {
   left: 50%;
   z-index: 99999;
   width: calc(100% - 10px);
+  max-width: 390px;
   height: auto;
   box-shadow: 0 15px 20px rgba(0,0,0,0.22),0 19px 60px rgba(0,0,0,0.3);
   opacity: 0;
@@ -2576,9 +2571,6 @@ li.menu-item-has-children {
   .wrap--active {
     padding-right: 16px;
   }
-  .popup-question {
-    width: 390px;
-  }
 
   .cloud-form__title,
   .popup-question-thanks__title {
@@ -2590,7 +2582,6 @@ li.menu-item-has-children {
     font-size: 0.87em;
   }
   .popup-question-thanks {
-    width: 390px;
     background-color: #fff;
   }
 

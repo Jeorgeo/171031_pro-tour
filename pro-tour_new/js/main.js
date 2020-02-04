@@ -107,6 +107,40 @@ $(document).ready(function() {
         }
     }
 
+    //counter
+
+    let show = true;
+    function showVisible() {
+        if(!show) return false;
+        let element = document.querySelector('.main-about__advantages');
+        let coords = element.getBoundingClientRect();
+        let windowHeight = document.documentElement.clientHeight;
+
+        let start;
+        const el = document.querySelectorAll('.advantages__title');
+        for (let i = 0; i < el.length; i++){
+            const final = parseInt(el[i].textContent, 10);
+            const duration = 1000;
+
+            const step = ts => {
+                if (!start) {
+                    start = ts
+                }
+                let progress = Math.ceil(ts - start) / duration;
+
+                el[i].textContent = Math.floor(progress * final) + " +";
+                if (progress < 1) {
+                    requestAnimationFrame(step)
+                }
+            };
+            if (coords.top > 0 && coords.top < windowHeight){
+                requestAnimationFrame(step);
+                show = false;
+            }
+        }
+    }
+    window.addEventListener('scroll', showVisible);
+
 // popup windows
 
     var outer = document.querySelector('body');
@@ -118,15 +152,19 @@ $(document).ready(function() {
     var excellentBtn = document.querySelector(".btn--excellent")
     var formMark = document.querySelectorAll(".cloud-mark");
     var formTitle = document.querySelector(".cloud-title");
-    var z = popupBtn.length;
     var callBtn = document.querySelector('.cloud-form__submit');
     var clientName = document.getElementById('client-name');
     var consentCheck = document.querySelector('.cloud-form__сonsent');
 
-    function showPopup(event) {
-        popup.classList.add("modal-content-show");
-        winPopup.classList.add("wrap--active");
-    };
+    for (let i = 0; i < popupBtn.length; ++i) {
+        let item = popupBtn[i];
+        function showPopup(event) {
+            formTitle.value = 'Заявка с сайта.' + popupBtn[i].querySelector('.hidden').innerText
+            popup.classList.add("modal-content-show");
+            winPopup.classList.add("wrap--active");
+        }
+        item.addEventListener('click', showPopup);
+    }
 
     function removePopup() {
         winPopup.classList.remove("wrap--active");
@@ -175,39 +213,6 @@ $(document).ready(function() {
         }, 60000);
     };
 
-
-    for (var i = 0; i < z; i++) {
-        popupBtn[i].addEventListener('click', function (evt) {
-            evt.preventDefault();
-
-            var current = evt.currentTarget;
-            if (current.classList.contains("cloud-link")) {
-                var n = z;
-                while (n--) {
-                    if (popupBtn[n] == current) {
-                        var x = n;
-                        break;
-                    }
-                }
-                showPopup();
-                formTitle.value = 'Заявка с сайта.' + popupBtn[x].querySelector('.hidden').innerText;
-            } else {
-                evt.preventDefault();
-            }
-        });
-    };
-
-    /*for (var i = 0; i < popupBtn.length; i++) {
-      popupBtn[i].addEventListener("click", function(event) {
-
-        event.preventDefault();
-
-        showPopup();
-
-      });
-    }
-    */
-
     for (var i = 0; i < close.length; i++) {
         close[i].addEventListener("click", function (event) {
             event.preventDefault();
@@ -220,22 +225,21 @@ $(document).ready(function() {
             removePopup();
         }
     }
-
     window.addEventListener('click', windowOnClick);
     window.addEventListener("keydown", windowOnClick)
 
     //E-mail Ajax Send
-    $(".order-form").submit(function() { //Change
-        var th = $(this);
+    $('.cloud-form__submit').click(function() { //Change
+        var form = $('#js_form').serialize();
         $.ajax({
             type: "POST",
-            url: "https://pro-tour.by/mail.php", //Change
-            data: th.serialize()
+            url: "http://rstudio.ru.com/wp-content/themes/pro-tour_by/mail/send.php", //Change
+            data: form
         }).done(function() {
             showThank();
             setTimeout(function() {
                 // Done Functions
-                th.trigger("reset");
+                $(".cloud-form").trigger('reset');
             }, 1000);
         });
         return false;
