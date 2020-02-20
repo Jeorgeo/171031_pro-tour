@@ -110,7 +110,6 @@ $type_avia = get_field('type_avia');
 					<?
 						the_post();
 						the_content();
-
 					?>
 				</section>
 			  <section class="main-catalog main-catalog_country flex-box">
