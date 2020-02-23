@@ -1,0 +1,16 @@
+.header__logo,
+.header__slogan,
+.header__adress,
+.header__btn {
+  display: none; }
+
+.header__top-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #1d2262;
+  width: 100%;
+  box-shadow: 1px 1px 3px rgba(29, 34, 98, 0.5);
+  z-index: 999999; }
+
+/*# sourceMappingURL=header.css.map */

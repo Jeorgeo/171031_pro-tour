@@ -1,0 +1,206 @@
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.footer {
+  padding: 1em 0 0 0;
+  box-sizing: border-box;
+  background: $blue;
+  color: #bbbcd0;
+
+  h3 {
+    text-align: center;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .social,
+  .payment {
+    display: block;
+    text-align: center;
+  }
+
+  .social li,
+  .payment li,
+  .social li a {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+  }
+
+  .social li,
+  .payment li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+  }
+
+  .social li {
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.7s ease;
+    &:hover{
+      background: $orange;
+      transition: all 0.7s ease;
+    }
+  }
+
+  .phone-button::after {
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  .phone-button:hover {
+    border: 1px solid $orange;
+    transition: all 0.5s ease;
+
+    &::after {
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+  }
+
+  .column-1,
+  .dark {
+    font-size: 0.9em;
+  }
+
+  .dark {
+    color: #8e90b0;
+    background: #1d2245;
+    padding: 1em 0;
+
+    a {
+      border-bottom: 1px dotted #8c90b0;
+
+      &:hover {
+        color: #ffffff;
+        border-bottom: 1px solid #ffffff;
+      }
+    }
+  }
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  padding-bottom: 1em;
+}
+
+
+.social__icon a::after,
+.payment__icon::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  content: '';
+}
+
+@each $name in 'ins' 'tel' 'vk' 'fb' 'ok' {
+  .social__icon.#{$name} a::after {
+    background: url('img/icon_#{$name}_w.png') no-repeat center center;
+    background-size: 75%;
+  }
+}
+
+@each $name in 'erip' 'e-pos' 'visa' 'mastercard' 'easy-pay' {
+  .social__icon.#{$name} a::after {
+    background: url('img/icon_#{$name}.png') no-repeat center center;
+    background-size: 100%;
+  }
+}
+
+.footer .mobile-header__phone-box,
+.about .mobile-header__phone-box {
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer .phone-button,
+.about .phone-button {
+  width: 260px;
+  margin: 5px auto;
+  text-align: center;
+  line-height: 2em;
+  font-size: 1em;
+  color: #ffffff;
+  border: 1px solid transparent;
+  box-sizing: content-box;
+  transition: all 0.5s ease;
+}
+
+.about .phone-button {
+  color: #070918;
+  margin-left: 0;
+}
+
+.about .phone-button::after,
+.about .phone-button:hover::after {
+  display: none;
+}
+
+.footer-menu li {
+  padding: 5px;
+  transition: all 0.5s ease;
+
+  &:hover{
+    color: #ffffff;
+    transition: all 0.5s ease;
+  }
+}
+
+.footer .header__adress,
+.footer__clock {
+  position: relative;
+  display: block;
+  width: 260px;
+  margin: 0 auto;
+  padding-left: 40px;
+  font-size: 0.95em;
+  box-sizing: border-box;
+
+  &::after{
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    content: '';
+  }
+
+  .color-w{
+    display: inline-block;
+    vertical-align: top;
+    padding: 4px 0;
+    font-size: 1em;
+  }
+}
+
+.footer .header__adress::after {
+  background: url('img/icon_map_o.png') no-repeat center center;
+  background-size: contain;
+}
+
+.footer__clock::after {
+  background: url('img/icon_clock_o.png') no-repeat center center;
+  background-size: contain;
+}
+
+
+.footer__logo {
+  display: block;
+  float: left;
+  width: 100px;
+  margin: 15px 15px 15px 5px;
+}
