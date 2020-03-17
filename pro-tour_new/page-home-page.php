@@ -171,12 +171,14 @@ $partners = get_posts(
   </section>
 	<section class="tour-type">
 		<div class="container flex-box">
+			<!--
 			<a class="tour-type__box" href="https://pro-tour.by/novogodnie-tury/">
 				<figure class="tt-btn">
 					<img src="<?bloginfo('template_url'); ?>/img/icon_newyear_w.png" alt="Новогодние и рождественские туры от ПРО-ТУР">
 				</figure>
 				<h5>Новогодние и рождественские туры</h5>
 			</a>
+			!-->
 			<!-- Будет блок для автивного отдыха
 			<a class="tour-type__box" href="https://pro-tour.by/tury-na-osennie-kanikuly/">
 				<figure class="tt-btn">
@@ -230,12 +232,12 @@ $partners = get_posts(
         <ul class="main-about__advantages">
           <li class="advantages__icon icon-like">
             <i></i>
-            <span class="advantages__title">985 +</span>
+            <span class="advantages__title">1299 +</span>
             <p>купальников выгуляли наши путешественницы</p>
           </li>
           <li class="advantages__icon icon-clients">
             <i></i>
-            <span class="advantages__title">3310 +</span>
+            <span class="advantages__title">3399 +</span>
             <p>Туристов зарядились эмоциями</p>
           </li>
           <li class="advantages__icon icon-cream">
