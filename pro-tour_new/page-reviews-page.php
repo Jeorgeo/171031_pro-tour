@@ -28,43 +28,74 @@ get_header();
 				</div>
 			</aside>
 			<main id="main" class="site-main reviews">
-				<h1 class="section-title section-title_dark-theme">Отзывы <span class="color-orange">наших</span> туристов</h1>
+                <h1 class="section-title section-title_dark-theme"><span class="color-orange">о</span>тзывы</h1>
 
-			<?php
+                <p>Отдых – это хорошо! А хороший отдых – просто великолепно!</p>
 
-			$args = array(
-                   'post_type' => 'reviews',
-                   'publish' => true,
-                   'paged' => get_query_var('paged'),
-               );
+                <p>Мы обожаем подбирать для вас отличный отдых и вдохновляемся, когда вы рассказываете нам свои впечатления.
+                   Как отдохнули? Не стесняйтесь – поделитесь своими эмоциями!</p>
+                <div class="reviews__inner">
+                     <div class="reviews__social">
+                     <h3>открыть или оставить отзыв в:</h3>
+                     <div class="reviews__container">
+                           <a href="https://www.g.page/protourby/review" target="_blank" nofollow>
+                               <svg class="reviews__icon">
+                                    <use xlink:href="<?bloginfo('template_url'); ?>/img/sprite.svg#google"></use>
+                               </svg>
+                           </a>
+                            <a href="https://yandex.by/maps/org/pro_tur/45471421445/?ll=25.296019%2C53.891147&z=18" target="_blank" nofollow>
+                                <svg class="reviews__icon">
+                                     <use xlink:href="<?bloginfo('template_url'); ?>/img/sprite.svg#yandex"></use>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/stories/highlights/17848963783497896/" target="_blank" nofollow>
+                                 <svg class="reviews__icon">
+                                      <use xlink:href="<?bloginfo('template_url'); ?>/img/sprite.svg#instagram"></use>
+                                 </svg>
+                            </a>
+                     </div>
+                     </div>
+                     <div class="reviews__social">
+                            <h3>оставить отзыв на сайте:</h3>
+                            <button class="btn reviews__btn">оставить отзыв</button>
+                     </div>
+                </div>
 
-            query_posts($args);
-
-			if ( have_posts() ) : ?>
-
-				<?php
-				/* Start the Loop */
-				while ( have_posts() ) :
-					the_post();
-
-					/*
-					 * Include the Post-Type-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content-reviews', get_post_type() );
-
-				endwhile;
-
-				the_posts_navigation();
-				//if (function_exists('wp_corenavi')) wp_corenavi();
-
-			else :
-
-				get_template_part( 'template-parts/content', 'none' );
-
-			endif;
-			?>
+             <div class="reviews__content">
+                 <div class="reviews__clients">
+                 <div class="reviews__quotes"></div>
+                     <div class="reviews__text">
+                         <span class="reviews__client-name">Инна</span>
+                         <span class="reviews__client-date">18 сентября 2019 г.</span>
+                         <p>Решили с мужем отправиться на отдых в Турцию. Выбрали это агенство и не пожалели. Нашим путешествием
+                             занималась замечательная девушка Анастасия. Отдохнули просто волшебно! Очень жаль, что отдых закончился...</p>
+                     </div>
+                 </div>
+                 <div class="reviews__clients">
+                 <div class="reviews__quotes"></div>
+                     <div class="reviews__text">
+                         <span class="reviews__client-name">Виктория</span>
+                         <span class="reviews__client-date">20 декабря 2019 г.</span>
+                         <p>В Pro-tour работают очень приятные девушки, которые подобрали для нас хороший тур цена=качество. Так как в выбранной
+                             нами стране, мы ни разу не были и не знали какой отель выбрать, девушки подсказали по отзывами своих предыдущих...</p>
+                     </div>
+                 </div>
+                 <div class="reviews__clients">
+                     <div class="reviews__quotes"></div>
+                     <div class="reviews__text">
+                         <span class="reviews__client-name">Ольга</span>
+                         <span class="reviews__client-date">29 января 2020 г.</span>
+                         <p>В декабре отдыхали в Шарм-эль-Шейхе. Спасибо компании ПРО-ТУР за прекрасную организацию отдыха.</p>
+                     </div>
+                 </div>
+             </div>
+                <ul class="reviews__control">
+                <li class="reviews__point"></li>
+                <li class="reviews__point"></li>
+                <li class="reviews__point reviews__point--selected"></li>
+                <li class="reviews__point"></li>
+                <li class="reviews__point"></li>
+            </ul>
 
 			</main><!-- #main -->
 		</div>

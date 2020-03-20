@@ -16,7 +16,7 @@
 		<section class="column-1">
 			<h3 class="visuallyhidden">Туристическое агенство "ПРО-ТУР"</h3>
 			<a href="#" class="logo footer__logo">
-				<img src="<?bloginfo('template_url'); ?>/img/pro-tour_w.png" alt="">
+				<img src="<?bloginfo('template_url'); ?>/img/pro-tour_w.png" alt="Турагентство ПРО-ТУР логотип">
 			</a>
 			<p>
 				ООО "ПРО-ТУР" УНП 591361984<br>
@@ -108,18 +108,6 @@
 	    </p>
 			<p>
 				© 2019 | Заряжено <a href="http://rstudio.by/" target="_blank">RStudio</a>
-				<!--LiveInternet counter-->
-				<script type="text/javascript">
-document.write('<a href="//www.liveinternet.ru/click" '+
-'target="_blank"><img src="//counter.yadro.ru/hit?t50.6;r'+
-escape(document.referrer)+((typeof(screen)=='undefined')?'':
-';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
-screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
-';h'+escape(document.title.substring(0,150))+';'+Math.random()+
-'" alt="" title="LiveInternet" '+
-'border="0" width="31" height="31"><\/a>')
-</script>
-<!--/LiveInternet-->
 			</p>
 		</div>
 	</section>
@@ -159,7 +147,7 @@ screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
                      <span></span>
                      Согласие на обработку персональных данных
                  </label>
-                 <a class="cloud-form__link" href="#">Политика конфиденциальности</a>
+                 <a class="cloud-form__link" href="https://pro-tour.by/privacy-policy/" target="_blank">Политика конфиденциальности</a>
                  <button id="submit" class="btn cloud-form__submit disabled" type="submit" name="submit">Заказать звонок</button>
             </fieldset>
 		</form>

@@ -120,7 +120,7 @@ $(document).ready(function() {
         const el = document.querySelectorAll('.advantages__title');
         for (let i = 0; i < el.length; i++){
             const final = parseInt(el[i].textContent, 10);
-            const duration = 1000;
+            const duration = 2000;
 
             const step = ts => {
                 if (!start) {
