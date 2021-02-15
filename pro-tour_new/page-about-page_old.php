@@ -106,12 +106,12 @@ $partners = get_posts(
 				<section class="about-contacts">
 					<h1 class="section-title section-title_dark-theme"><span class="color-orange">Наши</span> контакты</h1>
 					<article class="about-contacts__contacts">
-						<h3>ИП Шаховский Юрий Станиславович</h3>
+						<h3>ООО "ПРО-ТУР"</h3>
 						<h5>Реквизиты:</h5>
 						<p>
-							УНП 590207139<br>
-							ОКПО 737725184000<br>
-							Расчетный счет BY96BAPB30137060500100000000<br>
+							УНП 591361984<br>
+							ОКПО 501301274000<br>
+							Расчетный счет BY92BAPB30122866700140000000<br>
 							в OАО «Белагропромбанк» г. Лида ул. Тавлая, 4  код BAPBBY24457
 						</p>
 						<h5>Наш адрес:</h5>
