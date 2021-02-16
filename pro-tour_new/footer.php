@@ -72,7 +72,7 @@
 				</div>
 				<div class="header__adress adress">
 					<p>
-						<span class="color-w">Ждем вас в гости здесь:</span><br>
+						<span class="color-w">Ждем вас в гости:</span><br>
 						г.Лида, ул. Победы, 37 <br>
 						Торгово-сервисный центр<br>
 						офис 312
@@ -81,8 +81,8 @@
 				<div class="clock footer__clock">
 					<p>
 						<span class="color-w">Наши двери открыты:</span><br>
-						пн-пт: 10:00 - 18:00<br>
-						сб-вс: 10:00 - 16:00
+						пн-пт: 11:00 - 17:00<br>
+						сб-вс: 11:00 - 15:00
 					</p>
 				</div>
 			</article>
@@ -107,7 +107,7 @@
 				<a href="<?php echo get_permalink( 725 ); ?>">Политика конфиденциальности</a> Все предложения и цены на сайте носят информационный характер и не являются публичной афертой.
 	    </p>
 			<p>
-				© 2019 - 2021 | Заряжено <a href="https://rstudio.by/" target="_blank">RStudio</a>
+				© 2019 - 2021 | Разработка сайта <a href="https://rstudio.by/" target="_blank">RStudio</a>
 			</p>
 		</div>
 	</section>

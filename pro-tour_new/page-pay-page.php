@@ -41,29 +41,6 @@ get_header();
           <strong>Важно!</strong> Оплата производится только в белорусских рублях!
 				</p>
 			</section>
-			<section class="pay-box epos">
-				<h2 class="section-title section-title_dark-theme"><span class="color-orange">Оплата</span> через сервис E-POS</h2>
-				<figure class="pay-logo">
-					<img src="<?bloginfo('template_url'); ?>/img/icon_epos.png" alt="ПРО-ТУР через E-POS">
-				</figure>
-				<p class="pay-descript">
-					Оплатить услуги турагентства <a href="https://pro-tour.by/">ПРО-ТУР</a>Вы можете через систему E-Pos, в любом удобном для Вас месте, в удобное для Вас время.<br>
-					E-Pos это сервис, который позволяет Вам быстро оплачивать товары и услуги банковской картой через ЕРИП путем получения счета в виде специального QR-кода или же просто через услугу E-Pos в дереве ЕРИП.<br>
-					Существует несколько вариантов оплаты:
-				</p>
-				<ol>
-					<li>
-						<h4>Оплата туристических услуг с выставлением персонального счета.</h4>
-						Менеджер турагентства ПРО-ТУР выставит Вам уникальный персональный счет.
-						После этого, в дереве ЕРИП выберите услугу <strong>E-Pos</strong>, введите номер счета.
-						Нажимайте далее <strong>«Оплатить»</strong> и дождитесь сообщения об успешно проведенной оплате.
-					</li>
-				</ol>
-				<figure>
-					<img src="<?bloginfo('template_url'); ?>/pics/por-tour_epos_1.jpg" alt="">
-					<img src="<?bloginfo('template_url'); ?>/pics/por-tour_epos_2.jpg" alt="">
-				</figure>
-			</section>
 			<section class="pay-box erip">
 				<h2 class="section-title section-title_dark-theme"><span class="color-orange">Оплата в системе </span>"Расчет"(ЕРИП)</h2>
 				<figure class="pay-logo">
@@ -86,13 +63,13 @@ get_header();
 	    				"Система "Расчёт" (ЕРИП) -> Cервис E-POS -> E-POS - оплата товаров и услуг
 						</li>
 						<figure>
-							<img src="<?bloginfo('template_url'); ?>/pics/pro-tour_erip_210215_001" alt="ПРО-ТУР через ЕРИП">
+							<img src="<?bloginfo('template_url'); ?>/pics/pro-tour_erip_210215_001.jpg" alt="ПРО-ТУР через ЕРИП">
 						</figure>
 						<li>
 							<strong>Шаг 2</strong> Для оплаты "Услуги" вводим <strong>Код</strong> (указывается в электронном письме, СМС на телефон, или уточняете у менеджера нашего агентства)
 						</li>
 						<figure>
-							<img src="<?bloginfo('template_url'); ?>/pics/pro-tour_erip_210215_002" alt="ПРО-ТУР через ЕРИП">
+							<img src="<?bloginfo('template_url'); ?>/pics/pro-tour_erip_210215_002.jpg" alt="ПРО-ТУР через ЕРИП">
 						</figure>
 						<li>
 							<strong>Шаг 3</strong> Проверяем корректность информации по платежу
@@ -115,8 +92,36 @@ get_header();
 					<strong>Важно!</strong> Если Вы осуществляете платеж в кассе банка, пожалуйста, сообщите кассиру о необходимости проведения платежа через систему ”Расчет“ (ЕРИП).
 				</p>
 			</section>
+			<section class="pay-box epos">
+				<h2 class="section-title section-title_dark-theme"><span class="color-orange">Оплата</span> через сервис E-POS</h2>
+				<figure class="pay-logo">
+					<img src="<?bloginfo('template_url'); ?>/img/icon_epos.png" alt="ПРО-ТУР через E-POS">
+				</figure>
+				<p class="pay-descript">
+					Оплатить услуги турагентства <a href="https://pro-tour.by/">ПРО-ТУР</a> Вы можете через систему <a href="https://ssl.easypay.by/main/e_pos" target="_blank" nofollow>E-Pos</a>, в любом удобном для Вас месте, в удобное для Вас время.<br>
+					E-Pos это сервис, который позволяет Вам быстро оплачивать товары и услуги банковской картой через ЕРИП путем получения счета в виде специального QR-кода или же просто через услугу E-Pos в дереве ЕРИП.<br>
+					Существует несколько вариантов оплаты:
+				</p>
+				<ol>
+					<li>
+						<h4>Оплата туристических услуг с выставлением персонального счета.</h4>
+						Менеджер турагентства ПРО-ТУР выставит Вам уникальный персональный счет с QR-кодом.
+						После этого, вы сканируете QR-код с помощью вашего мобильного устройства и переходите в свой интернет банк для оплаты счёта. (Возможность оплаты услуг по QR-коду с помощью интернет-банка уточняйте в банке обслуживания)
+					</li>
+					<li>
+						<h4>Оплата туристических услуг с выставлением кода услуги в ЕРИП.</h4>
+						Менеджер турагентства ПРО-ТУР выставит Вам уникальный персональный счет.
+						После этого, в дереве ЕРИП выберите услугу <strong>E-Pos</strong>, введите номер счета.
+						Нажимайте далее <strong>«Оплатить»</strong> и дождитесь сообщения об успешно проведенной оплате.
+					</li>
+				</ol>
+				<figure>
+					<img src="<?bloginfo('template_url'); ?>/pics/pro-tour_erip_210215_001.jpg" alt="ПРО-ТУР через ЕРИП">
+					<img src="<?bloginfo('template_url'); ?>/pics/pro-tour_erip_210215_002.jpg" alt="ПРО-ТУР через ЕРИП">
+				</figure>
+			</section>
 			<section class="pay-box easypay">
-				<h2 class="section-title section-title_dark-theme"><span class="color-orange">Оплата через</span> сервис онлайн платежей (EasyPay)</h2>
+				<h2 class="section-title section-title_dark-theme"><span class="color-orange">Оплата картой через</span> сервис онлайн платежей (EasyPay)</h2>
 				<p class="pay-descript">
 					Также, для оплаты туристических услуг вы можете воспользоваться услугой <strong>"интернет-эквайринг"</strong> банковских карт международных платежных систем <strong>Visa, MasterCard и Белкарт</strong>"<br>
 					Обращаем Ваше внимание - на нашем сайте не нужно вводить Ваши персональные данные (пароли, номера кошельков и т.п.) Оплата производится в системе электронных платежей <strong>EasyPay</strong> на защищенной странице сервиса.
