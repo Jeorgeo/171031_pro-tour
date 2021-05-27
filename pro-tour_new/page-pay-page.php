@@ -36,10 +36,14 @@ get_header();
 				<figure class="pay-logo">
 					<img src="<?bloginfo('template_url'); ?>/pics/pro-tour_pay.jpg" alt="ПРО-ТУР оплата в офисе">
 				</figure>
-				<p class="pay-descript">
+				<div class="pay-descript">
 					Вы можете приехать к нам в офис по адресу: г. Лида, Торгово-сервисный центр (ул. Победы, 37) офис 312 в любое рабочее время, заключить договор и внести оплату наличными.<br>
           <strong>Важно!</strong> Оплата производится только в белорусских рублях!
-				</p>
+					<h5>Образец чека:</h5>
+					<figure style="width:240px;">
+						<img src="<?bloginfo('template_url'); ?>/pics/pro-tour_erip_210527_001.jpg" alt="ПРО-ТУР образец чека">
+					</figure>
+				</div>
 			</section>
 			<section class="pay-box erip">
 				<h2 class="section-title section-title_dark-theme"><span class="color-orange">Оплата в системе </span>"Расчет"(ЕРИП)</h2>
@@ -204,19 +208,19 @@ get_header();
 				</h5>
 				<ul>
 					<li>
-						Наименование: <strong>ООО "ПРО-ТУР"</strong>
+						Наименование: <strong>ИП Шаховский Юрий Станиславович</strong>
 					</li>
 					<li>
-						Юридический адрес: <strong>РБ 231300 г. Лида ул. Победы, 37 офис 312</strong>
+						Юридический адрес: <strong>Республика Беларусь, 231430, Гродненская обл., г.п. Кореличи ул. Домейко, д.28 </strong>
 					</li>
 					<li>
-						УНП: <strong>591361984</strong>
+						УНП: <strong>590207139</strong>
 					</li>
 					<li>
 						Расчетный счет:<br>
-						<strong>р/с BY92BAPB30122866700140000000</strong>
+						<strong>р/с BY96BAPB30137060500100000000</strong>
 						в OАО «БЕЛАГРОПРОМБАНК» г. Лида ул. Тавлая,4
-						Код (БИК): <strong>BAPBBY24457</strong>
+						Код (БИК): <strong>BAPBBY2X</strong>
 					</li>
 					<li>
 						Назначение платежа: Фамилия туриста, направление, номер заявки (договора)
