@@ -34,11 +34,9 @@ get_header();
  	 <main class="site-main bus">
 	<section class="bus-search">
 		<h1 class="section-title section-title_dark-theme">Подбор <span class="color-orange">Автобусных</span> туров</h1>
-		<!-- BigTrip widget -->
-		<iframe id="bigtrip_frame" style="border: 0px none; padding: 0px; display: block; width: 100%; height: 1422px;" src="https://bigtrip.by/widget/default/index/5311" name="bigtrip_frame"> </iframe>
-		<iframe id="bigtrip_popup" style="position: fixed; border: none; left: 0; top: 0; right: 0; bottom: 0; visibility: visible; z-index: 99999; display: none; width: 100%; height: 100%; padding: 0;" src="about:black" name="bigtrip_popup"></iframe>
-		<script src="https://bigtrip.by/scripts/external/bigtrip-external-2.js?id=5311"></script>
-		<!-- /BigTrip widget -->
+    <p>
+      Подбор автобусных туров временно не работает!
+    </p>
 	</section>
 	<section class="form-box">
 		<h3 class="section-title section-title_dark-theme">Остались <span class="color-orange">вопросы?</span> Хотите заказать <span class="color-orange">консультацию?</span></h3>

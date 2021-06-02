@@ -58,7 +58,13 @@ $tabs = get_posts(
 			?>
 		</article>
 	</section>
+
 	<section class="visa-box">
+		<h2 class="section-title section-title_dark-theme">Визы<span class="color-orange"> и </span>страны</h2>
+		<p>
+			Информация по визам обновляется...
+		</p>
+		<?/*
 		<h2 class="section-title section-title_dark-theme">Визы<span class="color-orange"> и </span>страны</h2>
 		<span id="table"></span>
 		<div class="visa-box__table">
@@ -106,7 +112,9 @@ $tabs = get_posts(
 				</tbody>
 			</table>
 		</div>
+			*/?>
 	</section>
+
 	<section class="form-box">
 		<h3 class="section-title section-title_dark-theme">Остались <span class="color-orange">вопросы?</span> Хотите заказать <span class="color-orange">консультацию?</span></h3>
 		<p>заполните поля и мы свяжемся с Вами в ближайшее время</p>
